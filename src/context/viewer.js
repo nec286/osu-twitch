@@ -1,7 +1,8 @@
 import axios from 'axios';
 import Config from '../config/config';
 import User from '../stores/User';
-import BestScores from '../stores/BestScores';
+import TopRanks from '../stores/TopRanks';
+import RecentActivity from '../stores/RecentActivity';
 import BeatMaps from '../stores/BeatMaps';
 
 export default (state) => {
@@ -15,9 +16,10 @@ export default (state) => {
   return {
     state,
     store: {
-      beatMaps: new BeatMaps(request, state),
       user: new User(request, state),
-      bestScores: new BestScores(request, state)
+      beatMaps: new BeatMaps(request, state),
+      recentActivity: new RecentActivity(request, state),
+      topRanks: new TopRanks(request, state)
     }
   }
 }

@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "flow": "flow",
-    "start": "webpack-dev-server --quiet --config webpack.conf.js --host 0.0.0.0 --https",
+    "start": "webpack-dev-server --config webpack.conf.js --host 0.0.0.0 --https",
     "build": "webpack -p --config webpack.conf.js --watch",
     "lint": "eslint src"
   },
@@ -56,7 +56,6 @@
     "inferno-router": "^3.9.0",
     "lodash": "^4.17.4",
     "mobx": "^3.3.0",
-    "recharts": "^1.0.0-beta.1",
-    "selectn": "^1.1.2"
+    "recharts": "^1.0.0-beta.1"
   }
 }

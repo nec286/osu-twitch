@@ -8,7 +8,7 @@ export default class extends Component {
   @autobind
   handleChange(e) {
     const { store, onChange } = this.props;
-    store.bestScores.filter = e.target.value;
+    store.topRanks.filter = e.target.value;
     onChange(e);
   }
 
