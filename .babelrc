@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "es2015"
+  ],
+  "plugins": [
+    "babel-plugin-syntax-jsx",
+    "babel-plugin-inferno",
+    "fast-async",
+    "transform-decorators-legacy",
+    "transform-object-rest-spread"
+  ]
+}
