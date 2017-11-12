@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accuracy renders OK 1`] = `
+<tr
+  value={99.999}
+/>
+`;
+
+exports[`CountryPPRank renders OK 1`] = `
+<tr
+  value={1}
+/>
+`;
+
+exports[`GlobalPPRank renders OK 1`] = `
+<tr
+  value={1}
+/>
+`;
+
+exports[`LetterRank renders OK 1`] = `
+<tr
+  value={999}
+/>
+`;
+
+exports[`Level renders OK 1`] = `
+<tr
+  value={99.99}
+/>
+`;
+
+exports[`LevelProgress renders OK 1`] = `
+<tr
+  level={99.99}
+/>
+`;
+
+exports[`PlayCount renders OK 1`] = `
+<tr
+  value={1}
+/>
+`;
+
+exports[`RankedScore renders OK 1`] = `
+<tr
+  value={999999}
+/>
+`;
+
+exports[`TotalScore renders OK 1`] = `
+<tr
+  value={999999}
+/>
+`;
