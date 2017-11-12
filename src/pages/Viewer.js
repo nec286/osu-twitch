@@ -7,7 +7,9 @@ class NavLink extends Component {
   render({ label, path }) {
     return (
       <li className="nav-item">
-        <Link className="nav-link" to={ path }>{ label }</Link>
+        <Link className="nav-link" activeClassName="active" to={ path }>
+          { label }
+        </Link>
       </li>
     );
   }
@@ -19,6 +21,10 @@ class Navbar extends Component {
       <ul className="nav">
         <NavLink label="Profile" path="/profile" />
         <NavLink label="Best" path="/best" />
+        {/*
+        <NavLink label="Recent" path="/recent" />
+        <NavLink label="Data" path="/data" />
+        */}
       </ul>
     );
   }
@@ -34,7 +40,7 @@ class OsuProfileLink extends Component {
 
 @connect(['state', 'store'])
 export default class Viewer extends Component {
-  componentWillMount() {
+  async componentWillMount() {
     const { store, state } = this.props;
     store.user.fetch('rafis');
   }

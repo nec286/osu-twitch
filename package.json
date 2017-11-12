@@ -31,6 +31,7 @@
     "fast-async": "^6.3.0",
     "glob": "^7.1.2",
     "inferno-devtools": "^3.9.0",
+    "inferno-test-utils": "^3.10.1",
     "jest": "^21.2.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
@@ -53,9 +54,8 @@
     "inferno-create-element": "^3.9.0",
     "inferno-mobx": "^3.9.0",
     "inferno-router": "^3.9.0",
-    "lodash.isempty": "^4.4.0",
+    "lodash": "^4.17.4",
     "mobx": "^3.3.0",
-    "numeraljs": "^1.5.6",
     "recharts": "^1.0.0-beta.1",
     "selectn": "^1.1.2"
   }
