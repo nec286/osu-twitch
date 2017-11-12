@@ -19,12 +19,9 @@ class Navbar extends Component {
   render() {
     return (
       <ul className="nav">
-        <NavLink label="Profile" path="/profile" />
-        <NavLink label="Best" path="/best" />
-        {/*
+        <NavLink label="Profile" path="/" />
+        <NavLink label="Top Ranks" path="/top-ranks" />
         <NavLink label="Recent" path="/recent" />
-        <NavLink label="Data" path="/data" />
-        */}
       </ul>
     );
   }
@@ -47,7 +44,7 @@ export default class Viewer extends Component {
 
   render({ state, store, children }) {
     const { user } = state;
-    return (
+    return ( !!user.username &&
       <main>
         <OsuProfileLink username={ user.username } />
         <Navbar />

@@ -8,12 +8,25 @@ export default class {
 
   @action async fetch(id) {
     try {
-      const result = await this.request.get(`/beatmaps/:id`, {
+      const result = await this.request.get(`/beatmaps/${id}`, {
         params: { }
       });
-      this.state.beatMaps = this.state.beatMaps.filter(value => value.id !== id);
-      this.state.beatMaps.push(result.data[0]);
+      this.state.beatMaps.set(id, result.data[0]);
+      return result.data[0];
     } catch(e) {
+      this.state.lastError = e;
+    }
+  }
+
+  @action async fetchAll(ids) {
+    try {
+      const result = await Promise.all(ids.map(id => {
+        return this.request.get(`/beatmaps/${id}`);
+      }));
+      const map = _.keyBy(_.map(result, 'data[0]'), 'beatmap_id');
+      this.state.beatMaps.merge(map);
+    } catch(e) {
+      console.log(e);
       this.state.lastError = e;
     }
   }
