@@ -45,11 +45,11 @@ select {
   font-size: 0.9em;
 }
 
-.osu-profile-link {
+.nav-bar {
   background-color: #e0e0e0;
-  width: 100%;
-  display: block;
-  padding: 0.5rem;
+  .osu-profile-link {
+    padding: 0.5rem;
+  }
 }
 
 .grade-badge {
@@ -70,7 +70,7 @@ select {
 
 .list-group {
   overflow-y: auto;
-  height: 370px;
+  height: 408px;
 }
 
 .list-group-item{
@@ -95,4 +95,22 @@ select {
 
 .recent {
   font-size: 0.8rem;
+}
+
+// Custom material scrollbar fro webkit browsers
+
+.list-group::-webkit-scrollbar-track
+{
+	background-color: $grey-light;
+}
+
+.list-group::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: $grey-light;
+}
+
+.list-group::-webkit-scrollbar-thumb
+{
+	background-color: #e0e0e0;
 }

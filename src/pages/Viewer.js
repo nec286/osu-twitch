@@ -3,7 +3,7 @@ import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import { Link } from 'inferno-router';
 
-class NavLink extends Component {
+class NavItem extends Component {
   render({ label, path }) {
     return (
       <li className="nav-item">
@@ -18,11 +18,13 @@ class NavLink extends Component {
 class Navbar extends Component {
   render() {
     return (
-      <ul className="nav">
-        <NavLink label="Profile" path="/" />
-        <NavLink label="Best Scores" path="/top-ranks" />
-        <NavLink label="Activity" path="/recent" />
-      </ul>
+      <div className="nav-bar">
+        <ul className="nav">
+          <NavItem label="Profile" path="/" />
+          <NavItem label="Best Scores" path="/top-ranks" />
+          <NavItem label="Activity" path="/recent" />
+        </ul>
+      </div>
     );
   }
 }
@@ -48,7 +50,6 @@ export default class Viewer extends Component {
     const { user } = state;
     return ( !!user.username &&
       <main>
-        <OsuProfileLink username={ user.username } />
         <div className="">
           <Navbar />
           { children }
