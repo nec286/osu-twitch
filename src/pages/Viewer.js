@@ -30,7 +30,9 @@ class Navbar extends Component {
 class OsuProfileLink extends Component {
   render({ username }) {
     return (
-      <a href={ `https://osu.ppy.sh/u/${username}` }>{ username }</a>
+      <a className="osu-profile-link" href={ `https://osu.ppy.sh/u/${username}` }>
+        { username }
+      </a>
     );
   }
 }
@@ -47,8 +49,10 @@ export default class Viewer extends Component {
     return ( !!user.username &&
       <main>
         <OsuProfileLink username={ user.username } />
-        <Navbar />
-        { children }
+        <div className="p-2">
+          <Navbar />
+          { children }
+        </div>
       </main>
     )
   }
