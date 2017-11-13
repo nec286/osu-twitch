@@ -33,7 +33,6 @@ export default class extends Component {
         <ModeSelect mode={ topRanksFilter } onChange={ this.handleModeChange } />
         { !!pagedResults && <Results results={ pagedResults } beatMaps={ beatMaps } /> }
         <pre style={{ display: 'none' }}>{ beatMaps.size }</pre>
-        <Paginator context="topRanks" />
       </div>
     );
   }
