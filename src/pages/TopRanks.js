@@ -2,7 +2,7 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { Results, Paginator } from '../components/common';
+import { Results } from '../components/common';
 import { ModeSelect, ScoreList } from '../components/viewer/top_ranks';
 
 @connect(['state', 'store'])
@@ -25,13 +25,13 @@ export default class extends Component {
   }
 
   render({ state, store }) {
-    const { topRanksFilter, beatMaps } = state;
-    const pagedResults = store.topRanks.paginate;
+    const { topRanks, topRanksFilter, beatMaps } = state;
+    const results = topRanks.get(topRanksFilter);
 
     return (
       <div className="top-ranks">
         <ModeSelect mode={ topRanksFilter } onChange={ this.handleModeChange } />
-        { !!pagedResults && <Results results={ pagedResults } beatMaps={ beatMaps } /> }
+        { !!results && <Results results={ results } beatMaps={ beatMaps } /> }
         <pre style={{ display: 'none' }}>{ beatMaps.size }</pre>
       </div>
     );
