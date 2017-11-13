@@ -8,8 +8,10 @@ export default class State {
       asyncStatus: null,
       lastError: null,
       user: {},
-      topRanks: observable(new Map()), // These are mapped by mode for convinience
+      topRanks: observable(new Map()),
       topRanksFilter: 0,
+      topRanksPage: 0,
+      topRanksLimit: 5,
       beatMaps: observable(new Map()),
       recentActivity: []
     }, state)

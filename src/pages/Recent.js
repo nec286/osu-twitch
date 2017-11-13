@@ -2,27 +2,7 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-// import { Activity } from '../components/viewer/recent';
-
-class ActivityListItem extends Component {
-  render({ item, beatMap }) {
-    return (
-      <li className="list-group-item">
-        { beatMap && beatMap.title }
-      </li>
-    );
-  }
-}
-
-class ActivityList extends Component {
-  render({ activity, beatMaps }) {
-    return (
-      <ul className="list-group">
-        { activity.map(item => <ActivityListItem item={ item } beatMap={ beatMaps.get(item.beatmap_id) } />) }
-      </ul>
-    );
-  }
-}
+import { Results } from '../components/common';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -37,8 +17,8 @@ export default class extends Component {
 
     return (
       <div className="recent">
-        { !!recentActivity && <ActivityList activity={ recentActivity } beatMaps={ beatMaps } /> }
-        <pre>{ beatMaps.size }</pre>
+        { !!recentActivity && <Results results={ recentActivity } beatMaps={ beatMaps } /> }
+        <pre style={{ display: 'none' }}>{ beatMaps.size }</pre>
       </div>
     );
   }

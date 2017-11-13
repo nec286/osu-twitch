@@ -20,8 +20,8 @@ class Navbar extends Component {
     return (
       <ul className="nav">
         <NavLink label="Profile" path="/" />
-        <NavLink label="Top Ranks" path="/top-ranks" />
-        <NavLink label="Recent" path="/recent" />
+        <NavLink label="Best Scores" path="/top-ranks" />
+        <NavLink label="Activity" path="/recent" />
       </ul>
     );
   }
@@ -49,7 +49,7 @@ export default class Viewer extends Component {
     return ( !!user.username &&
       <main>
         <OsuProfileLink username={ user.username } />
-        <div className="p-2">
+        <div className="">
           <Navbar />
           { children }
         </div>
