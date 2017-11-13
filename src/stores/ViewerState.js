@@ -11,7 +11,7 @@ export default class State {
       topRanks: observable(new Map()),
       topRanksFilter: 0,
       topRanksPage: 0,
-      topRanksLimit: 5,
+      topRanksLimit: 10,
       beatMaps: observable(new Map()),
       recentActivity: []
     }, state)
