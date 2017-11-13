@@ -3,11 +3,15 @@ body {
   color: #494949; // TODO move to vars
 }
 
+main {
+  height: 100vh;
+}
+
 a{
   color: inherit;
 }
 
-table {
+table, select {
   width: 100%;
 }
 
@@ -18,32 +22,60 @@ table {
   }
 }
 
+.list-group-item {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
 .container-fluid {
   width: 318px;
   font-size: 0.9em;
 }
 
 .osu-profile-link {
-  background: #e0e0e0;
+  background-color: #e0e0e0;
   width: 100%;
   display: block;
   padding: 0.5rem;
 }
 
 .grade-badge {
-   margin: 0 0.8rem;
+  background-color: #e0e0e0;
   .badge {
     border-radius: 0;
     width: 40px;
-    &.grade {
-      padding: 0.7rem 0;
-      &.ss{ background-color: #ffd54f; }
-      &.s { background-color: #e0e0e0; }
-      &.a { background-color: #00e676; }
-    }
-    &.value {
-      padding: 0.5rem;
-      display: block;
+    padding: 0.7rem 0;
+    &.ss{ background-color: #ffd54f; }
+    &.s { background-color: #e0e0e0; }
+    &.a { background-color: #00e676; }
+  }
+  small {
+    display: block;
+    text-align: center;
+  }
+}
+
+.list-group-item{
+  .grade-badge {
+    .badge {
+      width: 30px;
+      padding: 0;
     }
   }
+}
+
+.profile {
+  font-size: 0.8rem;
+  .grade-badge {
+    margin: 0 0.8rem;
+  }
+}
+
+.top-ranks {
+  font-size: 0.8rem;
+}
+
+.recent {
+  font-size: 0.8rem;
 }

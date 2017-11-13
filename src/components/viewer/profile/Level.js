@@ -7,11 +7,23 @@ export default class extends Component {
     const nextLevel = Math.round((value % 1) * 100);
     return (
       <div className="grade-badge">
-        <div className="badge grade">
+        <div className="badge">
           { Math.floor(value) }
-          <div />
         </div>
-        <div className="badge value">LVL</div>
+        <small>LVL</small>
+      </div>
+    );
+  }
+}
+
+
+import classNames from 'classnames';
+class GradeBadge extends Component {
+  render({ grade, label }) {
+    return (
+      <div className="grade-badge">
+        <div className={ classNames('badge', grade) }>{ grade.toUpperCase() }</div>
+        { !!label && <div className="label">{ label }</div> }
       </div>
     );
   }

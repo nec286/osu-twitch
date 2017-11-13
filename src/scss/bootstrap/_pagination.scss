@@ -1,0 +1,19 @@
+.pagination {
+  background-color: #e0e0e0;
+  border-radius: 0;
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &:last-child {
+    .page-link {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
