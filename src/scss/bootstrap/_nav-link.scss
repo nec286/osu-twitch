@@ -1,6 +1,9 @@
 .nav-link {
   padding: 0.5rem 0.5rem;
   &:first-child {
-    padding-left: 0;
+    // padding-left: 0;
+  }
+  &.active {
+    border-bottom: 3px solid;
   }
 }

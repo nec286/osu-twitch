@@ -4,7 +4,7 @@ import Component from 'inferno-component';
 export default class App extends Component {
   render({ children }) {
     return (
-      <div className="container-fluid">{ children }</div>
+      <div className="container-fluid p-0">{ children }</div>
     );
   }
 }

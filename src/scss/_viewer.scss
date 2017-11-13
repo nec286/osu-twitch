@@ -1,7 +1,49 @@
-.container-fluid {
-  width: 318px;
+body {
+  background-color: $grey-light;
+  color: #494949; // TODO move to vars
+}
+
+a{
+  color: inherit;
 }
 
 table {
   width: 100%;
+}
+
+// TODO move the bs overrides
+.table {
+  td {
+    padding: 0.5rem;
+  }
+}
+
+.container-fluid {
+  width: 318px;
+  font-size: 0.9em;
+}
+
+.osu-profile-link {
+  background: #e0e0e0;
+  width: 100%;
+  display: block;
+  padding: 0.5rem;
+}
+
+.grade-badge {
+   margin: 0 0.8rem;
+  .badge {
+    border-radius: 0;
+    width: 40px;
+    &.grade {
+      padding: 0.7rem 0;
+      &.ss{ background-color: #ffd54f; }
+      &.s { background-color: #e0e0e0; }
+      &.a { background-color: #00e676; }
+    }
+    &.value {
+      padding: 0.5rem;
+      display: block;
+    }
+  }
 }

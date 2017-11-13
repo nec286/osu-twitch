@@ -4,6 +4,4 @@ export { default as PlayCount } from './PlayCount';
 export { default as Accuracy } from './Accuracy';
 export { default as RankedScore } from './RankedScore';
 export { default as TotalScore } from './TotalScore';
-export { default as LetterRank } from './LetterRank';
 export { default as Level } from './Level';
-export { default as LevelProgress } from './LevelProgress';
