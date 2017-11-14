@@ -1,8 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { connect } from 'inferno-mobx';
 
-@connect(['store'])
 export default class extends Component {
   render({ mode, onChange }) {
     return (

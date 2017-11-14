@@ -1,15 +1,8 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import {
-  GlobalPPRank,
-  CountryPPRank,
-  PlayCount,
-  Accuracy,
-  RankedScore,
-  TotalScore,
-  Badges
-} from '../components/viewer/profile';
+import { FlagIcon } from '../components/common';
+import { Statistic, Accuracy, Score, Badges } from '../components/viewer/profile';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -18,12 +11,12 @@ export default class extends Component {
     return (
       <div className="profile">
         <table className="table">
-          <GlobalPPRank value={ user.pp_rank } />
-          <CountryPPRank country={ user.country } value={ user.pp_country_rank } />
-          <PlayCount value={ user.playcount } />
+          <Statistic label={ <i className="icon-globe" /> } value={ user.pp_rank } />
+          <Statistic label={ <FlagIcon country={ user.country } /> } value={ user.pp_country_rank } />
+          <Statistic label="Play Count" value={ user.playcount } />
           <Accuracy value={ user.accuracy } />
-          <TotalScore value={ user.total_score } />
-          <RankedScore value={ user.ranked_score } />
+          <Score value={ user.total_score } />
+          <Score value={ user.ranked_score } />
         </table>
         <Badges user={ user } />
       </div>

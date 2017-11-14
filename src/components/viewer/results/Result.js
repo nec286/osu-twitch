@@ -1,8 +1,9 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import prettydate from 'pretty-date';
-import { modEnum, abbreviate } from '../../utils/';
-import { Progress, BeatMapLink, Badge } from './';
+import { modEnum, abbreviate } from '../../../utils/';
+import { Badge } from '../../common';
+import { BeatMapLink } from '../beatmap';
 
 class ScorePP extends Component {
   render({ value }) {
