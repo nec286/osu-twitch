@@ -6,9 +6,7 @@ export default class extends Component {
     return (
       <tr>
         <td>{ label }</td>
-        <td className="text-right">
-          { value }
-        </td>
+        <td className="text-right">{ value }</td>
       </tr>
     );
   }

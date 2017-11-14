@@ -5,13 +5,14 @@ export default class State {
     extendObservable(this, {
       twitchAuth: null,
       twitchContext: null,
-      asyncStatus: null,
       lastError: null,
       user: {},
-      topRanks: observable(new Map()),
-      topRanksFilter: 0,
+      bestScores: observable(new Map()),
+      bestScoresFilter: 0,
+      isFetchingBestScores: false,
       beatMaps: observable(new Map()),
       recentActivityFilter: 0,
+      isFetchingRecentActivity: false,
       recentActivity: observable(new Map())
     }, state)
   }

@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverage: true,
+  collectCoverage: false,
   moduleDirectories: ['node_modules', '../peyote', 'src'],
   transformIgnorePatterns: ['node_modules\/(?!peyote)/'],
   moduleNameMapper: {

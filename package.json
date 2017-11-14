@@ -3,7 +3,7 @@
   "description": "An extension for twitch",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "flow": "flow",
     "start": "webpack-dev-server --config webpack.conf.js --host 0.0.0.0 --https",
     "build": "webpack -p --config webpack.conf.js --watch",

@@ -1,8 +1,5 @@
-export { default as GlobalPPRank } from './GlobalPPRank';
-export { default as CountryPPRank } from './CountryPPRank';
-export { default as PlayCount } from './PlayCount';
 export { default as Accuracy } from './Accuracy';
-export { default as RankedScore } from './RankedScore';
-export { default as TotalScore } from './TotalScore';
+export { default as Score } from './Score';
 export { default as Level } from './Level';
 export { default as Badges } from './Badges';
+export { default as Statistic } from './Statistic';
