@@ -2,8 +2,8 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { Results } from '../components/common';
-import { ModeSelect, ScoreList } from '../components/viewer/top_ranks';
+import { Results, ModeSelect } from '../components/common';
+import { ScoreList } from '../components/viewer/top_ranks';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -16,11 +16,14 @@ export default class extends Component {
   }
 
   async componentWillMount() {
-    this.loadData(this.props.state.topRanksFilter);
+    const { state } = this.props;
+    this.loadData(state.topRanksFilter);
   }
 
   @autobind
   handleModeChange(e) {
+    const { store } = this.props;
+    store.topRanks.filter = e.target.value;
     this.loadData(e.target.value);
   }
 

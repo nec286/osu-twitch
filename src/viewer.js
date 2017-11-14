@@ -7,7 +7,6 @@ import _ from 'lodash';
 import createContext from './context/viewer';
 import State from './stores/ViewerState';
 import routes from './routes/viewer';
-import noop from './lib/noop';
 // import 'flag-icon-css/css/flag-icon.css';
 import 'bootstrap/scss/bootstrap.scss';
 import './scss/main.scss';
