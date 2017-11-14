@@ -1,15 +1,14 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { Level } from './';
-import { GradeBadge } from '../../common';
+import { Badge } from '../../common';
 
 export default class extends Component {
   render({ user }) {
+    const ranks = ['ss', 's', 'a'];
     return (
       <div className="d-flex justify-content-center">
-        <GradeBadge grade='ss' label={ user.count_rank_ss } />
-        <GradeBadge grade='s' label={ user.count_rank_s } />
-        <GradeBadge grade='a' label={ user.count_rank_a } />
+        { ranks.map(rank => <Badge className={ rank } label={ rank } value={ user[`count_rank_${rank}`] } /> ) }
         <Level value={ user.level } />
       </div>
     );

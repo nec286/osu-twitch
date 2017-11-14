@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { formatNo } from '../../util';
+import { formatNo } from '../../../utils';
 import { Statistic } from '../../common';
 
 export default class extends Component {

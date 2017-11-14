@@ -36,8 +36,11 @@ select {
 
 .list-group-item {
   background: none;
-  border: none;
+  border-width: 0 0 1px 0;
   padding: 0.5rem;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .container-fluid {
@@ -52,40 +55,38 @@ select {
   }
 }
 
-.grade-badge {
+.badge {
+  padding: 0.5rem;
   background-color: #e0e0e0;
-  .badge {
-    border-radius: 0;
-    width: 40px;
-    padding: 0.7rem 0;
-    &.ss{ background-color: #ffd54f; }
-    &.s { background-color: #e0e0e0; }
-    &.a { background-color: #00e676; }
-  }
+  border-radius: 0;
+  &.ss{ background-color: #ffd54f; }
+  &.s { background-color: #e0e0e0; }
+  &.a { background-color: #00e676; }
+  &.max-combo { min-width: 50px; }
   small {
     display: block;
     text-align: center;
   }
 }
 
+.mods {
+}
+
 .list-group {
   overflow-y: auto;
   height: 408px;
-}
-
-.list-group-item{
-  .grade-badge {
-     height: 1rem;
-    .badge {
-      padding: 0;
-    }
+  padding: 0 0.5rem;
+  .badge {
+    width: 30px;
   }
 }
 
 .profile {
   font-size: 0.8rem;
-  .grade-badge {
+  .badge {
+    width: 40px;
     margin: 0 0.8rem;
+    padding: 0.7rem;
   }
 }
 
