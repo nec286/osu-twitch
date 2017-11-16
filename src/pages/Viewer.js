@@ -15,31 +15,49 @@ class NavItem extends Component {
   }
 }
 
-class Navbar extends Component {
+class Tabs extends Component {
   render() {
     return (
-      <div className="nav-bar">
-        <ul className="nav">
+      <div className="nav-tabs nav-fill">
+        <ul className="nav mr-auto">
           <NavItem label="Profile" path="/" />
           <NavItem label="Top" path="/best" />
-          <NavItem label="Recent" path="/recent" />
         </ul>
       </div>
     );
   }
 }
 
-/*
+class Banner extends Component {
+  render({ user }) {
+    return(
+      <h1>
+        <OsuProfileLink username={ !!user && user.username } />
+      </h1>
+    );
+  }
+}
+
+
 class OsuProfileLink extends Component {
   render({ username }) {
     return (
-      <a className="osu-profile-link" href={ `https://osu.ppy.sh/u/${username}` }>
+      <a className="osu-profile-link" href={ `https://osu.ppy.sh/u/${username}` } target="_blank" nofollow>
         { username }
       </a>
     );
   }
 }
-*/
+
+class Error extends Component {
+  render({ error }) {
+    return (
+      <div className="error">
+        <div class="">Aligned flex item</div>
+      </div>
+    );
+  }
+}
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -49,11 +67,13 @@ export default class extends Component {
   }
 
   render({ state, children }) {
-    const { user } = state;
-    return ( !!user.username &&
+    const { lastError, isFetchingUser, user } = state;
+    return (
       <main className="container-fluid p-0">
-        <Navbar />
-        { children }
+        <Banner user={ user } />
+        <Tabs />
+        { !!lastError && <Error error={ lastError } /> }
+        { !isFetchingUser && !lastError && children }
       </main>
     )
   }

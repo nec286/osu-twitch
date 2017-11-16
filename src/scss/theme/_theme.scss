@@ -1,8 +1,9 @@
 @import "forms.scss";
-@import "nav.scss";
-@import "nav-link.scss";
+@import "nav-tabs.scss";
 @import "button.scss";
 
 body {
+  background-color: $twitch-bg;
+  color: $grey-dark;
   font-family: Helvetica Neue, Helvetica, Liberation Sans, Arial, sans-serif;
 }

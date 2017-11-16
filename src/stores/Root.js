@@ -7,7 +7,7 @@ import Settings from './Settings';
 
 export default class {
   constructor(request, state) {
-    this.user = new User(request, state);
+    this.user = new User(request, state, this);
     this.beatMaps = new BeatMaps(request, state);
     this.recentActivity = new RecentActivity(request, state, this);
     this.bestScores = new BestScores(request, state, this);

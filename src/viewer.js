@@ -1,5 +1,5 @@
 import Inferno from 'inferno';
-import { Router, match } from 'inferno-router';
+import { Router, match, doAllAsyncBefore } from 'inferno-router';
 import { Provider } from 'inferno-mobx';
 import createMemoryHistory from 'history/createMemoryHistory';
 import axios from 'axios';
@@ -21,7 +21,7 @@ let init = () => {
   init = () => {}; // noop
   Inferno.render(
     <Provider { ...context }>
-      <Router history={ history }>
+      <Router history={ history } asyncBefore={ url => doAllAsyncBefore(match(routes, url)) }>
         { routes }
       </Router>
     </Provider>,
