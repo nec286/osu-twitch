@@ -53,7 +53,7 @@ class Error extends Component {
   render({ error }) {
     return (
       <div className="error">
-        <div class="">Aligned flex item</div>
+        <div>Unable to load extension { '(*ﾉ∀`*)' }</div>
       </div>
     );
   }
@@ -61,7 +61,7 @@ class Error extends Component {
 
 @connect(['state', 'store'])
 export default class extends Component {
-  async componentWillMount() {
+  componentWillMount() {
     const { store } = this.props;
     store.user.fetch('rafis');
   }
