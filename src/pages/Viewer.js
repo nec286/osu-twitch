@@ -21,14 +21,15 @@ class Navbar extends Component {
       <div className="nav-bar">
         <ul className="nav">
           <NavItem label="Profile" path="/" />
-          <NavItem label="Best Scores" path="/top-ranks" />
-          <NavItem label="Activity" path="/recent" />
+          <NavItem label="Top" path="/best" />
+          <NavItem label="Recent" path="/recent" />
         </ul>
       </div>
     );
   }
 }
 
+/*
 class OsuProfileLink extends Component {
   render({ username }) {
     return (
@@ -38,22 +39,21 @@ class OsuProfileLink extends Component {
     );
   }
 }
+*/
 
 @connect(['state', 'store'])
-export default class Viewer extends Component {
+export default class extends Component {
   async componentWillMount() {
-    const { store, state } = this.props;
+    const { store } = this.props;
     store.user.fetch('rafis');
   }
 
-  render({ state, store, children }) {
+  render({ state, children }) {
     const { user } = state;
     return ( !!user.username &&
-      <main>
-        <div className="">
-          <Navbar />
-          { children }
-        </div>
+      <main className="container-fluid p-0">
+        <Navbar />
+        { children }
       </main>
     )
   }

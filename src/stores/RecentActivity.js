@@ -8,16 +8,15 @@ export default class {
   }
 
   @action async fetch(userId, mode=0) {
-    this.state.isFetchingRecentActivity = true;
     try {
-      const result = await this.request.get(`/users/${userId}/recent`, {
+      this.state.isFetchingRecentActivity = true;
+      const result = await this.request.get(`/users/viewing/recent`, {
         params: { m: mode, limit: 50 }
       });
       this.state.recentActivity.set(mode, result.data);
       await this.rootStore.beatMaps.fetchAll(_.map(result.data, 'beatmap_id'));
       this.state.isFetchingRecentActivity = false;
     } catch(e) {
-      console.log(e);
       this.state.isFetchingRecentActivity = false;
       this.state.lastError = e;
     }

@@ -7,7 +7,7 @@ export default class {
   }
 
   @action async fetch(id) {
-    const result = await this.request.get(`/users/${id}`, {
+    const result = await this.request.get(`/users/viewing`, {
       params: {}
     });
     this.state.user = result.data[0];

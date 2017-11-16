@@ -2,7 +2,8 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { Results, ModeSelect } from '../components/common';
+import { ModeSelect } from 'components/common';
+import { ResultList } from 'components/viewer/results';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -34,7 +35,7 @@ export default class extends Component {
         <ModeSelect mode={ recentActivityFilter } onChange={ this.handleModeChange } />
         { isFetchingRecentActivity ?
           <div>Loading...</div> :
-          <Results results={ results } beatMaps={ beatMaps } /> }
+          <ResultList results={ results } beatMaps={ beatMaps } /> }
       </div>
     );
   }

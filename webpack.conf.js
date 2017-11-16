@@ -30,6 +30,10 @@ module.exports = {
     }]
 	},
 	resolve: {
+		modules: [
+			path.resolve('./node_modules'),
+			path.resolve('./src')
+		],
 		alias: {
 			react: 'inferno-compat',
 			'react-dom': 'inferno-compat'
@@ -40,7 +44,8 @@ module.exports = {
 		port: 3000,
 		noInfo: false,
 		hot: true,
-		inline: true
+		inline: true,
+    public: 'twitch.local'
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()

@@ -8,34 +8,40 @@ import createContext from './context/viewer';
 import State from './stores/ViewerState';
 import routes from './routes/viewer';
 // import 'flag-icon-css/css/flag-icon.css';
-import 'bootstrap/scss/bootstrap.scss';
-import './scss/main.scss';
+import './scss/viewer.scss';
 
-if(process.env.NODE_ENV !== 'production') {
+if(process.env.NODE_ENV === 'development') {
   require('inferno-devtools');
 }
 
 const context = createContext(new State(window.__STATE));
 const history = createMemoryHistory();
 
-Inferno.render(
-  <Provider { ...context }>
-    <Router history={ history }>
-      { routes }
-    </Router>
-  </Provider>,
-  document.getElementById('root')
-);
+let init = () => {
+  init = () => {}; // noop
+  Inferno.render(
+    <Provider { ...context }>
+      <Router history={ history }>
+        { routes }
+      </Router>
+    </Provider>,
+    document.getElementById('root')
+  );
+}
 
 // Twitch callbacks
 
 window.__onAuthorized = function(twitchAuth) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${twitchAuth.token}`;
   context.state.twitchAuth = twitchAuth;
-  if(context.state.twitchContext) init();
+  console.log(twitchAuth);
+  // if(context.state.twitchContext) init();
+  init();
 }
 
+/*
 window.__onContext = function(twitchContext) {
   context.state.twitchContext = twitchContext;
   if(context.state.twitchAuth) init();
 }
+*/

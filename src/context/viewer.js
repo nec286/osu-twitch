@@ -1,9 +1,9 @@
 import axios from 'axios';
-import Config from '../config/config';
-import Root from '../stores/Root';
+import config from 'config/config';
+import Root from 'stores/Root';
 
 export default (state) => {
-  const { ebs } = new Config();
+  const { ebs } = config();
 
   const request = axios.create({
     baseURL: `${ ebs.url }`,

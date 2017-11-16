@@ -6,7 +6,8 @@ import axios from 'axios';
 import createContext from './context/settings';
 import State from './stores/SettingsState';
 import routes from './routes/settings.js';
-import style from './scss/main.scss';
+// import 'bootstrap/scss/bootstrap.scss';
+import './scss/settings.scss';
 
 if (process.env.NODE_ENV !== 'production') {
   require('inferno-devtools');
@@ -15,8 +16,8 @@ if (process.env.NODE_ENV !== 'production') {
 const context = createContext(new State(window.__STATE));
 const history = createMemoryHistory();
 
-let init = function() {
-  init = noop;
+let init = () => {
+  init = () => {}; // noop
   Inferno.render(
     <Provider { ...context }>
       <Router history={ history }>
@@ -32,10 +33,14 @@ let init = function() {
 window.__onAuthorized = function(twitchAuth) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${twitchAuth.token}`;
   context.state.twitchAuth = twitchAuth;
-  if(context.state.twitchContext) init();
+  console.log(twitchAuth);
+  // if(context.state.twitchContext) init();
+  init();
 }
 
+/*
 window.__onContext = function(twitchContext) {
   context.state.twitchContext = twitchContext;
   if(context.state.twitchAuth) init();
 }
+*/

@@ -1,4 +1,10 @@
-// Colors
 $grey-light: #fafafa;
 $grey-dark: #c7c7c7;
 $pink-medium: #f06292;
+
+$blue: red;
+$enable-rounded: false;
+
+$font-size-base: 0.78rem;
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * .875) !default;
