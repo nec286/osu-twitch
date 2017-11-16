@@ -11,7 +11,7 @@ export default class {
     try {
       this.lastError = null;
       this.state.isFetchingUser = true;
-      const result = await this.request.get(`/users/viewingxx`, {
+      const result = await this.request.get(`/users/viewing`, {
         params: {}
       });
       this.state.user = result.data[0];

@@ -3,7 +3,7 @@ import Component from 'inferno-component';
 import { Router } from 'inferno-router';
 import { connect } from 'inferno-mobx';
 import { FlagIcon } from 'components/common';
-import { Accuracy, Score, Showcase } from 'components/viewer/profile';
+import { TableRow, Accuracy, Score, Showcase } from 'components/viewer/profile';
 
 function parseEventHTML(str) {
   const arr = str.split(/\s*(<[^>]*>)/g);
@@ -40,22 +40,10 @@ export default class extends Component {
     return (
       <div className="profile">
         <table className="table table-sm">
-          <tr>
-            <td>Play Count</td>
-            <td className="text-right">{ user.playcount }</td>
-          </tr>
-          <tr>
-            <td>Hit Accuracy</td>
-            <td className="text-right"><Accuracy value={ user.accuracy } /></td>
-          </tr>
-          <tr>
-            <td>Total Score</td>
-            <td className="text-right"><Score value={ user.total_score } /></td>
-          </tr>
-          <tr>
-            <td>Ranked Score</td>
-            <td className="text-right"><Score value={ user.ranked_score } /></td>
-          </tr>
+          <TableRow label="Play Count" value={ user.playcount } />
+          <TableRow label="Hit Accuracy" value={ <Accuracy value={ user.accuracy } /> } />
+          <TableRow label="Total Score" value={ <Score value={ user.total_score } /> } />
+          <TableRow label="Ranked Score" value={ <Score value={ user.ranked_score } /> } />
         </table>
         <Showcase user={ user } />
         <RecentEvents events={ user.events } beatMaps={ beatMaps } />

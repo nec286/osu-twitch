@@ -1,3 +1,4 @@
+export { default as TableRow } from './TableRow';
 export { default as Accuracy } from './Accuracy';
 export { default as Score } from './Score';
 export { default as Level } from './Level';
