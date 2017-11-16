@@ -7,7 +7,6 @@ if(window.Twitch.ext) {
   });
 
   window.Twitch.ext.onContext(function(context) {
-    // context.game = 'Sonic Mania';
     window.__onContext(context);
   });
 

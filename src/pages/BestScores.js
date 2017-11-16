@@ -2,8 +2,8 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { ModeSelect } from '../components/common';
-import { ResultList } from '../components/viewer/results';
+import { ModeSelect } from 'components/common';
+import { ResultList } from 'components/viewer/results';
 
 @connect(['state', 'store'])
 export default class extends Component {

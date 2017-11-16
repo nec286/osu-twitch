@@ -5,7 +5,10 @@ export default class State {
     extendObservable(this, {
       twitchAuth: null,
       twitchContext: null,
-      validation: {}
+      lastError: null,
+      validation: observable(new Map()),
+      settings: observable(new Map()),
+      saveStatus: null
     }, state)
   }
 }

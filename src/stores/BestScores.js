@@ -8,9 +8,9 @@ export default class {
   }
 
   @action async fetch(userId, mode=0) {
-    this.state.isFetchingBestScores = true;
     try {
-      const result = await this.request.get(`/users/${userId}/best`, {
+      this.state.isFetchingBestScores = true;
+      const result = await this.request.get(`/users/viewing/best`, {
         params: { m: mode, limit: 10 }
       });
       this.state.bestScores.set(mode, result.data);
