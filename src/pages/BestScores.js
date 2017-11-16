@@ -31,7 +31,7 @@ export default class extends Component {
     const results = bestScores.get(bestScoresFilter);
 
     return (
-      <div className="top-ranks">
+      <div className="best-scores">
         <ModeSelect mode={ bestScoresFilter } onChange={ this.handleModeChange } />
         { isFetchingBestScores ?
           <div>Loading...</div> :

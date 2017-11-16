@@ -1,0 +1,11 @@
+.nav-tabs {
+  border-bottom: none;
+  .nav-item {
+    .nav-link {
+      border: none;
+      &.active {
+        background-color: $twitch-bg;
+      }
+    }
+  }
+}

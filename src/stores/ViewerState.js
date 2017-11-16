@@ -6,6 +6,7 @@ export default class State {
       twitchAuth: null,
       twitchContext: null,
       lastError: null,
+      isFetchingUser: false,
       user: {},
       bestScores: observable(new Map()),
       bestScoresFilter: 0,
