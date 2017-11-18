@@ -26,4 +26,16 @@ export default class {
   set filter(filter) {
     this.state.bestScoresFilter = filter;
   }
+
+  @action setData(data) {
+    try{
+      data.beatMaps.forEach(beatMap => {
+        console.log('beatMap', beatMap);
+        this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
+      });
+      this.state.bestScores.set(0, data.bestScores);
+    } catch(e) {
+      console.log(e);
+    }
+  }
 }

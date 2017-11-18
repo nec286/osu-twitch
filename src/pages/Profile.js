@@ -25,7 +25,6 @@ class RecentEvents extends Component {
 
     return(
       <div className="recent-events">
-        <h2>Recent</h2>
         <ResultList results={ results } beatMaps={ beatMaps } />
       </div>
     );

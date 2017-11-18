@@ -79,18 +79,16 @@ select {
 }
 
 .list-group-item {
+  border-width: 1px 0 0 0;
   border-radius: 0 !important;
   padding: 0.5rem;
-  margin: 0 0.25rem 0.25rem 0.25rem;
-  border: 1px solid #eee;
-  /*
+  background-color: $twitch-bg;
   &:first-child {
     border-top: none;
   }
   &:last-child {
     border-bottom: none;
   }
-  */
 }
 
 .table-sm {
@@ -170,6 +168,6 @@ h2 {
 
 .recent-events {
   .list-group {
-    height: 204px;
+    height: 243px;
   }
 }

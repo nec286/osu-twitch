@@ -8,12 +8,11 @@ export default class {
 
   @action async fetch(id) {
     try {
-      console.log('GET THE FUCKING BEATMSP');
       const result = await this.request.get(`/beatmaps`, {
         params: { b: id }
       });
-      this.state.beatMaps.set(id, result.data[0]);
-      return result.data[0];
+      this.state.beatMaps.set(id, result.data);
+      return result.data;
     } catch(e) {
       this.state.lastError = e;
     }
@@ -26,7 +25,7 @@ export default class {
           params: { b: id }
         });
       }));
-      const map = _.keyBy(_.map(result, 'data[0]'), 'beatmap_id');
+      const map = _.keyBy(_.map(result, 'data'), 'beatmap_id');
       this.state.beatMaps.merge(map);
     } catch(e) {
       console.log(e);

@@ -7,7 +7,7 @@ export default class extends Component {
     // const nextLevel = Math.round((value % 1) * 100);
     const nextLevel = 70;
     const style = {
-      background: `linear-gradient(0deg, #bcaaa4, ${nextLevel}%, #d7ccc8 0%)`
+      background: `linear-gradient(0deg, #e0e0e0, ${nextLevel}%, #eee 0%)`
     }
     return <Badge style={ style } label={ Math.floor(value).toString() } value={ 'LVL' } />;
   }
