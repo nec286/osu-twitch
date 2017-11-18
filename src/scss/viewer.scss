@@ -46,8 +46,8 @@ select {
   }
 }
 
-.error {
-  height: 450px;
+.error, .loading {
+  height: 430px;
   div {
     /* background: #ffdb4c; */
     position: relative;
@@ -162,7 +162,7 @@ h2 {
 
 .best-scores {
   .list-group {
-    height: 380px;
+    height: 401px;
   }
 }
 
