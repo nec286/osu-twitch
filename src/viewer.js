@@ -31,17 +31,21 @@ let init = () => {
 
 // Twitch callbacks
 
-window.__onAuthorized = function(twitchAuth) {
+window.__onAuthorized = (twitchAuth) => {
   axios.defaults.headers.common['Authorization'] = `Bearer ${twitchAuth.token}`;
   context.state.twitchAuth = twitchAuth;
-  console.log(twitchAuth);
   // if(context.state.twitchContext) init();
   init();
 }
 
 /*
-window.__onContext = function(twitchContext) {
+window.__onContext = (twitchContext) => {
   context.state.twitchContext = twitchContext;
   if(context.state.twitchAuth) init();
 }
 */
+
+window.__onMessage = (message) => {
+  message = JSON.parse(message);
+  context.store[message.key].setData(message);
+}

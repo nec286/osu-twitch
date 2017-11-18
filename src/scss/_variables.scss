@@ -4,9 +4,9 @@ $grey-dark: #494949;
 $pink-medium: #f06292;
 $twitch-bg: #FAF9FA;
 $brown-light: #d7ccc8;
-$gold-light: #fff9c4;
-$silver-light: #cfd8dc;
-$green-light: #c8e6c9;
+$gold-light: #fff176;
+$silver-light: #80deea;
+$green-light: #ccff90;
 
 // Bootstrap overrides
 $blue: red;
@@ -14,4 +14,4 @@ $enable-rounded: false;
 
 $font-size-base: 0.78rem;
 $font-size-lg: ($font-size-base * 1.25) !default;
-$font-size-sm: ($font-size-base * .875) !default;
+$font-size-sm: ($font-size-base * 1) !default;

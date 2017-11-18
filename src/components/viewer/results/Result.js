@@ -40,7 +40,7 @@ export default class extends Component {
         <div className="d-flex">
           <div className="d-flex flex-column">
             <BeatMapLink beatMap={ beatMap } />
-            <p>{ prettydate.format(new Date(result.date)) }</p>
+            <p><small>{ prettydate.format(new Date(result.date)) }</small></p>
           </div>
           { !!result.pp && <ScorePP value={ result.pp } /> }
         </div>
