@@ -1,13 +1,23 @@
 @import "forms.scss";
 @import "nav-tabs.scss";
-@import "button.scss";
 
 body {
   background-color: $twitch-bg;
-  color: $grey-dark;
+  color: $black;
   font-family: Helvetica Neue, Helvetica, Liberation Sans, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
 }
 
 small {
   font-size: 0.9em;
+}
+
+button {
+  cursor: pointer;
 }
