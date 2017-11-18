@@ -59,6 +59,16 @@ class Error extends Component {
   }
 }
 
+class Loading extends Component {
+  render() {
+    return (
+      <div className="loading">
+        <div>Loading...</div>
+      </div>
+    );
+  }
+}
+
 @connect(['state', 'store'])
 export default class extends Component {
   componentWillMount() {
@@ -72,6 +82,7 @@ export default class extends Component {
       <main className="container-fluid p-0">
         <Banner user={ user } />
         <Tabs />
+        { !!isFetchingUser && <Loading /> }
         { !!lastError && <Error error={ lastError } /> }
         { !isFetchingUser && !lastError && children }
       </main>
