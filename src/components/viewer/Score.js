@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { formatNo } from '../../../utils';
+import { formatNo } from 'utils';
 
 export default class extends Component {
   render({ value }) {

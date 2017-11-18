@@ -2,8 +2,7 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { ModeSelect } from 'components/common';
-import { ResultList } from 'components/viewer/results';
+import { ModeSelect, ResultList, Loading } from 'components/viewer';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -30,12 +29,12 @@ export default class extends Component {
     const { bestScores, bestScoresFilter, isFetchingBestScores, beatMaps } = state;
     const results = bestScores.get(bestScoresFilter);
 
+    if(!!isFetchingBestScores) return <Loading />;
+
     return (
       <div className="best-scores">
         <ModeSelect mode={ bestScoresFilter } onChange={ this.handleModeChange } />
-        { isFetchingBestScores ?
-          <div>Loading...</div> :
-          <ResultList results={ results } beatMaps={ beatMaps } /> }
+        <ResultList results={ results } beatMaps={ beatMaps } />
       </div>
     );
   }
