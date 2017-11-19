@@ -15,7 +15,7 @@ export default class {
         params: { m: mode, limit: 10 }
       });
       this.state.bestScores.set(mode, result.data);
-      await this.rootStore.beatMaps.fetchAll(_.map(result.data, 'beatmap_id'));
+      await this.rootStore.beatMaps.fetch(_.map(result.data, 'beatmap_id'));
       this.state.isFetchingBestScores = false;
     } catch(e) {
       this.state.isFetchingBestScores = false;

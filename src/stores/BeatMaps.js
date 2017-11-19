@@ -7,26 +7,12 @@ export default class {
     this.state = state;
   }
 
-  @action async fetch(id) {
+  @action async fetch(ids) {
     try {
       const result = await this.request.get('/beatmaps', {
-        params: { b: id }
+        params: { b: ids.filter(id => Number(id) > 0) }
       });
-      this.state.beatMaps.set(id, result.data);
-      return result.data;
-    } catch(e) {
-      this.state.lastError = e;
-    }
-  }
-
-  @action async fetchAll(ids) {
-    try {
-      const result = await Promise.all(ids.map(id => {
-        return this.request.get('/beatmaps', {
-          params: { b: id }
-        });
-      }));
-      const map = _.keyBy(_.map(result, 'data'), 'beatmap_id');
+      const map = _.keyBy(result.data, 'beatmap_id');
       this.state.beatMaps.merge(map);
     } catch(e) {
       this.state.lastError = e;
