@@ -16,7 +16,7 @@ export default class {
         params: {}
       });
       this.state.user = result.data;
-      await this.rootStore.beatMaps.fetchAll(_.map(result.data.events, 'beatmap_id'));
+      await this.rootStore.beatMaps.fetch(_.map(result.data.events, 'beatmap_id'));
       this.state.isFetchingUser = false;
     } catch(e) {
       this.state.lastError = e;
