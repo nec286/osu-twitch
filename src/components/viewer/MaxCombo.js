@@ -5,7 +5,7 @@ import { Badge } from 'components/viewer';
 export default class extends Component {
   render({ value, record }) {
     const percentage = value / record * 100;
-    const style = { background: `linear-gradient(0deg, #e0e0e0, ${percentage}%, #eee 0%)` }
+    const style = { background: `linear-gradient(0deg, #e0e0e0, ${percentage}%, #eee 0%)` };
     return <Badge className="max-combo" style={ style } label={ `x${value }` } />;
   }
 }

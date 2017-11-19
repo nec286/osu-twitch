@@ -14,7 +14,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.1",
+    "babel-eslint": "^8.0.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-inferno": "^3.2.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -27,6 +27,8 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.8.0",
     "eslint-config-inferno-app": "^4.2.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-inferno": "^7.4.0",
     "eslint-plugin-react": "^7.4.0",
     "fast-async": "^6.3.0",
     "glob": "^7.1.2",

@@ -9,6 +9,6 @@ export default class extends Component {
       <div className="mods d-flex">
         { modEnum.read(mods).map(mod => <Badge label={ abbreviate(mod) } />) }
       </div>
-    )
+    );
   }
 }

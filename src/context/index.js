@@ -13,5 +13,5 @@ export default (state) => {
   return {
     state,
     store: new Root(request, state)
-  }
-}
+  };
+};

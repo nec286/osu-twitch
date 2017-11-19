@@ -25,11 +25,11 @@ export default class extends Component {
     this.loadData(e.target.value);
   }
 
-  render({ state, store }) {
+  render({ state }) {
     const { bestScores, bestScoresFilter, isFetchingBestScores, beatMaps } = state;
     const results = bestScores.get(bestScoresFilter);
 
-    if(!!isFetchingBestScores) return <Loading />;
+    if(isFetchingBestScores) return <Loading />;
 
     return (
       <div className="best-scores">

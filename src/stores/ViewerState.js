@@ -1,4 +1,4 @@
-import { observable, extendObservable } from 'mobx'
+import { observable, extendObservable } from 'mobx';
 
 export default class State {
   constructor(state) {
@@ -15,6 +15,6 @@ export default class State {
       recentActivityFilter: 0,
       isFetchingRecentActivity: false,
       recentActivity: observable(new Map())
-    }, state)
+    }, state);
   }
 }

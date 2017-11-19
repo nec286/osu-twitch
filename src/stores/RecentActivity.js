@@ -1,4 +1,5 @@
-import { observable, action, computed } from 'mobx';
+import { action } from 'mobx';
+import _ from 'lodash';
 
 export default class {
   constructor(request, state, rootStore) {
@@ -10,7 +11,7 @@ export default class {
   @action async fetch(userId, mode=0) {
     try {
       this.state.isFetchingRecentActivity = true;
-      const result = await this.request.get(`/users/viewing/recent`, {
+      const result = await this.request.get('/users/viewing/recent', {
         params: { m: mode, limit: 50 }
       });
       this.state.recentActivity.set(mode, result.data);

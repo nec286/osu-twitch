@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { action } from 'mobx';
 
 export default class {
   constructor(request, state) {
@@ -19,7 +19,6 @@ export default class {
       this.state.saveStatus = 'saved';
     } catch(e) {
       this.state.saveStatus = null;
-      console.log(e);
       this.state.lastError = e;
     }
   }

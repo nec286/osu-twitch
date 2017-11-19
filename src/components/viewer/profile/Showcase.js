@@ -2,7 +2,6 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { Level } from './';
 import { Badge, Flag } from 'components/viewer';
-import classNames from 'classnames';
 
 export default class extends Component {
   render({ user }) {
