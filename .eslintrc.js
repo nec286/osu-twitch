@@ -5,6 +5,7 @@ module.exports = {
         "es6": true
     },
     "extends": "eslint:recommended",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -13,7 +14,7 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "inferno"
     ],
     "rules": {
         "indent": [
@@ -31,6 +32,11 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "inferno/jsx-uses-inferno": "error",
+        "inferno/jsx-uses-vars": "error"
+    },
+    "globals": {
+      "process": true
     }
 };

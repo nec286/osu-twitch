@@ -1,7 +1,7 @@
-import Inferno from 'inferno'
-import { Route, IndexRoute, Redirect } from 'inferno-router'
-import App from 'components/App'
-import Viewer from 'pages/Viewer'
+import Inferno from 'inferno';
+import { Route, IndexRoute } from 'inferno-router';
+import App from 'components/App';
+import Viewer from 'pages/Viewer';
 import Profile from 'pages/Profile';
 import BestScores from 'pages/BestScores';
 
@@ -12,4 +12,4 @@ export default (
       <Route path="/best" component={ BestScores } />
     </Route>
   </Route>
-)
+);

@@ -1,4 +1,5 @@
-import { observable, action, computed } from 'mobx';
+import { action } from 'mobx';
+import _ from 'lodash';
 
 export default class {
   constructor(request, state, rootStore) {
@@ -7,11 +8,11 @@ export default class {
     this.rootStore = rootStore;
   }
 
-  @action async fetch(id) {
+  @action async fetch() {
     try {
       this.lastError = null;
       this.state.isFetchingUser = true;
-      const result = await this.request.get(`/users/viewing`, {
+      const result = await this.request.get('/users/viewing', {
         params: {}
       });
       this.state.user = result.data;
@@ -24,7 +25,6 @@ export default class {
   }
 
   @action setData(data) {
-    console.log(data);
     data.beatMaps.forEach(beatMap => {
       this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
     });

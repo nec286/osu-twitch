@@ -20,6 +20,6 @@ export default class extends Component {
           { !lastError ? children : <Error error={ lastError } /> }
         </div>
       </main>
-    )
+    );
   }
 }

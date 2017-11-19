@@ -62,7 +62,7 @@ const mods = {
   Random,
   LastMod,
   FreeModAllowed
-}
+};
 
 function key(value) {
   return Object.keys(mods).find(key => mods[key] === value);

@@ -9,7 +9,7 @@ export default class extends Component {
   render({ state }) {
     const { isFetchingUser, user, beatMaps } = state;
 
-    if(!!isFetchingUser) return <Loading />;
+    if(isFetchingUser) return <Loading />;
 
     return (
       <div className="profile">
@@ -22,6 +22,6 @@ export default class extends Component {
         <Showcase user={ user } />
         <RecentEvents events={ user.events } beatMaps={ beatMaps } />
       </div>
-    )
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { observable, extendObservable } from 'mobx'
+import { observable, extendObservable } from 'mobx';
 
 export default class State {
   constructor(state) {
@@ -9,6 +9,6 @@ export default class State {
       validation: observable(new Map()),
       settings: observable(new Map()),
       saveStatus: null
-    }, state)
+    }, state);
   }
 }

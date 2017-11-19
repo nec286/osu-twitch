@@ -1,4 +1,3 @@
-import { observable, action, computed } from 'mobx';
 import User from './User';
 import BestScores from './BestScores';
 import RecentActivity from './RecentActivity';
