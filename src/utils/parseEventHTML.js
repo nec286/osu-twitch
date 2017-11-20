@@ -3,9 +3,9 @@ export default function(str) {
   const img = arr.filter(v => v.match(/<img.+>/));
 
   // Try to extract the global #rank
-  let globalRank = str.split('rank #');
-  if(globalRank.length === 2) {
-    globalRank = globalRank[1].replace(/(^\d+)(.+$)/i,'$1');
+  let chunks = str.split('rank #'), globalRank;
+  if(chunks.length === 2) {
+    globalRank = chunks[1].replace(/(^\d+)(.+$)/i,'$1');
   }
 
   return {

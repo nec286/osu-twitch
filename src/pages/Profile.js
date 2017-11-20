@@ -13,13 +13,15 @@ export default class extends Component {
 
     return (
       <div className="profile">
+        <Showcase user={ user } />
         <table className="table table-sm">
+          <tbody>
           <TableRow label="Play Count" value={ user.playcount } />
           <TableRow label="Hit Accuracy" value={ <Accuracy value={ user.accuracy } /> } />
           <TableRow label="Total Score" value={ <Score value={ user.total_score } /> } />
           <TableRow label="Ranked Score" value={ <Score value={ user.ranked_score } /> } />
+          </tbody>
         </table>
-        <Showcase user={ user } />
         <RecentEvents events={ user.events } beatMaps={ beatMaps } />
       </div>
     );
