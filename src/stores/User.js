@@ -13,7 +13,7 @@ export default class {
       this.lastError = null;
       this.state.isFetchingUser = true;
       const result = await this.request.get('/users/viewing', {
-        params: {}
+        params: { event_days: 10 }
       });
       this.state.user = result.data;
       await this.rootStore.beatMaps.fetch(_.map(result.data.events, 'beatmap_id'));
@@ -25,6 +25,7 @@ export default class {
   }
 
   @action setData(data) {
+    console.log(data);
     data.beatMaps.forEach(beatMap => {
       this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
     });

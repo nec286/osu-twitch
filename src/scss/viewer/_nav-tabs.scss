@@ -1,13 +1,12 @@
 .nav-tabs {
   border-bottom: none;
+  background-color: $grey-dark;
   .nav-item {
     width: 35px;
     .nav-link {
       border: none;
       padding: 0.3rem;
-      &.active {
-        background-color: $grey-mid
-      }
+      &.active { background-color: $grey-light }
     }
   }
 }

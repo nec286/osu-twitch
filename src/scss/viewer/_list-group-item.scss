@@ -1,0 +1,12 @@
+.list-group-item {
+  border-width: 1px 0 0 0;
+  border-radius: 0 !important;
+  border-color: $grey-dark;
+  padding: 0;
+  line-height: 1.2em;
+  background-color: $white;
+  &:first-child { border-top: none }
+  &:last-child { border-bottom: none }
+  .summary { padding: 0.3rem }
+  .badges { }
+}

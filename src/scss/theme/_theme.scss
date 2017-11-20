@@ -1,31 +1,16 @@
-@import "forms.scss";
-@import "nav-tabs.scss";
+@import "forms";
 
 body {
-  background-color: $twitch-bg;
+  background-color: $white;
   color: $black;
   font-family: Helvetica Neue, Helvetica, Liberation Sans, Arial, sans-serif;
 }
 
 a {
   color: inherit;
-  &:hover {
-    color: inherit;
-  }
+  &:hover { color: inherit }
 }
 
-small {
-  font-size: 0.9em;
-}
+small { font-size: 0.9em }
 
-button {
-  cursor: pointer;
-}
-
-p {
-  margin-bottom: 0.5rem;
-}
-
-.line-through {
-  text-decoration: line-through;
-}
+button { cursor: pointer }

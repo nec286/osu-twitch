@@ -1,18 +1,14 @@
-$grey-light: #fafafa;
-$grey-mid: #efeef1;
-$grey-dark: #e0e0e0;
+$grey-light: #F2F4F4;
+$grey-dark: #E5E8E8;
 $black: #19171c;
-$pink-medium: #f06292;
-$twitch-bg: #faf9fa;
-$brown-light: #d7ccc8;
-$gold-light: #ffea00;
-$silver-light: #1de9b6;
-$green-light: #76ff03;
-
-// Bootstrap overrides
+$white: #faf9fa;
+$gold: #ffea00;
+$silver: #1de9b6;
+$green: #76ff03;
 $blue: #0097a7;
+
 $enable-rounded: false;
 
-$font-size-base: 0.78rem;
+$font-size-base: 0.7rem;
 $font-size-lg: ($font-size-base * 1.25) !default;
 $font-size-sm: ($font-size-base * 1) !default;

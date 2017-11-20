@@ -1,4 +1,5 @@
-@import "variables.scss";
+@import "variables";
+@import "utils";
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -15,16 +16,13 @@
 @import "bootstrap/card";
 @import "bootstrap/badge";
 @import "bootstrap/list-group";
+@import "bootstrap/progress";
 @import "bootstrap/utilities";
-@import "theme/theme";
+@import "viewer/viewer";
 
-body {
-  background-color: $grey-mid;
-}
+body { background-color: $grey-light }
 
-main {
-  height: 100vh;
-}
+main { height: 100vh }
 
 h1 {
   background-color: $black;
@@ -34,148 +32,18 @@ h1 {
   margin-bottom: 0;
 }
 
-h2 {
-  background-color: $grey-dark;
-  padding: 0.3rem;
-  font-size: $font-size-base;
-  font-weight: normal;
-  margin-bottom: 0;
-}
-
-table, select {
-  width: 100%;
-}
+table, select { width: 100% }
 
 select {
   border: none;
   padding: 0.3rem;
-  background: $grey-dark;
+  background: $grey-light;
   width: 100%;
   &:focus {
     outline: none;
   }
 }
 
-.table {
-  margin-bottom: 0;
-  tr:not(:last-child) {
-    td {
-      border-bottom: 1px solid $grey-dark;
-    }
-  }
-}
+p { margin-bottom: 0.3rem }
 
-.v-center {
-  height: 100%;
-  div {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-  }
-}
-
-.list-group {
-  // border-top: 1px solid $grey-dark;
-  // border-bottom: 1px solid $grey-dark;
-  height: 100%;
-  overflow-y: auto;
-  padding: 0;
-  // background-color: $grey-dark;
-  .badge {
-    width: 40px;
-    padding: 0.3rem;
-  }
-  &::-webkit-scrollbar-track {
-  	background-color: $grey-mid;
-  }
-  &::-webkit-scrollbar {
-  	width: 0.3rem;
-  	background-color: $grey-mid;
-  }
-  &::-webkit-scrollbar-thumb {
-  	background-color: $grey-dark;
-  }
-}
-
-.list-group-item {
-  border-width: 1px 0 0 0;
-  border-radius: 0 !important;
-  border-color: $grey-dark;
-  padding: 0;
-  // margin: 0rem 0.3rem 0.3rem 0.3rem;
-  background-color: $grey-mid;
-  &:first-child {
-    border-top: none;
-  }
-  &:last-child {
-    border-bottom: none;
-  }
-  .summary {
-    padding: 0.3rem;
-  }
-  .badges {
-    // background-color: $grey-mid;
-  }
-}
-
-.nav-tabs {
-  // background-color: $grey-mid;
-  background-color: #e0e0e0;
-}
-
-.badge {
-  padding: 0.5rem;
-  background-color: #d7ccc8;
-  border-radius: 0;
-  &.ss, &.ssh {
-    background-color: $gold-light !important;
-    color: $black !important;
-  }
-  &.s, &.sh {
-    background-color: $silver-light !important;
-    color: $black !important;
-  }
-  &.a {
-    background-color: $green-light !important;
-    color: $black !important;
-  }
-  &.max-combo {
-    min-width: 50px;
-  }
-  &.global-rank {
-    // min-width: 50px;
-  }
-}
-
-.page {
-  height: 315px;
-}
-
-.profile {
-  .showcase {
-    .badge {
-      width: 55px;
-      height: 40px;
-      padding: 0;
-      .label {
-        font-size: 1.2em;
-        margin-bottom: 0.25rem;
-      }
-      .value {
-        font-weight: normal;
-      }
-    }
-  }
-  .recent-events{
-    // margin-top: 0.3rem;
-    border-top: 1px solid $grey-mid;
-    // padding: 0.3rem 0;
-    height: 145px;
-    // background-color: $grey-mid;
-  }
-}
-
-.best-scores {
-  height: 295px;
-}
+.page { height: 241px }
