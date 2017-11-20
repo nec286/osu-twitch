@@ -29,12 +29,10 @@ export default class extends Component {
     const { bestScores, bestScoresFilter, isFetchingBestScores, beatMaps } = state;
     const results = bestScores.get(bestScoresFilter);
 
-    if(isFetchingBestScores) return <Loading />;
-
     return (
       <div className="best-scores">
         <ModeSelect mode={ bestScoresFilter } onChange={ this.handleModeChange } />
-        <ResultList results={ results } beatMaps={ beatMaps } />
+        { isFetchingBestScores ? <Loading /> : <ResultList results={ results } beatMaps={ beatMaps } /> }
       </div>
     );
   }
