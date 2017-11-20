@@ -1,0 +1,15 @@
+.profile {
+  .showcase {
+    .badge {
+      width: 65px;
+      height: 30px;
+      padding: 0;
+      .label { font-size: 1.2em; }
+      .value { font-weight: normal; }
+    }
+  }
+  .recent-events{
+    background-color: $white;
+    height: 115px;
+  }
+}

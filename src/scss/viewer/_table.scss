@@ -1,0 +1,10 @@
+.table {
+  margin-bottom: 0;
+  background-color: $white;
+  tr:not(:last-child) {
+    td { border-bottom: 1px solid $grey-dark }
+  }
+  &.table-sm {
+    td { padding: 0.1rem 0.3rem }
+  }
+}

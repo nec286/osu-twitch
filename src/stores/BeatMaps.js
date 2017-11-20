@@ -8,9 +8,11 @@ export default class {
   }
 
   @action async fetch(ids) {
+    ids = ids.filter(id => Number(id) > 0);
+    if(ids.length <= 0) return;
     try {
       const result = await this.request.get('/beatmaps', {
-        params: { b: ids.filter(id => Number(id) > 0) }
+        params: { b: ids }
       });
       const map = _.keyBy(result.data, 'beatmap_id');
       this.state.beatMaps.merge(map);

@@ -1,0 +1,11 @@
+.line-through { text-decoration: line-through }
+
+.v-center {
+  height: 100%;
+  div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+}
