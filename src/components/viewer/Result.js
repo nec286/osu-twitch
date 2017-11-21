@@ -1,22 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import prettydate from 'pretty-date';
-import { Badge, BeatMapLink, ScorePP, MaxCombo, Mods } from 'components/viewer';
-
-class Grade extends Component {
-  render({ value }) {
-    value = value.toLowerCase();
-    switch(value) {
-      case 'ssh':
-      value = 'ss';
-      break;
-      case 'sh':
-      value = 's';
-      break;
-    }
-    return <Badge className={ value } label={ value.toUpperCase() } />;
-  }
-}
+import { Badge, BeatMapLink, ScorePP, MaxCombo, Grade, Mods } from 'components/viewer';
 
 export default class extends Component {
   render({ result, beatMap }) {
