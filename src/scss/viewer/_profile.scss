@@ -13,3 +13,9 @@
     height: 115px;
   }
 }
+
+@-moz-document url-prefix() {
+  .profile {
+    .recent-events { height: 105px }
+  }
+}

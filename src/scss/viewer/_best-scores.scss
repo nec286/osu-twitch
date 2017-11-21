@@ -2,3 +2,7 @@
   background-color: $white;
   height: 217px;
 }
+
+@-moz-document url-prefix() {
+  .best-scores { height: 213px }
+}
