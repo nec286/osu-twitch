@@ -1,13 +1,14 @@
 {
   "author": "Peter Ludlow",
-  "description": "An extension for twitch",
+  "description": "An osu! stats extension for twitch",
   "license": "Apache-2.0",
   "scripts": {
     "test": "jest --watch",
     "flow": "flow",
     "start": "webpack-dev-server --config webpack.conf.js --host 0.0.0.0 --https",
-    "build": "webpack -p --config webpack.conf.js --watch",
-    "lint": "eslint src"
+    "build": "webpack -p --config webpack.conf.js",
+    "lint": "eslint src",
+    "package": "zip -r osu-twitch.zip settings.html viewer.html assets"
   },
   "name": "osu-twitch",
   "version": "1.0.0",

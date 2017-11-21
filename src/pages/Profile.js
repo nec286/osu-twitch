@@ -20,7 +20,6 @@ export default class extends Component {
           <TableRow label="Total Score" value={ <Score value={ user.total_score } /> } />
           <TableRow label="Ranked Score" value={ <Score value={ user.ranked_score } /> } />
         </table>
-        <Level value={ user.level } />
         <RecentEvents events={ user.events } beatMaps={ beatMaps } />
       </div>
     );

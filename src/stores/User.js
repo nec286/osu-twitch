@@ -24,6 +24,6 @@ export default class {
     data.beatMaps.forEach(beatMap => {
       this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
     });
-    this.state.user = data.user;
+    this.state.user = Object.assign(this.state.user, data.user);
   }
 }

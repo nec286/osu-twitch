@@ -3,7 +3,7 @@ export default function() {
   case 'production':
     return {
       ebs: {
-        // url: process.env.URL
+        url: process.env.URL,
         projectKey: process.env.PROJECT_KEY
       }
     };
@@ -12,7 +12,6 @@ export default function() {
       ebs: {
         url: 'https://10.1.1.183:81',
         projectKey: ''
-        // url: process.env.URL
       }
     };
   }

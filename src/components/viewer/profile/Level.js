@@ -4,12 +4,7 @@ import { Badge } from 'components/viewer';
 
 export default class extends Component {
   render({ value }) {
-    const percentage = Math.round((value % 1) * 100);
-    return (
-      <div className="progress">
-        <div className="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style={{ width: `${ percentage }%` }} />
-        <div className="label">Level { Math.floor(value) }</div>
-      </div>
-    );
+    const style = { background: `linear-gradient(0deg, #D5DBDB, ${Math.round((value % 1) * 100)}%, #E5E8E8 0%)` };
+    return <Badge style={ style } label={ Math.floor(value).toString() } value={ 'LVL' } />;
   }
 }

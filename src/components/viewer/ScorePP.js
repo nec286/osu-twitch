@@ -1,13 +1,12 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import classNames from 'classnames';
+import { Badge } from 'components/viewer';
 
 export default class extends Component {
-  render({ value, className }) {
+  render({ value }) {
     return (
-      <span className={ classNames('font-weight-bold', className) }>
-        { Math.round(value) }pp
-      </span>
+      <Badge label={ Math.round(value) + 'pp' } />
     );
   }
 }

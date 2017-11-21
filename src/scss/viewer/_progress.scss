@@ -1,7 +1,8 @@
 .progress {
   height: 1.25rem;
-  background-color: $grey-light;
-  .progress-bar { background-color: $grey-dark }
+  background-color: $white;
+  // color: black;
+  .progress-bar { background-color: $grey-dark; }
   .label {
     position: absolute;
     height: 1.3rem;
@@ -12,3 +13,7 @@
     line-height: 2em;
   }
 }
+
+// progress bar - purple
+// #D2B4DE
+// #A569BD

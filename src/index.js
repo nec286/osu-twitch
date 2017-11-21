@@ -5,12 +5,12 @@ import createMemoryHistory from 'history/createMemoryHistory';
 import axios from 'axios';
 import createContext from './context';
 
-if(process.env.NODE_ENV === 'development') {
+if(process.env.NODE_ENV !== 'production') {
   require('inferno-devtools');
 }
 
 module.exports = (routes, State) => {
-  const context = createContext(new State(window.__STATE));
+  const context = createContext(new State({}));
   const history = createMemoryHistory();
 
   let init = () => {
