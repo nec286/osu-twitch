@@ -1,5 +1,6 @@
 import { action } from 'mobx';
 import _ from 'lodash';
+import asyncWrapper from 'stores/asyncWrapper';
 
 export default class {
   constructor(request, state, rootStore) {
@@ -9,18 +10,14 @@ export default class {
   }
 
   @action async fetch(userId, mode=0) {
-    try {
-      this.state.isFetchingBestScores = true;
+    asyncWrapper.call(this, async () => {
       const result = await this.request.get('/users/viewing/best', {
         params: { m: mode, limit: 10 }
       });
       this.state.bestScores.set(mode, result.data);
       await this.rootStore.beatMaps.fetch(_.map(result.data, 'beatmap_id'));
       this.state.isFetchingBestScores = false;
-    } catch(e) {
-      this.state.isFetchingBestScores = false;
-      this.state.lastError = e;
-    }
+    }, 'BestScores');
   }
 
   set filter(filter) {
