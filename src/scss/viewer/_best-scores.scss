@@ -1,8 +1,14 @@
 .best-scores {
-  background-color: $white;
-  height: 217px;
+  height: 278px;
+  .result-list { height: 278px }
+  .result-list-item { height: 70px }
+}
+
+// TODO move me
+.mods {
+  .badge { background-color: #d7ccc8 }
 }
 
 @-moz-document url-prefix() {
-  .best-scores { height: 213px }
+  // .best-scores { height: 213px }
 }

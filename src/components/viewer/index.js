@@ -5,7 +5,7 @@ export { default as Flag } from './Flag';
 export { default as ModeSelect } from './ModeSelect';
 export { default as Score } from './Score';
 export { default as ResultList } from './ResultList';
-export { default as Result } from './Result';
+export { default as ResultListItem } from './ResultListItem';
 export { default as Banner } from './Banner';
 export { default as Error } from './Error';
 export { default as Loading } from './Loading';

@@ -1,0 +1,17 @@
+.result-list-item {
+  height: 50px; // Tweak me
+  line-height: 1.2;
+  .summary { padding: 0.3rem }
+  .beatmap-link {
+    display: block;
+    max-height: 27px;
+    overflow: hidden;
+  }
+  .badges {
+    background-color: $grey-dark;
+    .badge {
+      height: 25px;
+      width: 40px;
+    }
+  }
+}

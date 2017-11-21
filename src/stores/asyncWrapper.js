@@ -6,6 +6,7 @@ export default function(action, type) {
       this.state[`isFetching${type}`] = false;
     })
     .catch((e) => {
+      console.log(e);
       this.state.lastError = e;
     });
 }

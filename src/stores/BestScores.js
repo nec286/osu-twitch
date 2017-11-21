@@ -25,9 +25,11 @@ export default class {
   }
 
   @action setData(data) {
+    /*
     data.beatMaps.forEach(beatMap => {
       this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
     });
     this.state.bestScores.set(0, data.bestScores);
+    */
   }
 }

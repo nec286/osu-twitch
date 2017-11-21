@@ -1,13 +1,14 @@
 .badge {
   padding: 0.3rem;
-  background-color: $grey-light;
   border-radius: 0;
-  &.ss {
-    background-color: $gold;
-    .label { letter-spacing: -0.2em }
-  }
-  &.s { background-color: $silver }
-  &.a { background-color: $green }
   &.max-combo { }
-  &.rank { }
+  &.grade {
+    background-color: #d7ccc8;
+    &.ss {
+      background-color: $gold;
+      .label { letter-spacing: -0.2em }
+    }
+    &.s { background-color: $silver }
+    &.a { background-color: $green }
+  }
 }

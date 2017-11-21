@@ -1,18 +1,19 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import classNames from 'classnames';
 import { Badge } from 'components/viewer';
 
 export default class extends Component {
-  render({ value }) {
-    value = value.toLowerCase();
-    switch(value) {
+  render({ label='', value }) {
+    label = label.toLowerCase();
+    switch(label) {
       case 'ssh':
-      value = 'ss';
+      label = 'ss';
       break;
       case 'sh':
-      value = 's';
+      label = 's';
       break;
     }
-    return <Badge className={ value } label={ value.toUpperCase() } />;
+    return <Badge className={ classNames('grade', label)} label={ label.toUpperCase() } value={ value } />;
   }
 }
