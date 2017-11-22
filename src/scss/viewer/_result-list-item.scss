@@ -12,6 +12,9 @@
     .badge {
       height: 25px;
       width: 40px;
+      &.max-combo {
+        background-color: #c5cae9;
+      }
     }
   }
 }

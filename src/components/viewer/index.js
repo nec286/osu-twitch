@@ -13,6 +13,5 @@ export { default as OsuProfileLink } from './OsuProfileLink';
 export { default as Tabs } from './Tabs';
 export { default as NavItem } from './NavItem';
 export { default as ScorePP } from './ScorePP';
-export { default as MaxCombo } from './MaxCombo';
 export { default as Mods } from './Mods';
 export { default as Grade } from './Grade';

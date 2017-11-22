@@ -17,7 +17,7 @@ export default class extends Component {
           { result.droppedFirstPlace && <Badge className="rank line-through" label="#1" /> }
           { !!result.globalRank && <Badge className="rank" label={ `#${result.globalRank}` } /> }
           { !!result.pp && <ScorePP value={ result.pp } /> }
-          { !!result.maxcombo && <Badge value={ `${result.maxcombo}x` } /> }
+          { !!result.maxcombo && <Badge className="max-combo" value={ `${result.maxcombo}x` } /> }
         </div>
       </li>
     );

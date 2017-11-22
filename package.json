@@ -59,8 +59,6 @@
     "inferno-router": "^3.9.0",
     "lodash": "^4.17.4",
     "mobx": "^3.3.0",
-    "pretty-date": "^0.2.0",
-    "recharts": "^1.0.0-beta.1",
-    "spinkit": "^1.2.5"
+    "pretty-date": "^0.2.0"
   }
 }

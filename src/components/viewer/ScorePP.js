@@ -6,7 +6,7 @@ import { Badge } from 'components/viewer';
 export default class extends Component {
   render({ value }) {
     return (
-      <Badge label={ Math.round(value) + 'pp' } />
+      <Badge className="score-pp" label={ Math.round(value) + 'pp' } />
     );
   }
 }
