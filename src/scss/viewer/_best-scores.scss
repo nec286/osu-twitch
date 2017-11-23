@@ -1,6 +1,6 @@
 .best-scores {
-  height: 278px;
-  .result-list { height: 278px }
+  height: 273px;
+  .result-list { height: 273px }
   .result-list-item { height: 70px }
 }
 
@@ -10,5 +10,8 @@
 }
 
 @-moz-document url-prefix() {
-  // .best-scores { height: 213px }
+  .best-scores {
+    height: 269px;
+    .result-list { height: 269px }
+  }
 }

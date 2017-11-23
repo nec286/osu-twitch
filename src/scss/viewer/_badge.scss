@@ -4,11 +4,14 @@
   &.max-combo { }
   &.grade {
     background-color: #d7ccc8;
-    &.ss {
-      background-color: $gold;
+    &.ss, &.x, &.xh {
       .label { letter-spacing: -0.2em }
     }
-    &.s { background-color: $silver }
+    &.s, &.ss, &.x { background-color: $gold }
+    &.sh, &.ssh, &.xh { background-color: $silver }
     &.a { background-color: $green }
+  }
+  &.lost-first {
+    background-color: #ff5722;
   }
 }

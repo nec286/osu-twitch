@@ -64,6 +64,40 @@ const mods = {
   FreeModAllowed
 };
 
+const abbr = {
+  None: null,
+  NoFail: 'NF',
+  Easy: 'EZ',
+  NoVideo: 'NV',
+  Hidden: 'HD',
+  HardRock: 'HR',
+  SuddenDeath: 'SD',
+  DoubleTime: 'DT',
+  Relax: 'R',
+  HalfTime: 'HT',
+  NightCore: 'NC',
+  Flashlight: 'FL',
+  Autoplay: 'AP',
+  SpunOut: 'SO',
+  Relax2: 'R2',
+  Perfect: 'P',
+  Key1: '1K',
+  Key2: '2K',
+  Key3: '3K',
+  Key4: '4K',
+  Key5: '5K',
+  Key6: '6K',
+  Key7: '7K',
+  Key8: '8K',
+  Key9: '9K',
+  Key10: '10K',
+  keyMod: 'KM',
+  FadeIn: 'FI',
+  Random: 'R',
+  LastMod: 'LM',
+  FreeModAllowed: 'FMA'
+};
+
 function key(value) {
   return Object.keys(mods).find(key => mods[key] === value);
 }
@@ -72,7 +106,7 @@ function read(byte) {
   const bits = Number(byte).toString(2).split('').reverse();
   const keys = [];
   for(var i=0, j=1; i<bits.length; i++, j*=2) {
-    if(bits[i] === '1') keys.push(key(j));
+    if(bits[i] === '1') keys.push(abbr[key(j)]);
   }
   return keys;
 }

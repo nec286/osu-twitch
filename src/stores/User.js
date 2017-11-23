@@ -12,7 +12,7 @@ export default class {
   @action async fetch() {
     asyncWrapper.call(this, async () => {
       const result = await this.request.get('/users/viewing', {
-        params: { event_days: 10 }
+        params: { event_days: 15 }
       });
       this.state.user = result.data;
       await this.rootStore.beatMaps.fetch(_.map(result.data.events, 'beatmap_id'));

@@ -8,3 +8,11 @@
 @import "badge";
 @import "profile";
 @import "best-scores";
+
+.page {
+  height: 303px;
+}
+
+@-moz-document url-prefix() {
+  .page { height: 302px }
+}

@@ -59,6 +59,7 @@
     "inferno-router": "^3.9.0",
     "lodash": "^4.17.4",
     "mobx": "^3.3.0",
-    "pretty-date": "^0.2.0"
+    "moment": "^2.19.2",
+    "promise-polyfill": "6.0.2"
   }
 }

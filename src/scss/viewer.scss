@@ -52,12 +52,3 @@ select {
 }
 
 p { margin-bottom: 0.3rem }
-
-.page {
-  height: 308px;
-  // border-bottom: 1px solid $grey-dark;
-}
-
-@-moz-document url-prefix() {
-  // .page { height: 240px }
-}
