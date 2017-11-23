@@ -5,15 +5,18 @@
       width: 65px;
       .label { font-size: 1.2em }
       .value { font-weight: normal }
+      &.s { background-color: $silver }
     }
   }
   .recent-events {
-    .result-list { height: 173px }
+    .result-list { height: 168px }
   }
 }
 
 @-moz-document url-prefix() {
   .profile {
-    // .recent-events { height: 164px }
+    .recent-events {
+      .result-list { height: 159px }
+    }
   }
 }

@@ -5,15 +5,18 @@ import { Badge } from 'components/viewer';
 
 export default class extends Component {
   render({ label='', value }) {
+    let displayLabel = label;
     label = label.toLowerCase();
     switch(label) {
       case 'ssh':
-      label = 'ss';
+      case 'x':
+      case 'xh':
+      displayLabel = 'SS';
       break;
       case 'sh':
-      label = 's';
+      displayLabel = 'S';
       break;
     }
-    return <Badge className={ classNames('grade', label)} label={ label.toUpperCase() } value={ value } />;
+    return <Badge className={ classNames('grade', label)} label={ displayLabel } value={ value } />;
   }
 }

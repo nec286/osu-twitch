@@ -12,7 +12,7 @@ export default class extends Component {
 
     return(
       <div className="recent-events">
-        <h2>Recent</h2>
+        <h2>Last 15 days</h2>
         <ResultList results={ results } beatMaps={ beatMaps } />
       </div>
     );

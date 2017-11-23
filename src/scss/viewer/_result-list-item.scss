@@ -1,5 +1,5 @@
 .result-list-item {
-  height: 50px; // Tweak me
+  height: 45px;
   line-height: 1.2;
   .summary { padding: 0.3rem }
   .beatmap-link {
@@ -10,11 +10,8 @@
   .badges {
     background-color: $grey-dark;
     .badge {
-      height: 25px;
+      height: 22px;
       width: 40px;
-      &.max-combo {
-        background-color: #c5cae9;
-      }
     }
   }
 }
