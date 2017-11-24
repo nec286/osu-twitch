@@ -9,7 +9,7 @@ export default class {
     this.rootStore = rootStore;
   }
 
-  @action async fetch(userId, mode=0) {
+  @action async fetch(mode=0) {
     asyncWrapper.call(this, async () => {
       const result = await this.request.get('/users/viewing/best', {
         params: { m: mode, limit: 10 }
@@ -22,14 +22,5 @@ export default class {
 
   set filter(filter) {
     this.state.bestScoresFilter = filter;
-  }
-
-  @action setData(data) {
-    /*
-    data.beatMaps.forEach(beatMap => {
-      this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
-    });
-    this.state.bestScores.set(0, data.bestScores);
-    */
   }
 }
