@@ -8,12 +8,12 @@ export default class extends Component {
     let displayLabel = label;
     label = label.toLowerCase();
     switch(label) {
-      case 'ssh':
-      case 'x':
-      case 'xh':
+    case 'ssh':
+    case 'x':
+    case 'xh':
       displayLabel = 'SS';
       break;
-      case 'sh':
+    case 'sh':
       displayLabel = 'S';
       break;
     }

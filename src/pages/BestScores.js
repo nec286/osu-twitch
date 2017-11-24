@@ -9,7 +9,7 @@ export default class extends Component {
   loadData(mode) {
     const { store, state } = this.props;
     if(!state.bestScores.get(mode)) {
-      store.bestScores.fetch('rafis', mode);
+      store.bestScores.fetch(mode);
     }
   }
 

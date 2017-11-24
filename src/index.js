@@ -26,7 +26,6 @@ module.exports = (routes, State) => {
   };
 
   window.__onAuthorized = (twitchAuth) => {
-    console.log(twitchAuth);
     axios.defaults.headers.common['Authorization'] = `Bearer ${twitchAuth.token}`;
     context.state.twitchAuth = twitchAuth;
     init();
@@ -34,11 +33,11 @@ module.exports = (routes, State) => {
 
   window.__onError = (err) => {
     context.state.lastError = err;
-  }
+  };
 
   window.__onMessage = (message) => {
     message = JSON.parse(message);
     context.store[message.key].setData(message);
   };
 
-}
+};
