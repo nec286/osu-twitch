@@ -1,8 +1,8 @@
 .table {
   margin-bottom: 0;
-  background-color: $white;
+  background-color: $grey-dark;
   tr:nth-child(even) {
-    td{ background: $grey-light }
+    // td{ background: $grey-light }
   }
   /*
   tr:not(:last-child) {
@@ -13,6 +13,6 @@
     border: none;
   }
   &.table-sm {
-    td { padding: 0.1rem 0.3rem }
+    td { padding: 0.3rem }
   }
 }

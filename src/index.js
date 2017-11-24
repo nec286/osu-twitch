@@ -1,4 +1,3 @@
-import Promise from 'promise-polyfill';
 import Inferno from 'inferno';
 import { Router, match, doAllAsyncBefore } from 'inferno-router';
 import { Provider } from 'inferno-mobx';
@@ -8,10 +7,6 @@ import createContext from './context';
 
 if(process.env.NODE_ENV !== 'production') {
   require('inferno-devtools');
-}
-
-if(!window.Promise) {
-  window.Promise = Promise;
 }
 
 module.exports = (routes, State) => {
@@ -31,13 +26,13 @@ module.exports = (routes, State) => {
   };
 
   window.__onAuthorized = (twitchAuth) => {
+    console.log(twitchAuth);
     axios.defaults.headers.common['Authorization'] = `Bearer ${twitchAuth.token}`;
     context.state.twitchAuth = twitchAuth;
     init();
   };
 
   window.__onError = (err) => {
-    console.log(err);
     context.state.lastError = err;
   }
 
@@ -45,4 +40,5 @@ module.exports = (routes, State) => {
     message = JSON.parse(message);
     context.store[message.key].setData(message);
   };
+
 }

@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-const moment = require('moment'); // IDK
+const fromNow = require('moment-from-now');
 import { Badge, BeatMapLink, ScorePP, Grade, Mods } from 'components/viewer';
 
 export default class extends Component {
@@ -9,7 +9,7 @@ export default class extends Component {
       <li className="result-list-item d-flex">
         <div className="summary">
           <BeatMapLink beatMap={ beatMap } />
-          <p><small>{ moment(result.date).fromNow() }</small></p>
+          <p><small>{ fromNow(result.date) }</small></p>
           { !!result.enabled_mods && <Mods mods={ result.enabled_mods } /> }
         </div>
         <div className="badges d-flex flex-column ml-auto">

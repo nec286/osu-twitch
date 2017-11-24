@@ -20,23 +20,34 @@
 @import "bootstrap/utilities";
 @import "viewer/viewer";
 
-body { background-color: $grey-light }
+body {
+  background-color: $grey-dark;
+  color: darken($white, 10%);
+  // color: #D0D3D4;
+}
 
-main { height: 100vh }
+small {
+  color: darken($white, 30%);
+}
+
+// main { height: 100vh }
 
 h1 {
   background-color: $black;
   color: $white;
-  padding: 0.3rem;
+  padding: 0.5rem 0.3rem;
   font-size: $font-size-base;
   margin-bottom: 0;
 }
 
 h2 {
   background-color: $grey-dark;
+  color: $white;
   padding: 0.5rem 0.3rem;
   font-size: 0.7rem;
   margin-bottom: 0;
+  margin-top: 0.3rem;
+  border-bottom: 1px solid $grey-light;
 }
 
 table, select { width: 100% }
@@ -44,7 +55,8 @@ table, select { width: 100% }
 select {
   border: none;
   padding: 0.5rem 0.3rem;
-  background: $grey-light;
+  background: $grey-dark;
+  color: $white;
   width: 100%;
   &:focus {
     outline: none;

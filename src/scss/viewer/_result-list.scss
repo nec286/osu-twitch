@@ -1,11 +1,11 @@
 .result-list {
-  background-color: $white;
+  background-color: $grey-dark;
   overflow-y: auto;
   margin: 0;
   padding: 0;
   list-style: none;
   li {
     margin: 0;
-    &:nth-child(even) { background-color: $grey-light }
+    // &:nth-child(even) { background-color: $grey-light }
   }
 }

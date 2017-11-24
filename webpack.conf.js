@@ -5,7 +5,7 @@ const root = path.join.bind(path, __dirname);
 
 module.exports = {
 	entry: {
-    viewer: root('src/viewer.js'),
+    viewer: ['babel-polyfill', root('src/viewer.js')],
     settings: root('src/settings.js')
   },
 	output: {

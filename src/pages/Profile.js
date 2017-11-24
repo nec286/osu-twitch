@@ -17,7 +17,7 @@ export default class extends Component {
         <table className="table table-sm">
           <TableRow label="Play Count" value={ user.playcount } />
           <TableRow label="Hit Accuracy" value={ <Accuracy value={ user.accuracy } /> } />
-          <TableRow label="Total Score" value={ <Score value={ user.total_score } /> } />
+          { /* <TableRow label="Total Score" value={ <Score value={ user.total_score } /> } /> */}
           <TableRow label="Ranked Score" value={ <Score value={ user.ranked_score } /> } />
         </table>
         <RecentEvents events={ user.events } beatMaps={ beatMaps } />

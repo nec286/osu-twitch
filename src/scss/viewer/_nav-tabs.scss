@@ -1,12 +1,23 @@
 .nav-tabs {
-  border-bottom: none;
-  background-color: $grey-dark;
+  font-size: 0.7rem;
+  border: none;
+  color: $white;
   .nav-item {
     width: 35px;
+    margin-bottom: none;
     .nav-link {
-      border: none;
+      border-top: 0.3rem solid $grey-dark;
+      background-color: $grey-dark;
       padding: 0.5rem 0.3rem;
-      &.active { background-color: $grey-light }
+      &.active {
+        color: $white;
+        border: none;
+        border-top: 0.3rem solid $grey-light;
+      }
+      &:hover {
+        border-left: none;
+        border-right: none;
+      }
     }
   }
 }
