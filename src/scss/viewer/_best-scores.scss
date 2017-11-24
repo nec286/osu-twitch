@@ -4,11 +4,6 @@
   .result-list-item { height: 70px }
 }
 
-// TODO move me
-.mods {
-  .badge { background-color: $grey-dark }
-}
-
 @-moz-document url-prefix() {
   .best-scores {
     height: 269px;
