@@ -1,6 +1,5 @@
 @import "../theme/theme";
 @import "nav-tabs";
-@import "progress";
 @import "table";
 @import "result-list";
 @import "result-list-item";
@@ -10,9 +9,13 @@
 @import "best-scores";
 
 .page {
-  height: 297px;
+  height: 282px;
 }
 
 @-moz-document url-prefix() {
-  .page { height: 302px }
+  .page { height: 282px }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .page { height: 282px }
 }

@@ -9,14 +9,22 @@
     }
   }
   .recent-events {
-    .result-list { height: 163px }
+    .result-list { height: 145px }
   }
 }
 
 @-moz-document url-prefix() {
   .profile {
     .recent-events {
-      .result-list { height: 159px }
+      .result-list { height: 138px }
+    }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .profile {
+    .recent-events {
+      .result-list { height: 137px }
     }
   }
 }

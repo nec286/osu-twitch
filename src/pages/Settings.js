@@ -8,7 +8,7 @@ class InvalidFeedback extends Component {
   render({ label, errors=[] }) {
     return (
       <ul className="list-unstyled invalid-feedback">
-      { errors.map(err => {
+        { errors.map(err => {
           if(err === 'required') {
             return <li>Please provide a valid { label }.</li>;
           }
@@ -69,7 +69,7 @@ class SettingsForm extends Component {
     );
   }
 
-  render({ settings, validation }) {
+  render() {
     return (
       <form onSubmit={ this.handleSubmit }>
         <div className="form-group">
@@ -94,6 +94,6 @@ export default class extends Component {
       <main>
         <SettingsForm settings={ settings } validation={ validation } />
       </main>
-    )
+    );
   }
 }

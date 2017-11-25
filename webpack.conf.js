@@ -6,7 +6,7 @@ const root = path.join.bind(path, __dirname);
 module.exports = {
 	entry: {
     viewer: ['babel-polyfill', root('src/viewer.js')],
-    settings: root('src/settings.js')
+    settings: ['babel-polyfill', root('src/settings.js')]
   },
 	output: {
     path: root('assets/js'),

@@ -1,12 +1,19 @@
 .best-scores {
-  height: 273px;
-  .result-list { height: 273px }
+  height: 250px;
+  .result-list { height: 250px }
   .result-list-item { height: 70px }
 }
 
 @-moz-document url-prefix() {
   .best-scores {
-    height: 269px;
-    .result-list { height: 269px }
+    height: 249px;
+    .result-list { height: 249px }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .best-scores {
+    height: 249px;
+    .result-list { height: 250px }
   }
 }
