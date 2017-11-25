@@ -1,5 +1,5 @@
 .badge {
-  background-color: $grey-light;
+  // background-color: $grey-light;
   color: $white;
   // font-size: 0.75em;
   padding: 0.3rem;
@@ -27,8 +27,5 @@
   }
   &.lost-first {
     background-color: #ff5722;
-  }
-  &.level {
-    color: $black;
   }
 }

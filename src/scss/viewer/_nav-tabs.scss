@@ -6,6 +6,7 @@
     width: 35px;
     margin-bottom: none;
     .nav-link {
+      border: none;
       border-top: 0.3rem solid $grey-dark;
       background-color: $grey-dark;
       padding: 0.5rem 0.3rem;
@@ -13,10 +14,6 @@
         color: $white;
         border: none;
         border-top: 0.3rem solid $grey-light;
-      }
-      &:hover {
-        border-left: none;
-        border-right: none;
       }
     }
   }
