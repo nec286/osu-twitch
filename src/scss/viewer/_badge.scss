@@ -19,6 +19,7 @@
     .label { font-weight: 600 }
   }
   &.lost-first {
-    background: #ff5722;
+    color: #ff5722;
+    .label { font-weight: 600 }
   }
 }

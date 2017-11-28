@@ -1,25 +1,50 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import { Accuracy, Score, Loading } from 'components/viewer';
+import autobind from 'autobind-decorator';
+import { ModeSelect, Accuracy, PrettyNumber, Loading } from 'components/viewer';
 import { TableRow, Showcase, RecentEvents } from 'components/viewer/profile';
 
 @connect(['state', 'store'])
 export default class extends Component {
-  render({ state }) {
-    const { isFetchingUser, user, beatMaps } = state;
+  loadData(mode) {
+    const { store, state } = this.props;
+    if(!state.profiles.get(mode)) {
+      store.profile.fetch(mode);
+    }
+  }
 
-    if(isFetchingUser) return <Loading />;
+  componentWillMount() {
+    const { state } = this.props;
+    this.loadData(state.modeFilter);
+  }
+
+  @autobind
+  handleModeChange(e) {
+    const { store } = this.props;
+    store.filters.mode = e.target.value;
+    this.loadData(e.target.value);
+
+  }
+
+  render({ state }) {
+    const { modeFilter, isFetchingProfile, profiles, beatMaps } = state;
+    const profile = profiles.get(modeFilter);
 
     return (
       <div className="profile">
-        <Showcase user={ user } />
-        <table className="table">
-          <TableRow label="Play Count" value={ user.playcount } />
-          <TableRow label="Hit Accuracy" value={ <Accuracy value={ user.accuracy } /> } />
-          <TableRow label="Ranked Score" value={ <Score value={ user.ranked_score } /> } />
-        </table>
-        <RecentEvents events={ user.events } beatMaps={ beatMaps } />
+        <ModeSelect mode={ modeFilter } onChange={ this.handleModeChange } />
+        { isFetchingProfile && <Loading /> }
+        { !isFetchingProfile && !!profile &&
+          <span>
+            <Showcase profile={ profile } />
+            <table className="table">
+              <TableRow label="Play Count" value={ <PrettyNumber value={ profile.playcount } /> } />
+              <TableRow label="Accuracy" value={ <Accuracy value={ profile.accuracy } /> } />
+              <TableRow label="Ranked Score" value={ <PrettyNumber value={ profile.ranked_score } /> } />
+            </table>
+            <RecentEvents events={ profile.events } beatMaps={ beatMaps } />
+          </span> }
       </div>
     );
   }

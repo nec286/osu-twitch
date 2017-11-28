@@ -15,23 +15,23 @@ export default class extends Component {
 
   async componentWillMount() {
     const { state } = this.props;
-    this.loadData(state.bestScoresFilter);
+    this.loadData(state.modeFilter);
   }
 
   @autobind
   handleModeChange(e) {
     const { store } = this.props;
-    store.bestScores.filter = e.target.value;
+    store.filters.mode = e.target.value;
     this.loadData(e.target.value);
   }
 
   render({ state }) {
-    const { bestScores, bestScoresFilter, isFetchingBestScores, beatMaps } = state;
-    const results = bestScores.get(bestScoresFilter);
+    const { modeFilter, isFetchingBestScores, bestScores, beatMaps } = state;
+    const results = bestScores.get(modeFilter);
 
     return (
       <div className="best-scores">
-        <ModeSelect mode={ bestScoresFilter } onChange={ this.handleModeChange } />
+        <ModeSelect mode={ modeFilter } onChange={ this.handleModeChange } />
         { isFetchingBestScores ? <Loading /> : <ResultList results={ results } beatMaps={ beatMaps } /> }
       </div>
     );

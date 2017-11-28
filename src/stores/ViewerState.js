@@ -6,13 +6,12 @@ export default class State {
       twitchAuth: null,
       twitchContext: null,
       lastError: null,
-      isFetchingUser: false,
-      user: {},
+      isFetchingProfile: false,
+      profiles: observable(new Map()),
+      modeFilter: 0,
       bestScores: observable(new Map()),
-      bestScoresFilter: 0,
       isFetchingBestScores: false,
       beatMaps: observable(new Map()),
-      recentActivityFilter: 0,
       isFetchingRecentActivity: false,
       recentActivity: observable(new Map())
     }, state);

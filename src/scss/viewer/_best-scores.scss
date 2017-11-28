@@ -1,7 +1,9 @@
+$list-height: 350px;
+
 .best-scores {
-  height: 335px;
-  .result-list { height: 335px }
-  .result-list-item { height: 70px }
+  height: 100%;
+  .result-list { height: $list-height }
+  // .result-list-item { height: 70px }
 }
 
 @-moz-document url-prefix() {

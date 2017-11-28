@@ -1,6 +1,10 @@
+$padding: 0.8rem;
+$height: 400px;
+$nav-height: 32px;
+
 $black: #19171c;
 $white: #faf9fa;
-// white-dark = #e0e0e0;
+$grey-white: #bdbdbd;
 $grey-dark: #212121;
 $grey-light: lighten($grey-dark, 10%);
 $gold: #ffea00;
@@ -9,6 +13,7 @@ $green: #76ff03;
 $blue: #19171c;
 
 $enable-rounded: false;
+$border: 1px solid $grey-light;
 
 $font-size-base: 0.75rem;
 $font-size-lg: ($font-size-base * 1.25) !default;
