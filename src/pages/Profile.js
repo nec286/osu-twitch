@@ -14,7 +14,7 @@ export default class extends Component {
     return (
       <div className="profile">
         <Showcase user={ user } />
-        <table className="table table-sm">
+        <table className="table">
           <TableRow label="Play Count" value={ user.playcount } />
           <TableRow label="Hit Accuracy" value={ <Accuracy value={ user.accuracy } /> } />
           <TableRow label="Ranked Score" value={ <Score value={ user.ranked_score } /> } />

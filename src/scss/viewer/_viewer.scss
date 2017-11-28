@@ -9,13 +9,5 @@
 @import "best-scores";
 
 .page {
-  height: 282px;
-}
-
-@-moz-document url-prefix() {
-  .page { height: 282px }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .page { height: 282px }
+  height: 360px;
 }
