@@ -26,6 +26,7 @@ module.exports = (routes, State) => {
   };
 
   window.__onAuthorized = (twitchAuth) => {
+    console.log(twitchAuth);
     axios.defaults.headers.common['Authorization'] = `Bearer ${twitchAuth.token}`;
     context.state.twitchAuth = twitchAuth;
     init();

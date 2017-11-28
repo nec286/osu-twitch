@@ -5,7 +5,7 @@ export default class extends Component {
   render({ error }) {
     return (
       <div className="error v-center">
-        <div>Unable to load extension { '(*ﾉ∀`*)' }</div>
+        <div>Unable to load extension</div>
       </div>
     );
   }

@@ -6,7 +6,7 @@ export default class extends Component {
   render({ user }) {
     return(
       <h1>
-        <OsuProfileLink username={ !!user && user.username } />
+        { !!user.username && <OsuProfileLink username={ user.username } /> }
       </h1>
     );
   }
