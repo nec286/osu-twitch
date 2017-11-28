@@ -3,7 +3,7 @@ export { default as Badge } from './Badge';
 export { default as BeatMapLink } from './BeatMapLink';
 export { default as Flag } from './Flag';
 export { default as ModeSelect } from './ModeSelect';
-export { default as Score } from './Score';
+export { default as PrettyNumber } from './PrettyNumber';
 export { default as ResultList } from './ResultList';
 export { default as ResultListItem } from './ResultListItem';
 export { default as Banner } from './Banner';

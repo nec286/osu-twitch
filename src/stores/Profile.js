@@ -9,14 +9,14 @@ export default class {
     this.rootStore = rootStore;
   }
 
-  @action async fetch() {
+  @action async fetch(mode=0) {
     asyncWrapper.call(this, async () => {
       const result = await this.request.get('/users/viewing', {
-        params: { event_days: 15 }
+        params: { m: mode, event_days: 15 }
       });
-      this.state.user = result.data;
+      this.state.profiles.set(mode, result.data);
       await this.rootStore.beatMaps.fetch(_.map(result.data.events, 'beatmap_id'));
-    }, 'User');
+    }, 'Profile');
   }
 
   @action setData(data) {
@@ -25,6 +25,6 @@ export default class {
         this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
       });
     }
-    this.state.user = Object.assign(this.state.user, data.user);
+    this.state.profiles.set(0, Object.assign(this.state.profiles.get(0), data.user));
   }
 }

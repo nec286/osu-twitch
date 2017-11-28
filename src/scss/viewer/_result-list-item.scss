@@ -1,15 +1,17 @@
 .result-list-item {
-  height: 50px;
-  line-height: 1.1;
-  padding: 0.5rem;
+  // height: 50px;
+  // line-height: 1.1;
+  padding: 0 $padding $padding $padding;
+  &:first-child {  padding-top: $padding }
+  p { margin-bottom: 0.3rem }
   .beatmap-link {
     display: block;
-    max-height: 27px;
+    // max-height: 27px;
     overflow: hidden;
   }
   .badges {
     .badge {
-      height: 25px;
+      // height: 25px;
       width: 40px;
     }
   }

@@ -8,6 +8,42 @@
 @import "profile";
 @import "best-scores";
 
+body {
+  background-color: $grey-dark;
+  color: $white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+small { color: $grey-white }
+
+h1, h2 {
+  padding: $padding;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 0.9em;
+  border-bottom: $border;
+}
+
+table, select { width: 100% }
+
+table {
+  td:first-child { color: $grey-white }
+}
+
+select {
+  padding: $padding;
+  background: $grey-dark;
+  border: none;
+  border-bottom: $border;
+  color: $white;
+  &:focus { outline: none }
+}
+
 .page {
-  height: 360px;
+  position: relative;
+  height: 393px;
 }

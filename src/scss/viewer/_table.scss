@@ -1,7 +1,7 @@
 .table {
   margin-bottom: 0;
-  td { border: none }
-  &.table-sm {
-    td { padding: 0.3rem }
+  td {
+    border: none;
+    padding: 0.3rem $padding;
   }
 }

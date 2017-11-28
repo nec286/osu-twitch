@@ -1,4 +1,7 @@
+$list-height: 179px;
+
 .profile {
+  height: 100%;
   .showcase {
     margin: 0.5rem 0;
     .badge {
@@ -8,15 +11,14 @@
     }
   }
   .recent-events {
-    .result-list { height: 206px }
+    .result-list { height: $list-height }
   }
 }
-
 
 @-moz-document url-prefix() {
   .profile {
     .recent-events {
-      .result-list { height: 201px }
+      .result-list { height: $list-height - 6px }
     }
   }
 }
@@ -24,7 +26,7 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .profile {
     .recent-events {
-      .result-list { height: 201px }
+      .result-list { height: $list-height - 6px }
     }
   }
 }

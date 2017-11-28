@@ -16,11 +16,6 @@ export default class {
       });
       this.state.bestScores.set(mode, result.data);
       await this.rootStore.beatMaps.fetch(_.map(result.data, 'beatmap_id'));
-      this.state.isFetchingBestScores = false;
     }, 'BestScores');
-  }
-
-  set filter(filter) {
-    this.state.bestScoresFilter = filter;
   }
 }
