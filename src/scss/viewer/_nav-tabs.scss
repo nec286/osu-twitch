@@ -1,19 +1,21 @@
 .nav-tabs {
-  font-size: 0.7rem;
+  background: $grey-dark;
   border: none;
-  color: $white;
+  color: #e0e0e0;
+  font-size: 0.9em;
+  font-weight: 600;
   .nav-item {
     width: 35px;
-    margin-bottom: none;
+    margin-bottom: 0;
     .nav-link {
+      outline: 0;
+      text-transform: uppercase;
       border: none;
-      border-top: 0.3rem solid $grey-dark;
-      background-color: $grey-dark;
-      padding: 0.5rem 0.3rem;
+      background: none;
       &.active {
         color: $white;
         border: none;
-        border-top: 0.3rem solid $grey-light;
+        background: $grey-light;
       }
     }
   }

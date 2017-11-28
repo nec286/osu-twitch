@@ -1,22 +1,22 @@
 .profile {
   .showcase {
+    margin: 0.5rem 0;
     .badge {
-      height: 30px;
+      height: 35px;
       width: 65px;
-      .label { font-size: 1.2em }
-      .value { font-weight: normal }
-      &.s { background-color: $silver }
+      &.s { color: $silver }
     }
   }
   .recent-events {
-    .result-list { height: 145px }
+    .result-list { height: 206px }
   }
 }
+
 
 @-moz-document url-prefix() {
   .profile {
     .recent-events {
-      .result-list { height: 138px }
+      .result-list { height: 201px }
     }
   }
 }
@@ -24,7 +24,7 @@
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .profile {
     .recent-events {
-      .result-list { height: 137px }
+      .result-list { height: 201px }
     }
   }
 }

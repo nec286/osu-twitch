@@ -1,7 +1,8 @@
 $black: #19171c;
 $white: #faf9fa;
-$grey-light: #424242;
+// white-dark = #e0e0e0;
 $grey-dark: #212121;
+$grey-light: lighten($grey-dark, 10%);
 $gold: #ffea00;
 $silver: #80deea;
 $green: #76ff03;
@@ -9,6 +10,6 @@ $blue: #19171c;
 
 $enable-rounded: false;
 
-$font-size-base: 0.65rem;
+$font-size-base: 0.75rem;
 $font-size-lg: ($font-size-base * 1.25) !default;
 $font-size-sm: ($font-size-base * 1) !default;

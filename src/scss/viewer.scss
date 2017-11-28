@@ -22,40 +22,53 @@
 
 body {
   background-color: $grey-dark;
-  color: darken($white, 10%);
-  // color: #D0D3D4;
+  color: $white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 small {
-  color: darken($white, 30%);
+  color: #e0e0e0;
 }
 
 // main { height: 100vh }
 
 h1 {
-  background-color: $black;
+  background: $grey-dark;
   color: $white;
-  padding: 0.5rem 0.3rem;
-  font-size: $font-size-base;
+  padding: 0.5rem;
+  font-size: 0.9em;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
 h2 {
-  background-color: $grey-dark;
   color: $white;
-  padding: 0.5rem 0.3rem;
-  font-size: 0.7rem;
-  margin-bottom: 0;
-  margin-top: 0.3rem;
+  padding: 0.5rem;
+  background: $grey-dark;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: uppercase;
   border-bottom: 1px solid $grey-light;
+  margin-bottom: 0;
 }
 
 table, select { width: 100% }
 
+table {
+  td:first-child {
+    color: #e0e0e0;
+  }
+}
+
+.table {
+  td { padding: 0.3rem 0.5rem }
+}
+
 select {
   border: none;
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem;
   background: $grey-dark;
+  border-bottom: 1px solid $grey-light;
   color: $white;
   width: 100%;
   &:focus {
