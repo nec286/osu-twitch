@@ -1,5 +1,5 @@
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
 
 const root = path.join.bind(path, __dirname);
 
@@ -38,16 +38,5 @@ module.exports = {
 			react: 'inferno-compat',
 			'react-dom': 'inferno-compat'
 		}
-	},
-	devServer: {
-    publicPath: '/assets/js/',
-		port: 3000,
-		noInfo: false,
-		hot: true,
-		inline: true,
-    public: 'twitch.local'
-	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin()
-	]
+	}
 };
