@@ -6,6 +6,7 @@
 @import "scroll-bar";
 @import "badge";
 @import "profile";
+@import "activity";
 @import "best-scores";
 
 body {
@@ -20,11 +21,11 @@ h1, h2 {
   padding: $padding;
   font-weight: 600;
   margin-bottom: 0;
-  text-transform: uppercase;
 }
 
 h2 {
   font-size: 0.9em;
+  font-weight: normal;
   border-bottom: $border;
 }
 
@@ -45,5 +46,5 @@ select {
 
 .page {
   position: relative;
-  height: 393px;
+  height: 277px;
 }

@@ -4,6 +4,6 @@ import { formatNo } from 'utils';
 
 export default class extends Component {
   render({ value }) {
-    return <span>{ formatNo(value) }</span>;
+    return <span>{ formatNo(value || 0) }</span>;
   }
 }
