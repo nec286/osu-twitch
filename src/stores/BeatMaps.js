@@ -1,5 +1,5 @@
 import { action } from 'mobx';
-import _ from 'lodash';
+import keyBy from 'lodash.keyby';
 
 export default class {
   constructor(request, state) {
@@ -14,7 +14,7 @@ export default class {
       const result = await this.request.get('/beatmaps', {
         params: { b: ids }
       });
-      const map = _.keyBy(result.data, 'beatmap_id');
+      const map = keyBy(result.data, 'beatmap_id');
       this.state.beatMaps.merge(map);
     } catch(e) {
       this.state.lastError = e;

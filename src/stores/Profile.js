@@ -1,5 +1,5 @@
 import { action } from 'mobx';
-import _ from 'lodash';
+import map from 'lodash.map';
 import asyncWrapper from 'stores/asyncWrapper';
 
 export default class {
@@ -15,7 +15,7 @@ export default class {
         params: { m: mode, event_days: 15 }
       });
       this.state.profiles.set(mode, result.data);
-      await this.rootStore.beatMaps.fetch(_.map(result.data.events, 'beatmap_id'));
+      await this.rootStore.beatMaps.fetch(map(result.data.events, 'beatmap_id'));
     }, 'Profile');
   }
 

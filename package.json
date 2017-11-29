@@ -6,7 +6,7 @@
     "test": "jest --watch",
     "flow": "flow",
     "start": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0 --https",
-    "build": "webpack -p --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "lint": "eslint src",
     "package": "zip -r osu-twitch.zip settings.html viewer.html assets"
   },
@@ -49,9 +49,7 @@
   "dependencies": {
     "autobind-decorator": "^2.1.0",
     "axios": "^0.16.2",
-    "bootstrap": "^4.0.0-beta.2",
     "classnames": "^2.2.5",
-    "flag-icon-css": "^2.8.0",
     "history": "^4.7.2",
     "inferno": "^3.9.0",
     "inferno-compat": "^3.10.1",
@@ -59,7 +57,8 @@
     "inferno-create-element": "^3.9.0",
     "inferno-mobx": "^3.9.0",
     "inferno-router": "^3.9.0",
-    "lodash": "^4.17.4",
+    "lodash.keyby": "^4.6.0",
+    "lodash.map": "^4.6.0",
     "mobx": "^3.3.0",
     "moment": "^2.19.2",
     "promise-polyfill": "6.0.2"
