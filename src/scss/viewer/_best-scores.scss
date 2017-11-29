@@ -3,19 +3,4 @@ $list-height: 350px;
 .best-scores {
   height: 100%;
   .result-list { height: $list-height }
-  // .result-list-item { height: 70px }
-}
-
-@-moz-document url-prefix() {
-  .best-scores {
-    height: 334px;
-    .result-list { height: 334px; }
-  }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .best-scores {
-    height: 334px;
-    .result-list { height: 334px; }
-  }
 }
