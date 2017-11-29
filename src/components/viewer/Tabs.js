@@ -8,6 +8,7 @@ export default class extends Component {
       <div className="nav-tabs nav-fill">
         <ul className="nav mr-auto">
           <NavItem label="Profile" path="/" />
+          <NavItem label="Activity" path="/activity" />
           <NavItem label="Best" path="/best" />
         </ul>
       </div>

@@ -3,6 +3,6 @@ import Component from 'inferno-component';
 
 export default class extends Component {
   render({ value }) {
-    return <span>{ Number(value).toFixed(2) + '%' }</span>;
+    return <span>{ !!value ? (Number(value).toFixed(2) + '%') : '-' }</span>;
   }
 }

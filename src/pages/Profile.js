@@ -2,8 +2,8 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { ModeSelect, Accuracy, PrettyNumber, Loading } from 'components/viewer';
-import { TableRow, Showcase, RecentEvents } from 'components/viewer/profile';
+import { ModeSelect, Accuracy, PrettyNumber, OsuProfileLink, Loading } from 'components/viewer';
+import { TableRow, Showcase, Level } from 'components/viewer/profile';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -28,7 +28,7 @@ export default class extends Component {
   }
 
   render({ state }) {
-    const { modeFilter, isFetchingProfile, profiles, beatMaps } = state;
+    const { modeFilter, isFetchingProfile, profiles } = state;
     const profile = profiles.get(modeFilter);
 
     return (
@@ -39,11 +39,13 @@ export default class extends Component {
           <span>
             <Showcase profile={ profile } />
             <table className="table">
-              <TableRow label="Play Count" value={ <PrettyNumber value={ profile.playcount } /> } />
+              <TableRow label="Full Profile" value={ <OsuProfileLink username={ profile.username } /> } />
               <TableRow label="Accuracy" value={ <Accuracy value={ profile.accuracy } /> } />
+              <TableRow label="Play Count" value={ <PrettyNumber value={ profile.playcount } /> } />
               <TableRow label="Ranked Score" value={ <PrettyNumber value={ profile.ranked_score } /> } />
+              <TableRow label="Total Score" value={ <PrettyNumber value={ profile.total_score } /> } />
+              <TableRow label="Level" value={ <Level value={ profile.level } /> } />
             </table>
-            <RecentEvents events={ profile.events } beatMaps={ beatMaps } />
           </span> }
       </div>
     );
