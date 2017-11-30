@@ -11,6 +11,9 @@ module.exports = merge(common, {
         warnings: false,
         drop_console: true
       }
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
     })
   ]
 });
