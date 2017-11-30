@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import { Badge, BeatMapLink, ScorePP, Grade, Mods } from 'components/viewer';
-const moment = require('moment');
 
 export default class extends Component {
   render({ result, beatMap }) {
@@ -9,7 +9,7 @@ export default class extends Component {
       <li className="result-list-item d-flex">
         <div className="summary">
           <BeatMapLink beatMap={ beatMap } />
-          <p><small>{ moment(result.date).fromNow() }</small></p>
+          <p><small>{ distanceInWordsToNow(result.date, { addSuffix: true }) }</small></p>
           { !!result.enabled_mods && <Mods mods={ result.enabled_mods } /> }
         </div>
         <div className="badges d-flex flex-column ml-auto">
