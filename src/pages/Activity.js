@@ -8,7 +8,7 @@ import { RecentEvents } from 'components/viewer/profile';
 export default class extends Component {
   render({ state }) {
     const { modeFilter, isFetchingProfile, profiles, beatMaps } = state;
-    const profile = profiles.get(modeFilter);
+    const profile = profiles.get(0);
 
     return (
       <div className="activity">
