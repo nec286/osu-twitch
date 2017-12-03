@@ -30,8 +30,6 @@ module.exports = (routes, State) => {
     init();
   };
 
-  window.__onAuthorized({ token: 'sometoken' });
-
   window.__onError = (err) => {
     context.state.lastError = err;
   };
