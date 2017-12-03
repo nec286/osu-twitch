@@ -85,7 +85,7 @@ class SettingsForm extends Component {
 export default class extends Component {
   async componentWillMount() {
     const { store, state } = this.props;
-    store.settings.fetch(state.twitchAuth.channelId);
+    store.settings.fetch();
   }
 
   render({ state }) {
