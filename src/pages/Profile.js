@@ -2,8 +2,16 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import { ModeSelect, Accuracy, PrettyNumber, OsuProfileLink, Loading } from 'components/viewer';
-import { TableRow, Showcase, Level } from 'components/viewer/profile';
+import {
+  ModeSelect,
+  Accuracy,
+  PrettyNumber,
+  OsuProfileLink,
+  Loading,
+  TableRow,
+  Showcase,
+  Level
+} from 'components/viewer';
 
 @connect(['state', 'store'])
 export default class extends Component {
