@@ -1,37 +1,41 @@
-/*
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
-import TextInput from '../forms/TextInput';
+import { TextInput, SaveButton } from 'components/forms';
 
-@connect(['store', 'state'])
-export default class SettingsForm extends Component {
+@connect(['store'])
+export default class extends Component {
+  @autobind
+  handleChange(e) {
+    const { store } = this.props;
+    store.settings[e.target.name] = e.target.value;
+    store.settings.clearValidation(e.target.name);
+  }
+
   @autobind
   handleSubmit(e) {
-    const { store, state } = this.props;
-
-    if(!state.foo) {
-      state.validation = { foo: ['required'] }
-    } else {
-      store.settings.save();
-    }
+    const { store } = this.props;
+    store.settings.validateAndSave();
     e.preventDefault();
   }
 
-  render({ state }) {
+  @autobind
+  renderTextInput(name, label) {
+    const { settings, validation } = this.props;
+    return (
+      <TextInput name={ name } label={ label } value={ settings.get(name) } errors={ validation.get(name) } onChange={ this.handleChange } />
+    );
+  }
+
+  render() {
     return (
       <form onSubmit={ this.handleSubmit }>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <TextInput name="Foo" value={ 'bar' } addon="foo" />
-          </div>
+        <div className="form-group">
+          { this.renderTextInput('osuUsername', 'osu! username') }
         </div>
-        <button type="submit" className="btn btn-primary">
-          Save
-        </button>
+        <SaveButton />
       </form>
     );
   }
 }
-*/
