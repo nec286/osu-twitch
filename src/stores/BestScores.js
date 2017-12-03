@@ -12,6 +12,7 @@ export default class {
   @action async fetch(mode=0) {
     asyncWrapper.call(this, async () => {
       const result = await this.request.get('/users/viewing/best', {
+        headers: { Authorization: this.state.authorization },
         params: { m: mode, limit: 10 }
       });
       this.state.bestScores.set(mode, result.data);
