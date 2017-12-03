@@ -6,7 +6,7 @@ import { Loading, RecentEvents } from 'components/viewer';
 @connect(['state', 'store'])
 export default class extends Component {
   render({ state }) {
-    const { modeFilter, isFetchingProfile, profiles, beatMaps } = state;
+    const { isFetchingProfile, profiles, beatMaps } = state;
     const profile = profiles.get(0);
 
     return (
