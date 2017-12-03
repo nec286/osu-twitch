@@ -2,9 +2,6 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import classNames from 'classnames';
 
-// #FF2488
-// #FE82B9
-
 export default class extends Component {
   render() {
     const { className, label, value, ...props} = this.props;
