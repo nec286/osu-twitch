@@ -15,3 +15,7 @@ export { default as NavItem } from './NavItem';
 export { default as ScorePP } from './ScorePP';
 export { default as Mods } from './Mods';
 export { default as Grade } from './Grade';
+export { default as TableRow } from './TableRow';
+export { default as Level } from './Level';
+export { default as Showcase } from './Showcase';
+export { default as RecentEvents } from './RecentEvents';
