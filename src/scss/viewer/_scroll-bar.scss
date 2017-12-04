@@ -3,4 +3,4 @@
   width: 0.6rem;
   background-color: $grey-dark;
 }
-::-webkit-scrollbar-thumb { background-color: $grey-light }
+::-webkit-scrollbar-thumb { background-color: lighten($grey-light, 10%) }
