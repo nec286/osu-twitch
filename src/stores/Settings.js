@@ -44,4 +44,8 @@ export default class {
   set osuUsername(osuUsername) {
     this.state.settings.set('osuUsername', osuUsername);
   }
+
+  set avatarUrl(avatarUrl) {
+    this.state.settings.set('avatarUrl', avatarUrl);
+  }
 }

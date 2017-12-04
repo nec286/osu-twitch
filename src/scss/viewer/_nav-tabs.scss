@@ -1,5 +1,5 @@
 .nav-tabs {
-  background: $grey-dark;
+  background: $grey-light;
   border: none;
   color: #e0e0e0;
   font-size: 0.9em;
@@ -15,7 +15,7 @@
       &.active {
         color: $white;
         border: none;
-        background: $grey-light;
+        border-bottom: 0.1rem solid $grey-white;
       }
     }
   }

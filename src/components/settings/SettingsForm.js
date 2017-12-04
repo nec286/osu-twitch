@@ -9,6 +9,11 @@ export default class extends Component {
   @autobind
   handleChange(e) {
     const { store } = this.props;
+
+    if(e.target.name === 'avatarUrl') {
+      e.target.value = e.target.value.split('/').reverse()[0];
+    }
+
     store.settings[e.target.name] = e.target.value;
     store.settings.clearValidation(e.target.name);
   }
@@ -21,10 +26,12 @@ export default class extends Component {
   }
 
   @autobind
-  renderTextInput(name, label) {
+  renderTextInput(name, label, addOn) {
     const { settings, validation } = this.props;
+    const value = settings.get(name);
+    const errors = validation.get(name);
     return (
-      <TextInput name={ name } label={ label } value={ settings.get(name) } errors={ validation.get(name) } onChange={ this.handleChange } />
+      <TextInput name={ name } label={ label } value={ value } addOn={ addOn } errors={ errors } onChange={ this.handleChange } />
     );
   }
 
@@ -33,6 +40,12 @@ export default class extends Component {
       <form onSubmit={ this.handleSubmit }>
         <div className="form-group">
           { this.renderTextInput('osuUsername', 'osu! username') }
+        </div>
+        <div className="form-group">
+          { this.renderTextInput('avatarUrl', 'Avatar URL', 'https://a.ppy.sh/') }
+          <small className="text-muted">
+            Right click your osu! profile image -> "Copy image address" [e.g. https://a.ppy.sh/12345_1234500.png]
+          </small>
         </div>
         <SaveButton />
       </form>

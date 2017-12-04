@@ -1,19 +1,21 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import { Tabs, Error } from 'components/viewer';
+import { Tabs, Error, Header } from 'components/viewer';
 
 @connect(['state', 'store'])
 export default class extends Component {
   render({ state, children }) {
-    const { lastError } = state;
+    const { lastError, profiles } = state;
+
     return (
-      <main className="container-fluid p-0">
+      <div className="container-fluid p-0">
+        <Header profile={ profiles.get(0) } />
         <Tabs />
-        <div className="page">
+        <main className="page">
           { !lastError ? children : <Error error={ lastError } /> }
-        </div>
-      </main>
+        </main>
+      </div>
     );
   }
 }
