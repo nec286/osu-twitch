@@ -9,7 +9,6 @@ export default class extends Component {
       <span>
         <Showcase profile={ profile } />
         <table className="table">
-          <TableRow label="Full Profile" value={ <OsuProfileLink username={ profile.username } /> } />
           <TableRow label="Accuracy" value={ profile.accuracy ? (Number(profile.accuracy).toFixed(2) + '%') : '-' } />
           <TableRow label="Play Count" value={ formatNo(profile.playcount || 0) } />
           <TableRow label="Ranked Score" value={ formatNo(profile.ranked_score || 0) } />
