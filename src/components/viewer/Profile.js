@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { formatNo } from 'utils';
-import { OsuProfileLink, TableRow, Showcase } from 'components/viewer';
+import { TableRow, Showcase } from 'components/viewer';
 
 export default class extends Component {
   render({ profile }) {

@@ -1,14 +1,12 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import autobind from 'autobind-decorator';
-import classNames from 'classnames';
 import SettingsForm from 'components/settings/SettingsForm';
 
 @connect(['state', 'store'])
 export default class extends Component {
   async componentWillMount() {
-    const { store, state } = this.props;
+    const { store } = this.props;
     store.settings.fetch();
   }
 

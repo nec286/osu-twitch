@@ -1,6 +1,5 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { connect } from 'inferno-mobx';
 import { OsuProfileLink } from 'components/viewer';
 
 class Avatar extends Component {

@@ -2,7 +2,6 @@ import Inferno from 'inferno';
 import { Router, match, doAllAsyncBefore } from 'inferno-router';
 import { Provider } from 'inferno-mobx';
 import createMemoryHistory from 'history/createMemoryHistory';
-import axios from 'axios';
 import createContext from './context';
 
 if(process.env.NODE_ENV !== 'production') {
