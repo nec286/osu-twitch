@@ -3,7 +3,7 @@ export default function() {
   case 'production':
     return {
       ebs: {
-        url: 'https://osu-twitch-ebs.atami.io/v1',
+        url: process.env.URL,
         projectKey: process.env.PROJECT_KEY
       }
     };
