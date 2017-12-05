@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import { dateFromNow } from 'utils';
 import { Badge, BeatMapLink, Grade, Mods } from 'components/viewer';
 
 export default class extends Component {
@@ -9,7 +9,7 @@ export default class extends Component {
       <li className="result-list-item d-flex">
         <div className="summary">
           <BeatMapLink beatMap={ beatMap } />
-          <p><small>{ distanceInWordsToNow(result.date, { addSuffix: true }) }</small></p>
+          <p><small>{ dateFromNow(result.date, { addSuffix: true }) }</small></p>
           { !!result.enabled_mods && <Mods mods={ result.enabled_mods } /> }
         </div>
         <div className="badges d-flex flex-column ml-auto">
