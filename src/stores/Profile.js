@@ -27,5 +27,6 @@ export default class {
       });
     }
     this.state.profiles.set(0, Object.assign(this.state.profiles.get(0), data.user));
+    this.state.lastRefreshTime = Date.now();
   }
 }

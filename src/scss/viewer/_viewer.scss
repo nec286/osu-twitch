@@ -58,3 +58,10 @@ select {
   position: relative;
   height: 238px;
 }
+
+.last-refresh {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
