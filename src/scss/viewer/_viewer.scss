@@ -19,6 +19,7 @@ body {
 
 header {
   // background: linear-gradient(lighten($grey-light, 5%), $grey-light);
+  position: relative;
   height: 101px;
   background: $grey-light;
   .player-info {
@@ -37,7 +38,6 @@ h1, h2 {
 h2 {
   font-size: 1em;
   font-weight: normal;
-  // border-bottom: $border;
 }
 
 table, select { width: 100% }
@@ -50,19 +50,9 @@ select {
   padding: 0.6rem 0.8rem;
   background: $grey-dark;
   border: none;
-  // border-bottom: $border;
   color: $white;
   &:focus { outline: none }
 }
-
-@-moz-document url-prefix() {
-  // h1, h2, select { padding: 0.6rem 0.8rem }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  // h1, h2 { padding: 0.6rem 0.8rem }
-}
-
 
 .page {
   position: relative;
