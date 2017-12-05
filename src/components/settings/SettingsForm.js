@@ -41,12 +41,6 @@ export default class extends Component {
         <div className="form-group">
           { this.renderTextInput('osuUsername', 'osu! username') }
         </div>
-        <div className="form-group">
-          { this.renderTextInput('avatarUrl', 'Avatar URL', 'https://a.ppy.sh/') }
-          <small className="text-muted">
-            Right click your osu! profile image -> "Copy image address" [e.g. https://a.ppy.sh/12345_1234500.png]
-          </small>
-        </div>
         <SaveButton />
       </form>
     );

@@ -18,11 +18,11 @@ body {
 }
 
 header {
-  padding: $padding;
+  // background: linear-gradient(lighten($grey-light, 5%), $grey-light);
+  height: 101px;
   background: $grey-light;
-  height: 67px;
-  .osu-profile-link {
-    i { display: none }
+  .player-info {
+    padding: $padding;
   }
 }
 
