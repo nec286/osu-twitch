@@ -1,5 +1,7 @@
 .nav-tabs {
-  background: none;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   border: none;
   color: #e0e0e0;
   font-size: 0.9em;
@@ -14,7 +16,6 @@
       background: none;
       &.active {
         color: $white;
-        border: none;
         border-bottom: 0.1rem solid $grey-white;
       }
     }

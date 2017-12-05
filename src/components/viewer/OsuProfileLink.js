@@ -6,7 +6,7 @@ export default class extends Component {
     const url = 'https://osu.ppy.sh/u/' + (username ? username : '');
     return (
       <a className="osu-profile-link pl-2" href={ url } target="_blank" nofollow>
-        <i className="icon-link" />{ username }
+        { username }
       </a>
     );
   }
