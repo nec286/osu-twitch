@@ -12,7 +12,8 @@ export default class State {
       isFetchingBestScores: false,
       beatMaps: observable(new Map()),
       isFetchingRecentActivity: false,
-      recentActivity: observable(new Map())
+      recentActivity: observable(new Map()),
+      lastRefreshTime: null
     }, state);
   }
 }
