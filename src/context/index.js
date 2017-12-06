@@ -8,7 +8,7 @@ export default (state) => {
   const request = axios.create({
     baseURL: `${ ebs.url }`,
     timeout: 10000,
-    headers: { 'x-api-key': ebs.projectKey }
+    params: { key: ebs.projectKey }
   });
 
   return {

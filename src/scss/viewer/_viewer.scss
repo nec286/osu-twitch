@@ -1,6 +1,8 @@
 @import "../theme/theme";
 @import "nav-tabs";
 @import "table";
+@import "loading";
+@import "avatar";
 @import "result-list";
 @import "result-list-item";
 @import "scroll-bar";
@@ -15,18 +17,27 @@ body {
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
+header {
+  // background: linear-gradient(lighten($grey-light, 5%), $grey-light);
+  position: relative;
+  height: 101px;
+  background: $grey-light;
+  .player-info {
+    padding: $padding;
+  }
+}
+
 small { color: $grey-white }
 
 h1, h2 {
-  padding: $padding;
+  padding: 0.7rem 0.8rem;
   font-weight: 600;
   margin-bottom: 0;
 }
 
 h2 {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: normal;
-  border-bottom: $border;
 }
 
 table, select { width: 100% }
@@ -36,15 +47,21 @@ table {
 }
 
 select {
-  padding: $padding;
+  padding: 0.6rem 0.8rem;
   background: $grey-dark;
   border: none;
-  border-bottom: $border;
   color: $white;
   &:focus { outline: none }
 }
 
 .page {
   position: relative;
-  height: 277px;
+  height: 238px;
+}
+
+.last-refresh {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

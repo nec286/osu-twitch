@@ -3,8 +3,7 @@ import { observable, extendObservable } from 'mobx';
 export default class State {
   constructor(state) {
     extendObservable(this, {
-      twitchAuth: null,
-      twitchContext: null,
+      authorization: null,
       lastError: null,
       isFetchingProfile: false,
       profiles: observable(new Map()),
@@ -13,7 +12,8 @@ export default class State {
       isFetchingBestScores: false,
       beatMaps: observable(new Map()),
       isFetchingRecentActivity: false,
-      recentActivity: observable(new Map())
+      recentActivity: observable(new Map()),
+      lastRefreshTime: null
     }, state);
   }
 }

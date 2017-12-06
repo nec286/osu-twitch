@@ -12,6 +12,7 @@ export default class {
   @action async fetch(mode=0) {
     asyncWrapper.call(this, async () => {
       const result = await this.request.get('/users/viewing', {
+        headers: { Authorization: this.state.authorization },
         params: { m: mode, event_days: 15 }
       });
       this.state.profiles.set(mode, result.data);
@@ -26,5 +27,6 @@ export default class {
       });
     }
     this.state.profiles.set(0, Object.assign(this.state.profiles.get(0), data.user));
+    this.state.lastRefreshTime = Date.now();
   }
 }

@@ -1,14 +1,13 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import { Loading } from 'components/viewer';
-import { RecentEvents } from 'components/viewer/profile';
+import { Loading, RecentEvents } from 'components/viewer';
 
 @connect(['state', 'store'])
 export default class extends Component {
   render({ state }) {
-    const { modeFilter, isFetchingProfile, profiles, beatMaps } = state;
-    const profile = profiles.get(modeFilter);
+    const { isFetchingProfile, profiles, beatMaps } = state;
+    const profile = profiles.get(0);
 
     return (
       <div className="activity">
