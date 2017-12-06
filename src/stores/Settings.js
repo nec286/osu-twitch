@@ -7,14 +7,18 @@ export default class {
   }
 
   @action async fetch() {
-    const result = await this.request.get('/settings');
+    const result = await this.request.get('/settings', {
+      headers: { Authorization: this.state.authorization }
+    });
     this.state.settings.replace(result.data.settings);
   }
 
   @action async save() {
     try {
       this.state.saveStatus = 'saving';
-      const result = await this.request.post('/settings', this.state.settings);
+      const result = await this.request.post('/settings', this.state.settings, {
+        headers: { Authorization: this.state.authorization }
+      });
       this.state.settings.replace(result.data.settings);
       this.state.saveStatus = 'saved';
     } catch(e) {
@@ -39,5 +43,9 @@ export default class {
 
   set osuUsername(osuUsername) {
     this.state.settings.set('osuUsername', osuUsername);
+  }
+
+  set avatarUrl(avatarUrl) {
+    this.state.settings.set('avatarUrl', avatarUrl);
   }
 }
