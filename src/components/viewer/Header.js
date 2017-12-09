@@ -10,6 +10,10 @@ export default class extends Component {
           <div className="d-flex player-info">
             <Avatar profile={ profile } />
             <OsuProfileLink username={ profile.username } />
+            <div className="devices ml-auto">
+              <i className="icon-mouse" />
+              <i className="icon-keyboard" />
+            </div>
           </div>
         }
         <Tabs />

@@ -25,6 +25,9 @@ header {
   .player-info {
     padding: $padding;
   }
+  .devices {
+    img { height: 40px }
+  }
 }
 
 small { color: $grey-white }
@@ -56,7 +59,7 @@ select {
 
 .page {
   position: relative;
-  height: 238px;
+  height: 239px;
 }
 
 .last-refresh {

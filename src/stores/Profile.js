@@ -17,7 +17,15 @@ export default class {
       });
       this.state.profiles.set(mode, result.data);
       await this.rootStore.beatMaps.fetch(map(result.data.events, 'beatmap_id'));
-    }, 'Profile');
+    }, 'Profile', (e) => {
+      switch(e.response.status) {
+        case 404:
+        this.state.lastError = 'Profile not found';
+        break;
+        default:
+        this.state.lastError = 'Unable to load profile';
+      }
+    });
   }
 
   @action setData(data) {
