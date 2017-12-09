@@ -1,3 +1,6 @@
 
 .icon-link:before { content: '\e800'; } /* '' */
+.icon-keyboard:before { content: '\e801'; } /* '' */
+.icon-mouse:before { content: '\e802'; } /* '' */
+.icon-up-hand:before { content: '\e803'; } /* '' */
 .icon-globe:before { content: '\e805'; } /* '' */
