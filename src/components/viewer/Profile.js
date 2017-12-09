@@ -1,13 +1,13 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { formatNo } from 'utils';
-import { TableRow, Showcase } from 'components/viewer';
+import { TableRow, Ranks } from 'components/viewer';
 
 export default class extends Component {
   render({ profile }) {
     return (
       <span>
-        <Showcase profile={ profile } />
+        <Ranks profile={ profile } />
         <table className="table">
           <TableRow label="Accuracy" value={ profile.accuracy ? (Number(profile.accuracy).toFixed(2) + '%') : '-' } />
           <TableRow label="Play Count" value={ formatNo(profile.playcount || 0) } />

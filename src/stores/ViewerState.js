@@ -7,7 +7,7 @@ export default class State {
       lastError: null,
       isFetchingProfile: false,
       profiles: observable(new Map()),
-      modeFilter: 0,
+      modeFilter: null,
       bestScores: observable(new Map()),
       isFetchingBestScores: false,
       beatMaps: observable(new Map()),
