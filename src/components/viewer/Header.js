@@ -6,7 +6,7 @@ export default class extends Component {
   render({ settings }) {
     return (
       <header>
-        {!!settings &&
+        {!!settings.size &&
           <div className="d-flex player-info">
             <Avatar username={ settings.get('osuUsername') } />
             <OsuProfileLink username={ settings.get('osuUsername') } />
