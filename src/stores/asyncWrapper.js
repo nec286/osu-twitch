@@ -1,3 +1,5 @@
+import Raven from 'raven';
+
 export default function(action, type, errorHandler) {
   this.state.lastError = null;
   this.state[`isFetching${type}`] = true;
@@ -12,5 +14,6 @@ export default function(action, type, errorHandler) {
       } else {
         this.state.lastError = 'Unable to load extension';
       }
+      Raven.captureException(e);
     });
 }

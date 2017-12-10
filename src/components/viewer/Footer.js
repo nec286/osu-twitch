@@ -7,7 +7,7 @@ export default class extends Component {
     return (
       <footer>
         <small className="ml-auto">
-          { distanceInWordsToNow(Date.now()) }
+          { distanceInWordsToNow(Date.now(), { addSuffix: true }) }
         </small>
       </footer>
     );

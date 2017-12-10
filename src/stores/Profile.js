@@ -27,7 +27,7 @@ export default class {
       });
       this.state.profiles.set(mode, result.data);
       await this.rootStore.beatMaps.fetch(map(result.data.events, 'beatmap_id'));
-    }, 'Profile', errorHandler);
+    }, 'Profile', errorHandler.bind(this));
   }
 
   @action setData(data) {
