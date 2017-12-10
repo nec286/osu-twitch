@@ -15,7 +15,8 @@ export default class extends Component {
 
   componentWillMount() {
     const { state } = this.props;
-    this.loadData(state.modeFilter);
+    console.log('mode', state.mode);
+    this.loadData(state.mode);
   }
 
   @autobind
@@ -26,12 +27,12 @@ export default class extends Component {
   }
 
   render({ state }) {
-    const { modeFilter, isFetchingProfile, profiles } = state;
-    const profile = profiles.get(modeFilter);
+    const { mode, isFetchingProfile, profiles } = state;
+    const profile = profiles.get(mode);
 
     return (
       <div className="profile">
-        <ModeSelect mode={ modeFilter } onChange={ this.handleModeChange } />
+        <ModeSelect mode={ mode } onChange={ this.handleModeChange } />
         { isFetchingProfile && <Loading /> }
         { !isFetchingProfile && !!profile && <Profile profile={ profile } /> }
       </div>

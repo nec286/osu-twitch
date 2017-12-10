@@ -5,11 +5,11 @@ import autobind from 'autobind-decorator';
 import { TextInput, SaveButton } from 'components/forms';
 
 class RadioButton extends Component {
-  render({ name, value, label, onChange }) {
+  render({ name, value, label, defaultChecked=false, onChange }) {
     return (
       <div className="form-check form-check-inline">
         <label className="form-check-label">
-          <input className="form-check-input" type="radio" name={ name } value={ value } onChange={ onChange } /> { label }
+          <input className="form-check-input" type="radio" name={ name } value={ value } onChange={ onChange } defaultChecked={ defaultChecked } /> { label }
         </label>
       </div>
     );
@@ -18,9 +18,10 @@ class RadioButton extends Component {
 
 class RadioGroup extends Component {
   render({ name, labels, value, onChange }) {
+    console.log('value', value);
     return (
       <div className="radio-group">
-        { labels.map((label, i) => <RadioButton name={ name } value={ i } label={ label } checked={ value === i } onChange={ onChange } />) }
+        { labels.map((label, i) => <RadioButton name={ name } value={ i } label={ label } onChange={ onChange } defaultChecked={ i == value } />) }
       </div>
     );
   }
@@ -30,6 +31,7 @@ class RadioGroup extends Component {
 export default class extends Component {
   @autobind
   handleChange(e) {
+    console.log('handleChange');
     const { store } = this.props;
     store.settings[e.target.name] = e.target.value;
     store.settings.clearValidation(e.target.name);

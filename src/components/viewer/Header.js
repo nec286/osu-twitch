@@ -3,13 +3,13 @@ import Component from 'inferno-component';
 import { Tabs, Avatar, OsuProfileLink } from 'components/viewer';
 
 export default class extends Component {
-  render({ profile }) {
+  render({ settings }) {
     return (
       <header>
-        {!!profile &&
+        {!!settings &&
           <div className="d-flex player-info">
-            <Avatar profile={ profile } />
-            <OsuProfileLink username={ profile.username } />
+            <Avatar username={ settings.get('osuUsername') } />
+            <OsuProfileLink username={ settings.get('osuUsername') } />
             <div className="devices ml-auto">
               <i className="icon-mouse" />
               <i className="icon-keyboard" />
