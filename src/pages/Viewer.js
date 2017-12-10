@@ -13,13 +13,13 @@ export default class extends Component {
   render({ state, children }) {
     const { isFetchingSettings, lastError, settings, profiles, lastRefreshTime } = state;
 
-    if(isFetchingSettings) return <Loading />;
-
     return (
       <div className="container-fluid p-0">
         <Header settings={ settings } lastRefreshTime={ Date.now() } />
         <main className="page">
-          { !lastError ? children : <Error error={ lastError } /> }
+        { isFetchingSettings ? <Loading /> :
+          <span>{ !lastError ? children : <Error error={ lastError } /> }</span>
+        }
         </main>
         <Footer lastRefreshTime={ lastRefreshTime } />
       </div>
