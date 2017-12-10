@@ -6,8 +6,8 @@ import { Loading, RecentEvents } from 'components/viewer';
 @connect(['state', 'store'])
 export default class extends Component {
   render({ state }) {
-    const { isFetchingProfile, profiles, beatMaps } = state;
-    const profile = profiles.get(0);
+    const { settings, isFetchingProfile, profiles, beatMaps } = state;
+    const profile = profiles.get(settings.get('mode'));
 
     return (
       <div className="activity">

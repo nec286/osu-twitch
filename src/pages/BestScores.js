@@ -15,7 +15,7 @@ export default class extends Component {
 
   async componentWillMount() {
     const { state } = this.props;
-    this.loadData(state.modeFilter);
+    this.loadData(state.mode);
   }
 
   @autobind
@@ -26,12 +26,12 @@ export default class extends Component {
   }
 
   render({ state }) {
-    const { modeFilter, isFetchingBestScores, bestScores, beatMaps } = state;
-    const results = bestScores.get(modeFilter);
+    const { mode, isFetchingBestScores, bestScores, beatMaps } = state;
+    const results = bestScores.get(mode);
 
     return (
       <div className="best-scores">
-        <ModeSelect mode={ modeFilter } onChange={ this.handleModeChange } />
+        <ModeSelect mode={ mode } onChange={ this.handleModeChange } />
         { isFetchingBestScores ? <Loading /> : <ResultList results={ results } beatMaps={ beatMaps } /> }
       </div>
     );
