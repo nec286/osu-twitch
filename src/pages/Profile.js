@@ -8,14 +8,14 @@ import { ModeSelect, Loading, Profile } from 'components/viewer';
 export default class extends Component {
   loadData(mode) {
     const { store, state } = this.props;
+    const { settings } = state;
     if(!state.profiles.get(mode)) {
-      store.profile.fetch(mode);
+      store.profile.fetch(settings.get('osuUsername'), mode);
     }
   }
 
   componentWillMount() {
     const { state } = this.props;
-    console.log('mode', state.mode);
     this.loadData(state.mode);
   }
 
