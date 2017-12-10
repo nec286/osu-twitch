@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import { Loading, Error, Header } from 'components/viewer';
+import { Loading, Error, Header, Footer } from 'components/viewer';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -17,13 +17,11 @@ export default class extends Component {
 
     return (
       <div className="container-fluid p-0">
-        <Header settings={ settings } />
+        <Header settings={ settings } lastRefreshTime={ Date.now() } />
         <main className="page">
           { !lastError ? children : <Error error={ lastError } /> }
         </main>
-        <small className="last-refresh">
-          Last refresh: { lastRefreshTime }
-        </small>
+        <Footer lastRefreshTime={ lastRefreshTime } />
       </div>
     );
   }

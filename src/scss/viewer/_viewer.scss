@@ -30,6 +30,12 @@ header {
   }
 }
 
+footer {
+  padding: $padding / 2 $padding;
+  background: $grey-light;
+  text-align: right;
+}
+
 small { color: $grey-white }
 
 h1, h2 {
@@ -59,7 +65,7 @@ select {
 
 .page {
   position: relative;
-  height: 239px;
+  height: 227px;
 }
 
 .last-refresh {
