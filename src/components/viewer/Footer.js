@@ -7,7 +7,7 @@ export default class extends Component {
     return (
       <footer>
         <small className="ml-auto">
-          { distanceInWordsToNow(Date.now(), { addSuffix: true }) }
+          { distanceInWordsToNow(Date.now(), { addSuffix: true }) } <i className="icon-refresh" />
         </small>
       </footer>
     );

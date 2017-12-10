@@ -35,6 +35,12 @@
       "css": "up-hand",
       "code": 59395,
       "src": "elusive"
+    },
+    {
+      "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
+      "css": "refresh",
+      "code": 59396,
+      "src": "entypo"
     }
   ]
 }
