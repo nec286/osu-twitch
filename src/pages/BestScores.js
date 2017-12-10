@@ -8,8 +8,9 @@ import { ModeSelect, ResultList, Loading } from 'components/viewer';
 export default class extends Component {
   loadData(mode) {
     const { store, state } = this.props;
+    const { settings } = state;
     if(!state.bestScores.get(mode)) {
-      store.bestScores.fetch(mode);
+      store.bestScores.fetch(settings.get('osuUsername'), mode);
     }
   }
 
