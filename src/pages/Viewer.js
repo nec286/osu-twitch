@@ -10,18 +10,31 @@ export default class extends Component {
     store.settings.fetch();
   }
 
+  componentDidMount() {
+    const { store, state } = this.props;
+    const updateLastRefreshTime = function() {
+      const { lastRefreshTime } = state;
+      const timeout = 1000 * 60;
+      if(!!lastRefreshTime) {
+        store.pubsub.lastRefreshTime = lastRefreshTime - timeout;
+      }
+      setTimeout(updateLastRefreshTime, timeout);
+    }
+    updateLastRefreshTime();
+  }
+
   render({ state, children }) {
     const { isFetchingSettings, lastError, settings, profiles, lastRefreshTime } = state;
 
     return (
       <div className="container-fluid p-0">
-        <Header settings={ settings } lastRefreshTime={ Date.now() } />
+        <Header settings={ settings } lastRefreshTime={ lastRefreshTime } />
         <main className="page">
         { isFetchingSettings ? <Loading /> :
           <span>{ !lastError ? children : <Error error={ lastError } /> }</span>
         }
         </main>
-        <Footer lastRefreshTime={ lastRefreshTime } />
+        { /* <Footer lastRefreshTime={ lastRefreshTime } /> */}
       </div>
     );
   }

@@ -4,6 +4,7 @@ import BestScores from './BestScores';
 import BeatMaps from './BeatMaps';
 import Settings from './Settings';
 import Filters from './Filters';
+import PubSub from './PubSub';
 
 export default class {
   constructor(request, state) {
@@ -13,6 +14,7 @@ export default class {
     this.bestScores = new BestScores(request, state, this);
     this.settings = new Settings(request, state);
     this.filters = new Filters(state);
+    this.pubsub = new PubSub(state);
   }
 
 }

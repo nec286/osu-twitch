@@ -29,14 +29,4 @@ export default class {
       await this.rootStore.beatMaps.fetch(map(result.data.events, 'beatmap_id'));
     }, 'Profile', errorHandler.bind(this));
   }
-
-  @action setData(data) {
-    if(data.beatMaps) {
-      data.beatMaps.forEach(beatMap => {
-        this.state.beatMaps.set(beatMap.beatmap_id, beatMap);
-      });
-    }
-    this.state.profiles.set(0, Object.assign(this.state.profiles.get(0), data.user));
-    this.state.lastRefreshTime = Date.now();
-  }
 }

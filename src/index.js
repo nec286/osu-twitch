@@ -36,6 +36,6 @@ module.exports = (routes, State) => {
 
   window.__onMessage = (message) => {
     message = JSON.parse(message);
-    context.store[message.key].setData(message);
+    context.store.pubsub[message.key] = message;
   };
 };
