@@ -32,8 +32,11 @@ header {
 
 footer {
   padding: $padding / 2 $padding;
-  background: $grey-light;
+}
+
+.refresh-time {
   text-align: right;
+  font-size: 0.7em;
 }
 
 small { color: $grey-white }
@@ -65,7 +68,7 @@ select {
 
 .page {
   position: relative;
-  height: 227px;
+  height: 239px;
 }
 
 .last-refresh {

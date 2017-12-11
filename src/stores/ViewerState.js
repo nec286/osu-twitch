@@ -13,7 +13,7 @@ export default class State {
       beatMaps: observable(new Map()),
       isFetchingRecentActivity: false,
       recentActivity: observable(new Map()),
-      lastRefreshTime: null,
+      lastRefreshTime: Date.now(),
       isFetchingSettings: false,
       settings: observable(new Map()),
     }, state);
