@@ -1,11 +1,42 @@
 .loading, .error {
   > div {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     text-align: center;
     width: 100%;
+    .osu-circle {
+      background-color: $grey-light;
+      border-color: lighten($grey-light, 5%);
+      position: relative;
+      i {
+        color: $grey-white;
+      }
+    }
   }
+}
+
+.v-center {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.osu-circle {
+  height: 60px;
+  width: 60px;
+  border: 0.3rem solid;
+  border-radius: 50%;
+}
+
+.animate-beat {
+  -webkit-animation: pulse .25s infinite alternate;
+  -moz-animation: pulse .25s infinite alternate;
+  -ms-animation: pulse .25s infinite alternate;
+  animation: pulse .25s infinite alternate;
+  @-webkit-keyframes pulse { to { -webkit-transform: scale(1.1) } }
+  @-moz-keyframes pulse { to { -webkit-transform: scale(1.1) } }
+  @-ms-keyframes pulse { to { -webkit-transform: scale(1.1) } }
+  @keyframes pulse { to { -webkit-transform: scale(1.1) } }
 }
 
 .error {

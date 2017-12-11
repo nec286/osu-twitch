@@ -31,7 +31,6 @@ class RadioGroup extends Component {
 export default class extends Component {
   @autobind
   handleChange(e) {
-    console.log('handleChange');
     const { store } = this.props;
     store.settings[e.target.name] = e.target.value;
     store.settings.clearValidation(e.target.name);
@@ -61,7 +60,7 @@ export default class extends Component {
           { this.renderTextInput('osuUsername', 'osu! username') }
         </div>
         <fieldset className="form-group">
-          <legend>Default mode</legend>
+          <legend>Default - <small>The play mode that will be selected by default when the extension is loaded and receive real-time updates.</small></legend>
           <RadioGroup name="mode" labels={ ['osu!', 'Taiko', 'CtB', 'osu!mania'] } value={ settings.get('mode') } onChange={ this.handleChange } />
         </fieldset>
         <SaveButton />

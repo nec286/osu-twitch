@@ -34,7 +34,6 @@ export default class extends Component {
           <span>{ !lastError ? children : <Error error={ lastError } /> }</span>
         }
         </main>
-        { /* <Footer lastRefreshTime={ lastRefreshTime } /> */}
       </div>
     );
   }

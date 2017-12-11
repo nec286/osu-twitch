@@ -25,9 +25,6 @@ header {
   .player-info {
     padding: $padding;
   }
-  .devices {
-    img { height: 40px }
-  }
 }
 
 footer {
@@ -36,6 +33,9 @@ footer {
 
 .refresh-time {
   text-align: right;
+}
+
+.text-xs {
   font-size: 0.7em;
 }
 

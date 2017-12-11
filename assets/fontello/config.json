@@ -13,33 +13,15 @@
       "src": "entypo"
     },
     {
-      "uid": "815503841e980c848f55e0271deacead",
-      "css": "link",
-      "code": 59392,
-      "src": "entypo"
-    },
-    {
-      "uid": "005a38f6af74b31aeb817fedb09d2175",
-      "css": "keyboard",
-      "code": 59393,
-      "src": "entypo"
-    },
-    {
-      "uid": "97c6901d8db077614e77b089d4eedac8",
-      "css": "mouse",
-      "code": 59394,
-      "src": "entypo"
-    },
-    {
-      "uid": "86cc7238838f8a1d9d442ee34120c78e",
-      "css": "up-hand",
-      "code": 59395,
-      "src": "elusive"
-    },
-    {
       "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
       "css": "refresh",
       "code": 59396,
+      "src": "entypo"
+    },
+    {
+      "uid": "7f6916533c0842b6cec699fd773693d3",
+      "css": "hourglass",
+      "code": 59399,
       "src": "entypo"
     }
   ]
