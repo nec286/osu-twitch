@@ -29,14 +29,16 @@
 }
 
 .animate-beat {
-  -webkit-animation: pulse .25s infinite alternate;
-  -moz-animation: pulse .25s infinite alternate;
-  -ms-animation: pulse .25s infinite alternate;
-  animation: pulse .25s infinite alternate;
-  @-webkit-keyframes pulse { to { -webkit-transform: scale(1.1) } }
-  @-moz-keyframes pulse { to { -webkit-transform: scale(1.1) } }
-  @-ms-keyframes pulse { to { -webkit-transform: scale(1.1) } }
-  @keyframes pulse { to { -webkit-transform: scale(1.1) } }
+  box-shadow: 0 0 0 0 rgba($grey-light, 1);
+  @include animation(beat 0.3s infinite);
+  @include keyframes(beat) {
+    25% { -webkit-transform: scale(1.2); }
+    75% { box-shadow: 0 0 0 20px rgba($grey-light, 0); }
+    100% {
+      -webkit-transform: scale(1);
+      box-shadow: none;
+    }
+  }
 }
 
 .error {

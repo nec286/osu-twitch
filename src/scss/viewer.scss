@@ -1,5 +1,4 @@
-@import "variables";
-@import "utils";
+@import "viewer/variables";
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -20,4 +19,56 @@
 @import "bootstrap/progress";
 @import "bootstrap/utilities";
 @import "bootstrap/type";
+@import "mixins/keyframes";
+@import "mixins/animation";
+@import "utils";
+@import "common/common";
 @import "viewer/viewer";
+
+body {
+  background-color: $grey-dark;
+  color: $white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+header {
+  position: relative;
+  height: 101px;
+  background: $grey-light;
+}
+
+h1, h2 {
+  padding: 0.6rem $padding;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+small { color: $grey-white }
+
+table, select { width: 100% }
+
+table {
+  td:first-child { color: $grey-white }
+}
+
+select {
+  padding: 0.6rem $padding;
+  background: $grey-dark;
+  border: none;
+  color: $white;
+  &:focus { outline: none }
+}
+
+.p { padding: $padding }
+
+.text-xs { font-size: 0.7em }
+
+.page {
+  position: relative;
+  height: 239px;
+}
