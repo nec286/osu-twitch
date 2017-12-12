@@ -18,7 +18,6 @@ class RadioButton extends Component {
 
 class RadioGroup extends Component {
   render({ name, labels, value, onChange }) {
-    console.log('value', value);
     return (
       <div className="radio-group">
         { labels.map((label, i) => <RadioButton name={ name } value={ i } label={ label } onChange={ onChange } defaultChecked={ i == value } />) }

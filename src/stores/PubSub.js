@@ -1,5 +1,4 @@
 import { action } from 'mobx';
-import map from 'lodash.map';
 
 export default class {
   constructor(state) {
