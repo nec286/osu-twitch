@@ -61,7 +61,7 @@ export default class extends Component {
         </div>
         <fieldset className="form-group">
           <legend>Default - <small>The play mode that will be selected by default when the extension is loaded and receive real-time updates.</small></legend>
-          <RadioGroup name="mode" labels={ ['osu!', 'Taiko', 'CtB', 'osu!mania'] } value={ settings.get('mode') } onChange={ this.handleChange } />
+          <RadioGroup name="mode" labels={ ['osu!', 'Taiko', 'CtB', 'osu!mania'] } value={ settings.get('mode') || 0 } onChange={ this.handleChange } />
         </fieldset>
         <SaveButton />
       </form>
