@@ -5,7 +5,7 @@ export default class extends Component {
   render({ error }) {
     return (
       <div className="error">
-        <div>{ error }</div>
+        <div className="v-center">{ error }</div>
       </div>
     );
   }
