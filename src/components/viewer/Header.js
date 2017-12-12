@@ -15,7 +15,7 @@ class Banner extends Component {
 }
 
 export default class extends Component {
-  render({ settings, lastRefreshTime }) {
+  render({ settings }) {
     return (
       <header>
         { !!settings.size && <Banner { ...this.props } /> }

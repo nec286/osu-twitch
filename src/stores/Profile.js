@@ -5,10 +5,10 @@ import asyncWrapper from 'stores/asyncWrapper';
 // TODO externalize
 function errorHandler(e) {
   switch(e.response.status) {
-    case 404:
+  case 404:
     this.state.lastError = 'Profile not found';
     break;
-    default:
+  default:
     this.state.lastError = 'Unable to load profile';
   }
 }
