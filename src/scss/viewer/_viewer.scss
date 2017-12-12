@@ -1,4 +1,3 @@
-@import "../theme/theme";
 @import "nav-tabs";
 @import "table";
 @import "loading";
@@ -10,70 +9,3 @@
 @import "profile";
 @import "activity";
 @import "best-scores";
-
-body {
-  background-color: $grey-dark;
-  color: $white;
-  font-family: 'Barlow Semi Condensed', sans-serif;
-}
-
-header {
-  // background: linear-gradient(lighten($grey-light, 5%), $grey-light);
-  position: relative;
-  height: 101px;
-  background: $grey-light;
-  .player-info {
-    padding: $padding;
-  }
-}
-
-footer {
-  padding: $padding / 2 $padding;
-}
-
-.refresh-time {
-  text-align: right;
-}
-
-.text-xs {
-  font-size: 0.7em;
-}
-
-small { color: $grey-white }
-
-h1, h2 {
-  padding: 0.7rem 0.8rem;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-h2 {
-  font-size: 1em;
-  font-weight: normal;
-}
-
-table, select { width: 100% }
-
-table {
-  td:first-child { color: $grey-white }
-}
-
-select {
-  padding: 0.6rem 0.8rem;
-  background: $grey-dark;
-  border: none;
-  color: $white;
-  &:focus { outline: none }
-}
-
-.page {
-  position: relative;
-  height: 239px;
-}
-
-.last-refresh {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
