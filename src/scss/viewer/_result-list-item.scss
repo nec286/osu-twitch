@@ -1,6 +1,7 @@
 .result-list-item {
-  padding: 0 $padding $padding $padding;
-  &:first-child {  padding-top: $padding }
+  &:not(:last-child) {
+    border-bottom: $border;
+  }
   p { margin-bottom: 0.3rem }
   .beatmap-link {
     display: block;

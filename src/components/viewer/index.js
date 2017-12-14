@@ -14,8 +14,6 @@ export { default as Grade } from './Grade';
 export { default as TableRow } from './TableRow';
 export { default as Ranks } from './Ranks';
 export { default as RecentEvents } from './RecentEvents';
-export { default as Profile } from './Profile';
 export { default as Header } from './Header';
 export { default as Avatar } from './Avatar';
-// export { default as Footer } from './Footer';
 export { default as RefreshTime } from './RefreshTime';

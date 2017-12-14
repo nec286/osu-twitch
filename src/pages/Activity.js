@@ -10,7 +10,7 @@ export default class extends Component {
     const profile = profiles.get(settings.get('mode'));
 
     return (
-      <div className="activity">
+      <div>
         { isFetchingProfile && <Loading /> }
         { !isFetchingProfile && !!profile &&
           <RecentEvents events={ profile.events } beatMaps={ beatMaps } /> }

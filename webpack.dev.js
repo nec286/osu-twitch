@@ -7,11 +7,11 @@ module.exports = merge(common, {
     publicPath: '/assets/js/',
     port: 3000,
     noInfo: false,
-    hot: true,
+    hot: false,
     inline: true,
     public: 'twitch.local'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    // new webpack.HotModuleReplacementPlugin()
   ]
 });

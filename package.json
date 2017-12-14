@@ -64,6 +64,7 @@
     "lodash.map": "^4.6.0",
     "mobx": "^3.3.0",
     "promise-polyfill": "6.0.2",
-    "raven-js": "^3.20.1"
+    "raven-js": "^3.20.1",
+    "react-sticky": "^6.0.1"
   }
 }

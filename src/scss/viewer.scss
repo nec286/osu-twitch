@@ -26,15 +26,33 @@
 @import "viewer/viewer";
 
 body {
-  background-color: $grey-dark;
+  background: $grey-dark;
   color: $white;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
+.container-fluid {
+  height: 340px; // Adjust per browser
+  overflow: hidden;
+  .scroll {
+    overflow-y: scroll;
+    height: 100%;
+    width: 335px;
+  }
+}
+
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
 header {
-  position: relative;
-  height: 101px;
-  background: $grey-light;
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  // TODO abstract this out
+  background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+  -webkit-animation: 10s linear 0s normal none infinite animate;
 }
 
 h1, h2 {
@@ -57,18 +75,18 @@ table {
 }
 
 select {
-  padding: 0.6rem $padding;
   background: $grey-dark;
   border: none;
   color: $white;
   &:focus { outline: none }
 }
 
-.p { padding: $padding }
-
 .text-xs { font-size: 0.7em }
 
 .page {
-  position: relative;
-  height: 239px;
+  margin-top: $header-height;
+}
+
+.mode-select {
+  border-bottom: $border;
 }

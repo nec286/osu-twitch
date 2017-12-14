@@ -1,7 +1,8 @@
-$list-height: 202px;
-
 .best-scores {
-  height: 100%;
-  .loading { height: 195px }
-  .result-list { height: $list-height }
+  select {
+    // position: fixed;
+  }
+  .result-list {
+    // padding-top: $select-height;
+  }
 }
