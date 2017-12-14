@@ -6,7 +6,7 @@ import { Badge, BeatMapLink, Grade, Mods } from 'components/viewer';
 export default class extends Component {
   render({ result, beatMap }) {
     return( beatMap &&
-      <li className="result-list-item d-flex">
+      <li className="result-list-item d-flex py-1">
         <div className="summary">
           <BeatMapLink beatMap={ beatMap } />
           <p><small>{ dateFromNow(result.date, { addSuffix: true }) }</small></p>

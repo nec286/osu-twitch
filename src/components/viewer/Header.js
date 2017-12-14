@@ -5,10 +5,10 @@ import { Tabs, Avatar, OsuProfileLink, RefreshTime } from 'components/viewer';
 class Banner extends Component {
   render({ settings, lastRefreshTime }) {
     return (
-      <div className="banner d-flex p">
+      <div className="banner p-2">
         <Avatar username={ settings.get('osuUsername') } />
         <OsuProfileLink className="pl-2" username={ settings.get('osuUsername') } />
-        <RefreshTime className="ml-auto" lastRefreshTime={ lastRefreshTime } />
+        {/* <RefreshTime className="ml-auto" lastRefreshTime={ lastRefreshTime } /> */}
       </div>
     );
   }

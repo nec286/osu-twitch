@@ -1,9 +1,9 @@
 .avatar {
   height: 40px;
-  width: 40px;
   background: $grey-dark;
-  border: $border;
-  border-color: $grey-white;
+  // border: $border;
+  // border-color: $grey-white;
+  border-radius: 50%;
   &.placeholder {
     background: $grey-light;
     text-align: center;
