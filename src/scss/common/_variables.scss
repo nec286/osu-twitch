@@ -1,13 +1,23 @@
 $black: #19171c;
 $white: #faf9fa;
-$grey-white: #bdbdbd;
-$grey-dark: #212121;
-$grey-light: lighten($grey-dark, 5%);
+$grey-1: #212121;
+$grey-2: #303030;
+$grey-3: #3b3b3b;
+$grey-4: #d4cdcf;
+$cyan-1: #283747;
+$cyan-2: #2E4053;
+$cyan-3: #34495E;
+$cyan-4: #5D6D7E;
 $gold: #ffea00;
 $silver: #80deea;
 $green: #76ff03;
+$red: #ff5722;
 $blue: #19171c;
-$enable-rounded: false;
+
+// Font
 $font-size-base: 0.8rem;
 $font-size-lg: ($font-size-base * 1.25) !default;
 $font-size-sm: ($font-size-base * 1) !default;
+
+// Bootstrap
+$enable-rounded: false;

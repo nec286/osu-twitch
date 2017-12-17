@@ -9,6 +9,6 @@ export default class extends Component {
 
   render({ username }) {
     const src = `https://storage.googleapis.com/osu-twitch/avatars/${username.toLowerCase()}`;
-    return <img className="avatar" src={ src } onError={ this.handleError } />;
+    return <img className="avatar z-depth-3" src={ src } onError={ this.handleError } />;
   }
 }

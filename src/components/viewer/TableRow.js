@@ -5,8 +5,8 @@ export default class extends Component {
   render({ label, value }) {
     return (
       <tr>
-        <td className="px-3 py-1">{ label }</td>
-        <td className="px-3 py-1 text-right">{ value }</td>
+        <td className="px-3 py-2 text-soften">{ label }</td>
+        <td className="px-3 py-2 text-right">{ value }</td>
       </tr>
     );
   }
