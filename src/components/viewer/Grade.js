@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Badge } from 'components/viewer';
 
 export default class extends Component {
-  render({ label='', value }) {
+  render({ className='', label='', value }) {
     let displayLabel = label;
     label = label.toLowerCase();
     switch(label) {
@@ -17,6 +17,6 @@ export default class extends Component {
       displayLabel = 'S';
       break;
     }
-    return <Badge className={ classNames('grade', label)} label={ displayLabel } value={ value } />;
+    return <Badge className={ classNames('grade', className, label)} label={ displayLabel } value={ value } />;
   }
 }

@@ -4,11 +4,9 @@ import Component from 'inferno-component';
 export default class extends Component {
   render() {
     return (
-      <div className="loading">
-        <div className="v-center">
-          <div className="osu-circle animate-beat m-auto">
-            <small className="v-center text-xs">Loading</small>
-          </div>
+      <div className="loading position-relative h-100">
+        <div className="v-center text-center">
+          <div className="loading-indicator animate beat m-auto" />
         </div>
       </div>
     );

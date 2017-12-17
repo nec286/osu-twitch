@@ -1,16 +1,17 @@
 .result-list-item {
   &:not(:last-child) {
-    border-bottom: $border;
+    border-bottom: 1px solid $grey-3;
   }
-  p { margin-bottom: 0.3rem }
-  .beatmap-link {
-    display: block;
+  a {
+    max-height: 38px;
     overflow: hidden;
   }
-  .badges {
-    .badge { width: 40px }
+  .badge {
+    width: 40px;
   }
   .mods {
-    .badge { background-color: $grey-light }
+    .badge {
+      width: auto;
+    }
   }
 }

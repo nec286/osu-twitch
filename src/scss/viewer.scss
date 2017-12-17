@@ -19,74 +19,54 @@
 @import "bootstrap/progress";
 @import "bootstrap/utilities";
 @import "bootstrap/type";
-@import "mixins/keyframes";
 @import "mixins/animation";
-@import "utils";
+@import "mixins/keyframes";
+@import "mixins/size";
+@import "mixins/transition";
 @import "common/common";
-@import "viewer/viewer";
+@import "viewer/container";
+@import "viewer/banner";
+@import "viewer/avatar";
+@import "viewer/mode-select";
+@import "viewer/page";
+@import "viewer/pattern";
+@import "viewer/table";
+@import "viewer/nav-tabs";
+@import "viewer/ranks";
+@import "viewer/loading";
+@import "viewer/result-list-item";
+@import "animations/beat";
+
+@import "viewer/collapse";
 
 body {
-  background: $grey-dark;
+  background: $grey-1;
   color: $white;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
-.container-fluid {
-  height: 340px; // Adjust per browser
-  overflow: hidden;
-  .scroll {
-    overflow-y: scroll;
-    height: 100%;
-    width: 335px;
+header {
+  position: fixed;
+  height: $header-height;
+}
+
+.profile {
+  .badge {
+    flex-grow: 1;
+    &.s {
+      color: $silver;
+    }
   }
 }
 
-@-webkit-keyframes animate {
-	from {background-position:0 0;}
-	to {background-position: 500px 0;}
+.activity {
+  li {
+    height: 75px;
+  }
 }
 
-header {
-  position: fixed;
-  width: 100%;
-  height: $header-height;
-  // TODO abstract this out
-  background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
-  -webkit-animation: 10s linear 0s normal none infinite animate;
-}
-
-h1, h2 {
-  padding: 0.7rem $padding;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-h2 {
-  font-size: 1em;
-  font-weight: normal;
-}
-
-small { color: $grey-white }
-
-table, select { width: 100% }
-
-table {
-  td:first-child { color: $grey-white }
-}
-
-select {
-  background: $grey-dark;
-  border: none;
-  color: $white;
-  &:focus { outline: none }
-}
-
-.text-xs { font-size: 0.7em }
-
-.page {
-  margin-top: $header-height;
-}
-
-.mode-select {
-  border-bottom: $border;
+.best-scores {
+  li {
+    height: 90px;
+  }
 }

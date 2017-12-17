@@ -1,8 +1,16 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import autobind from 'autobind-decorator';
 import { Loading, Error, Header } from 'components/viewer';
+
+const updateLastRefreshTime = function() {
+  const { store, state } = this.props;
+  const timeout = 1000 * 60;
+  if(state.lastRefreshTime) {
+    store.pubsub.lastRefreshTime = state.lastRefreshTime - timeout;
+  }
+  setTimeout(updateLastRefreshTime.bind(this), timeout, this);
+};
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -12,40 +20,31 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    const { store, state } = this.props;
-    const updateLastRefreshTime = function() {
-      const { lastRefreshTime } = state;
-      const timeout = 1000 * 60;
-      if(lastRefreshTime) {
-        store.pubsub.lastRefreshTime = lastRefreshTime - timeout;
-      }
-      setTimeout(updateLastRefreshTime, timeout);
-    };
-    updateLastRefreshTime();
-
-    // TODO abstract out
-    // TODO don't forget to unbind the event listener
-    window.addEventListener('scroll', (e) => {
-      document.body.className = (this.scroll.scrollTop > 0) ? 'collapse-header' : '';
+    updateLastRefreshTime.call(this);
+    window.addEventListener('scroll', () => {
+      document.body.className = (this.scroll.scrollTop > 1) ? 'collapse' : '';
     }, true);
   }
 
-  @autobind
-  initScroll(el) {
-    this.scroll = el;
+  componentWillUnmount() {
+    window.removeEventListener('scroll');
+  }
+
+  componentWillUpdate() {
+    this.scroll.scrollTop = 0;
   }
 
   render({ state, children }) {
-    const { isFetchingSettings, lastError, settings, lastRefreshTime } = state;
+    const { isFetchingSettings, lastError, settings, mode, lastRefreshTime } = state;
 
     return (
       <div className="container-fluid p-0">
-        <div className="scroll" ref={ this.initScroll } >
-          <Header settings={ settings } lastRefreshTime={ lastRefreshTime } />
+        <div className="scroll" ref={ (el) => { this.scroll = el; } } >
+          <Header settings={ settings } mode={ mode } lastRefreshTime={ lastRefreshTime } />
           <main className="page">
-            { isFetchingSettings ? <Loading /> :
-              <span>{ !lastError ? children : <Error error={ lastError } /> }</span>
-            }
+            { isFetchingSettings &&  <Loading /> }
+            { !isFetchingSettings && !!lastError && <Error error={ lastError } /> }
+            { !isFetchingSettings && !lastError && Inferno.cloneVNode(children, { ...state }) }
           </main>
         </div>
       </div>

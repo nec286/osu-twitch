@@ -1,38 +1,32 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import autobind from 'autobind-decorator';
-import { ModeSelect, ResultList, Loading } from 'components/viewer';
+import { ResultList, Loading } from 'components/viewer';
 
-@connect(['state', 'store'])
+@connect(['store'])
 export default class extends Component {
-  loadData(mode) {
-    const { store, state } = this.props;
-    const { settings } = state;
-    if(!state.bestScores.get(mode)) {
+  loadData() {
+    const { store, settings, mode, bestScores } = this.props;
+    if(!bestScores.get(mode)) {
       store.bestScores.fetch(settings.get('osuUsername'), mode);
     }
   }
 
-  async componentWillMount() {
-    const { state } = this.props;
-    this.loadData(state.mode);
+  componentDidMount() {
+    this.loadData();
   }
 
-  @autobind
-  handleModeChange(e) {
-    const { store } = this.props;
-    store.filters.mode = e.target.value;
-    this.loadData(e.target.value);
+  componentDidUpdate(nextProps) {
+    if(!this.props.mods !== nextProps.mods) {
+      this.loadData();
+    }
   }
 
-  render({ state }) {
-    const { mode, isFetchingBestScores, bestScores, beatMaps } = state;
+  render({ mode, isFetchingBestScores, bestScores, beatMaps }) {
     const results = bestScores.get(mode);
 
     return (
       <div className="best-scores">
-        <ModeSelect mode={ mode } onChange={ this.handleModeChange } />
         { isFetchingBestScores ? <Loading /> : <ResultList results={ results } beatMaps={ beatMaps } /> }
       </div>
     );

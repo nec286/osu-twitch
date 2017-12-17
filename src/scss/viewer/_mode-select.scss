@@ -1,0 +1,14 @@
+.mode-select {
+  z-index: -1;
+  background: $cyan-1;
+  li {
+    width: 75px;
+  }
+  a {
+    border-bottom: 0.1rem solid $cyan-2;
+    &.active {
+      border-color: $cyan-4;
+      background: $cyan-3;
+    }
+  }
+}

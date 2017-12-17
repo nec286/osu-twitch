@@ -1,0 +1,9 @@
+.container-fluid {
+  height: $viewer-height;
+  overflow: hidden;
+  .scroll {
+    overflow-y: scroll;
+    height: 100%;
+    width: $viewer-width;
+  }
+}
