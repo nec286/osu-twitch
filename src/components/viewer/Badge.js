@@ -8,7 +8,7 @@ export default class extends Component {
     const classes = classNames(className, 'badge d-flex flex-column fs-2 justify-content-center font-weight-normal');
     return (
       <div className={ classes } { ...props }>
-        <div>{ label }</div>
+        <div className="label">{ label }</div>
         { !!value && <div className="mt-1">{ value }</div> }
       </div>
     );
