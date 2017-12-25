@@ -1,8 +1,7 @@
-.loading, .error {
-  > div {
-    position: absolute;
-    top: 50%;
-    text-align: center;
-    width: 100%;
-  }
+.loading-indicator {
+  height:15px;
+  width: 15px;
+  border: 0.1rem solid $grey-3;
+  background: $grey-2;
+  border-radius: 50%;
 }

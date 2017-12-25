@@ -1,22 +1,20 @@
 .nav-tabs {
   position: absolute;
-  width: 100%;
   bottom: 0;
+  right: 0;
+  width: 100%;
   border: none;
-  color: #e0e0e0;
-  font-size: 0.9em;
-  font-weight: 600;
   .nav-item {
     width: 35px;
     margin-bottom: 0;
     .nav-link {
+      color: $grey-4;
       outline: 0;
-      text-transform: uppercase;
       border: none;
       background: none;
       &.active {
         color: $white;
-        border-bottom: 0.1rem solid $grey-white;
+        font-weight: bold;
       }
     }
   }

@@ -2,6 +2,7 @@ import Inferno from 'inferno';
 import { Router, match, doAllAsyncBefore } from 'inferno-router';
 import { Provider } from 'inferno-mobx';
 import createMemoryHistory from 'history/createMemoryHistory';
+import Raven from './raven';
 import createContext from './context';
 
 if(process.env.NODE_ENV !== 'production') {
@@ -26,7 +27,7 @@ module.exports = (routes, State) => {
 
   window.__onAuthorized = (twitchAuth) => {
     context.state.authorization = `Bearer ${twitchAuth.token}`;
-    init();
+    Raven.context(() => init());
   };
 
   window.__onError = (err) => {
@@ -35,7 +36,6 @@ module.exports = (routes, State) => {
 
   window.__onMessage = (message) => {
     message = JSON.parse(message);
-    context.store[message.key].setData(message);
+    context.store.pubsub[message.key] = message;
   };
-
 };

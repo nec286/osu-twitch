@@ -4,16 +4,33 @@ import { connect } from 'inferno-mobx';
 import autobind from 'autobind-decorator';
 import { TextInput, SaveButton } from 'components/forms';
 
+class RadioButton extends Component {
+  render({ name, value, label, defaultChecked=false, onChange }) {
+    return (
+      <div className="form-check form-check-inline">
+        <label className="form-check-label">
+          <input className="form-check-input" type="radio" name={ name } value={ value } onChange={ onChange } defaultChecked={ defaultChecked } /> { label }
+        </label>
+      </div>
+    );
+  }
+}
+
+class RadioGroup extends Component {
+  render({ name, labels, value, onChange }) {
+    return (
+      <div className="radio-group">
+        { labels.map((label, i) => <RadioButton name={ name } value={ i } label={ label } onChange={ onChange } defaultChecked={ i == value } />) }
+      </div>
+    );
+  }
+}
+
 @connect(['store'])
 export default class extends Component {
   @autobind
   handleChange(e) {
     const { store } = this.props;
-
-    if(e.target.name === 'avatarUrl') {
-      e.target.value = e.target.value.split('/').reverse()[0];
-    }
-
     store.settings[e.target.name] = e.target.value;
     store.settings.clearValidation(e.target.name);
   }
@@ -35,12 +52,16 @@ export default class extends Component {
     );
   }
 
-  render() {
+  render({ settings }) {
     return (
       <form onSubmit={ this.handleSubmit }>
         <div className="form-group">
           { this.renderTextInput('osuUsername', 'osu! username') }
         </div>
+        <fieldset className="form-group">
+          <legend>Default - <small>The play mode that will be selected by default when the extension is loaded and receive real-time updates.</small></legend>
+          <RadioGroup name="mode" labels={ ['osu!', 'Taiko', 'CtB', 'osu!mania'] } value={ settings.get('mode') || 0 } onChange={ this.handleChange } />
+        </fieldset>
         <SaveButton />
       </form>
     );

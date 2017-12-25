@@ -7,8 +7,8 @@ export default class extends Component {
     this.src = 'assets/img/avatar.png';
   }
 
-  render({ profile }) {
-    const src = `https://storage.googleapis.com/osu-twitch/avatars/${profile.username.toLowerCase()}`;
-    return <img className="avatar" src={ src } onError={ this.handleError } />;
+  render({ username }) {
+    const src = `https://storage.googleapis.com/osu-twitch/avatars/${username.toLowerCase()}`;
+    return <img className="avatar z-depth-3" src={ src } onError={ this.handleError } />;
   }
 }

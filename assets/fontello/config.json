@@ -13,9 +13,15 @@
       "src": "entypo"
     },
     {
-      "uid": "815503841e980c848f55e0271deacead",
-      "css": "link",
-      "code": 59392,
+      "uid": "3bd18d47a12b8709e9f4fe9ead4f7518",
+      "css": "refresh",
+      "code": 59396,
+      "src": "entypo"
+    },
+    {
+      "uid": "7f6916533c0842b6cec699fd773693d3",
+      "css": "hourglass",
+      "code": 59399,
       "src": "entypo"
     }
   ]

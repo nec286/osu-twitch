@@ -10,10 +10,6 @@ export default class extends Component {
       return Object.assign(event, extra);
     });
 
-    return(
-      <div className="recent-events">
-        <ResultList results={ results } beatMaps={ beatMaps } />
-      </div>
-    );
+    return <ResultList results={ results } beatMaps={ beatMaps } />;
   }
 }

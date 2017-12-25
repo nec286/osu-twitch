@@ -6,8 +6,8 @@ import { modEnum } from 'utils';
 export default class extends Component {
   render({ mods }) {
     return( !!mods &&
-      <div className="mods d-flex">
-        { modEnum.read(mods).map(mod => <Badge label={ mod } />) }
+      <div className="mods py-1 d-flex">
+        { modEnum.read(mods).map(mod => <Badge className="pl-0 pr-2" label={ mod } />) }
       </div>
     );
   }

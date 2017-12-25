@@ -9,9 +9,9 @@ export default class {
     this.rootStore = rootStore;
   }
 
-  @action async fetch(mode=0) {
+  @action async fetch(username, mode=0) {
     asyncWrapper.call(this, async () => {
-      const result = await this.request.get('/users/viewing/best', {
+      const result = await this.request.get(`/users/${username}/best`, {
         headers: { Authorization: this.state.authorization },
         params: { m: mode, limit: 10 }
       });

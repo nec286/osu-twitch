@@ -1,5 +1,4 @@
-@import "variables";
-@import "utils";
+@import "viewer/variables";
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -19,4 +18,55 @@
 @import "bootstrap/list-group";
 @import "bootstrap/progress";
 @import "bootstrap/utilities";
-@import "viewer/viewer";
+@import "bootstrap/type";
+@import "mixins/animation";
+@import "mixins/keyframes";
+@import "mixins/size";
+@import "mixins/transition";
+@import "common/common";
+@import "viewer/container";
+@import "viewer/banner";
+@import "viewer/avatar";
+@import "viewer/mode-select";
+@import "viewer/page";
+@import "viewer/pattern";
+@import "viewer/table";
+@import "viewer/nav-tabs";
+@import "viewer/ranks";
+@import "viewer/loading";
+@import "viewer/result-list-item";
+@import "animations/beat";
+
+@import "viewer/collapse";
+
+body {
+  background: $grey-1;
+  color: $white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+header {
+  position: fixed;
+  height: $header-height;
+}
+
+.profile {
+  .badge {
+    flex-grow: 1;
+    &.s {
+      color: $silver;
+    }
+  }
+}
+
+.activity {
+  li {
+    height: 75px;
+  }
+}
+
+.best-scores {
+  li {
+    height: 90px;
+  }
+}

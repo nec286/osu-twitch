@@ -1,15 +1,17 @@
 .result-list-item {
-  padding: 0 $padding $padding $padding;
-  &:first-child {  padding-top: $padding }
-  p { margin-bottom: 0.3rem }
-  .beatmap-link {
-    display: block;
+  &:not(:last-child) {
+    border-bottom: 1px solid $grey-3;
+  }
+  a {
+    max-height: 38px;
     overflow: hidden;
   }
-  .badges {
-    .badge { width: 40px }
+  .badge {
+    width: 40px;
   }
   .mods {
-    .badge { background-color: $grey-light }
+    .badge {
+      width: auto;
+    }
   }
 }
