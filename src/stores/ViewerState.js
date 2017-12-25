@@ -7,13 +7,15 @@ export default class State {
       lastError: null,
       isFetchingProfile: false,
       profiles: observable(new Map()),
-      modeFilter: 0,
+      mode: null,
       bestScores: observable(new Map()),
       isFetchingBestScores: false,
       beatMaps: observable(new Map()),
       isFetchingRecentActivity: false,
       recentActivity: observable(new Map()),
-      lastRefreshTime: null
+      lastRefreshTime: Date.now(),
+      isFetchingSettings: false,
+      settings: observable(new Map()),
     }, state);
   }
 }

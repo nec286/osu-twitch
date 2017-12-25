@@ -4,12 +4,11 @@ import classNames from 'classnames';
 
 export default class extends Component {
   render() {
-    const { className, label, value, ...props} = this.props;
-    const classes = classNames('badge d-flex flex-column justify-content-center', className);
+    const { className, label, ...props} = this.props;
+    const classes = classNames(className, 'badge d-flex flex-column fs-2 justify-content-center font-weight-normal');
     return (
       <div className={ classes } { ...props }>
         <div className="label">{ label }</div>
-        { !!value && <div className="value">{ value }</div> }
       </div>
     );
   }

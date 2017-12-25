@@ -1,18 +1,13 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { Tabs, Avatar, OsuProfileLink } from 'components/viewer';
+import { Banner, Mode } from 'components/viewer';
 
 export default class extends Component {
-  render({ profile }) {
+  render({ mode }) {
     return (
-      <header>
-        {!!profile &&
-          <div className="d-flex player-info">
-            <Avatar profile={ profile } />
-            <OsuProfileLink username={ profile.username } />
-          </div>
-        }
-        <Tabs />
+      <header className="w-100">
+        <Banner { ...this.props } />
+        <Mode mode={ mode } />
       </header>
     );
   }

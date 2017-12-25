@@ -1,39 +1,39 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import autobind from 'autobind-decorator';
-import { ModeSelect, Loading, Profile } from 'components/viewer';
+import { Loading, Ranks, Summary } from 'components/viewer';
 
-@connect(['state', 'store'])
+@connect(['store'])
 export default class extends Component {
-  loadData(mode) {
-    const { store, state } = this.props;
-    if(!state.profiles.get(mode)) {
-      store.profile.fetch(mode);
+  loadData() {
+    const { store, settings, mode, profiles } = this.props;
+    if(!profiles.get(mode)) {
+      store.profile.fetch(settings.get('osuUsername'), mode);
     }
   }
 
-  componentWillMount() {
-    const { state } = this.props;
-    this.loadData(state.modeFilter);
+  componentDidMount() {
+    this.loadData();
   }
 
-  @autobind
-  handleModeChange(e) {
-    const { store } = this.props;
-    store.filters.mode = e.target.value;
-    this.loadData(e.target.value);
+  componentDidUpdate(nextProps) {
+    if(!this.props.mods !== nextProps.mods) {
+      this.loadData();
+    }
   }
 
-  render({ state }) {
-    const { modeFilter, isFetchingProfile, profiles } = state;
-    const profile = profiles.get(modeFilter);
+  render({ mode, isFetchingProfile, profiles }) {
+    const profile = profiles.get(mode);
 
     return (
       <div className="profile">
-        <ModeSelect mode={ modeFilter } onChange={ this.handleModeChange } />
         { isFetchingProfile && <Loading /> }
-        { !isFetchingProfile && !!profile && <Profile profile={ profile } /> }
+        { !isFetchingProfile && !!profile && (
+          <div className="d-flex justify-content-center m-2 py-2">
+            <Ranks profile={ profile } />
+            <Summary profile={ profile } />
+          </div>
+        ) }
       </div>
     );
   }

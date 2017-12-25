@@ -4,6 +4,6 @@ export default class {
   }
 
   set mode(mode) {
-    this.state.modeFilter = mode;
+    this.state.mode = mode;
   }
 }

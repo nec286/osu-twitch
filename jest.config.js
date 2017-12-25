@@ -1,7 +1,7 @@
 module.exports = {
   collectCoverage: false,
-  moduleDirectories: ['node_modules', '../peyote', 'src'],
-  transformIgnorePatterns: ['node_modules\/(?!peyote)/'],
+  moduleDirectories: ['node_modules', 'src'],
+  transformIgnorePatterns: ['node_modules'],
   moduleNameMapper: {
     react: 'inferno-compat',
     'react-dom': 'inferno-compat'
