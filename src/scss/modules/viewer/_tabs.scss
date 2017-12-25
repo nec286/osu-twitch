@@ -1,0 +1,14 @@
+.nav-tabs {
+  .nav-item {
+    width: 35px;
+    .nav-link {
+      color: $epode;
+      outline: 0;
+      background: none;
+      &.active {
+        color: $white;
+        font-weight: bold;
+      }
+    }
+  }
+}

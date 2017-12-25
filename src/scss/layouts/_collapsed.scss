@@ -1,0 +1,27 @@
+header, .banner, .avatar, .nav-tabs, .refresh-time, .mode {
+  $t: 0.25s;
+  @include transition(height $t, width $t, opacity $t, margin $t);
+}
+
+.collapsed {
+  header, .banner {
+    height: 37px;
+  }
+
+  .avatar {
+    @include square($avatar-size / 2);
+  }
+
+  .refresh-time {
+    opacity: 0;
+  }
+
+  .nav-tabs {
+    width: 50% !important;
+    margin-bottom: 3px;
+  }
+
+  .mode {
+    margin-top: -27px;
+  }
+}

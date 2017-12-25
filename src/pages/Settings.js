@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import SettingsForm from 'components/settings/SettingsForm';
+import Form from 'components/settings/Form';
 
 @connect(['state', 'store'])
 export default class extends Component {
@@ -14,7 +14,7 @@ export default class extends Component {
     const { settings, validation } = state;
     return (
       <main className="container-fluid p-0">
-        <SettingsForm settings={ settings } validation={ validation } />
+        <Form settings={ settings } validation={ validation } />
       </main>
     );
   }
