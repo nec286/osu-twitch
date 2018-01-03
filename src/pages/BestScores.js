@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import { ResultList, Loading } from 'components/viewer';
+import { Results, Loading } from 'components/viewer';
 
 @connect(['store'])
 export default class extends Component {
@@ -27,7 +27,7 @@ export default class extends Component {
 
     return (
       <div className="best-scores">
-        { isFetchingBestScores ? <Loading /> : <ResultList results={ results } beatMaps={ beatMaps } /> }
+        { isFetchingBestScores ? <Loading /> : <Results results={ results } beatMaps={ beatMaps } /> }
       </div>
     );
   }

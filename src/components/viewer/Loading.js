@@ -1,14 +1,9 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import { VCenter } from 'components/viewer';
 
 export default class extends Component {
   render() {
-    return (
-      <div className="loading position-relative h-100">
-        <div className="v-center text-center">
-          <div className="indicator animate beat m-auto" />
-        </div>
-      </div>
-    );
+    return <VCenter><div className="loading animate beat m-auto" /></VCenter>;
   }
 }

@@ -9,6 +9,6 @@ export default class extends Component {
   }
 
   render({ username }) {
-    return <img className="avatar z-depth-3" src={ avatarURL(username) } onError={ this.handleError } />;
+    return <img className="avatar" src={ avatarURL(username) } onError={ this.handleError } />;
   }
 }

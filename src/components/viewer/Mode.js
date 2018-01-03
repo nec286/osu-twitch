@@ -29,11 +29,11 @@ export default class extends Component {
     return <NavItem value={ value } active={ active }>{ label }</NavItem>;
   }
 
-  render({ mode }) {
+  render({ className='', mode }) {
     const modes = ['osu!', 'Taiko', 'CtB', 'mania'];
     return (
-      <div className="mode nav-fill">
-        <ul className="nav fs-4">
+      <div className={ classNames('mode nav-fill w-100', className) }>
+        <ul className="nav fs-3">
           { modes.map((label, value) => this.renderNavItem(value, label, mode == value)) }
         </ul>
       </div>

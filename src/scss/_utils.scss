@@ -34,12 +34,9 @@
   bottom: 0;
 }
 
-.v-center {
-  display: block;
+.abs-b {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+  bottom: 0;
 }
 
 .fs-1 {

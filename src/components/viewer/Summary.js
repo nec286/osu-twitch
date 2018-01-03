@@ -16,7 +16,7 @@ class TableRow extends Component {
 export default class extends Component {
   render({ profile }) {
     return (
-      <table className="table table-sm mb-0 fs-3">
+      <table className="table table-sm w-50 mb-0 ml-auto fs-3">
         <TableRow label="Accuracy" value={ profile.accuracy ? (Number(profile.accuracy).toFixed(2) + '%') : '-' } />
         <TableRow label="Play Count" value={ formatNo(profile.playcount || 0) } />
         <TableRow label="Ranked Score" value={ formatNo(profile.ranked_score || 0) } />

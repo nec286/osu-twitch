@@ -4,9 +4,9 @@
 @import "utils";
 @import "pages/viewer";
 @import "modules/viewer/viewer";
-@import "layouts/collapsed";
+@import "animate";
 
-$header-height: 110px;
+$header-height: 135px;
 
 body {
   background: $navajos;
@@ -16,7 +16,22 @@ body {
 
 header {
   position: fixed;
+  z-index: 1;
   height: $header-height;
+  background: $navajos;
+  > div:first-of-type {
+    height: 115px;
+  }
+  .flag-icon {
+    padding-left: 12px;
+  }
+  .icon-globe {
+    margin-left: -2px;
+  }
+  .v-center {
+    width: 150px !important;
+    margin-left: auto;
+  }
 }
 
 a {
@@ -26,50 +41,10 @@ a {
   }
 }
 
-.page {
+main {
   padding-top: $header-height;
-  > div {
-    height: 238px;
+  background: $libels;
+  > div, .v-center {
+    height: 215px;
   }
 }
-
-.profile {
-  .badge {
-    flex-grow: 1;
-    &.s {
-      color: $silver;
-    }
-  }
-}
-
-.activity {
-  li {
-    height: 75px;
-  }
-}
-
-.best-scores {
-  li {
-    height: 90px;
-  }
-}
-
-/*
-.result-list-item {
-  &:not(:last-child) {
-    border-bottom: 1px solid $grey-3;
-  }
-  a {
-    max-height: 38px;
-    overflow: hidden;
-  }
-  .badge {
-    width: 40px;
-  }
-  .mods {
-    .badge {
-      width: auto;
-    }
-  }
-}
-*/

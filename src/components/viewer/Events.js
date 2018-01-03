@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { ResultList } from 'components/viewer';
+import { Results, VCenter } from 'components/viewer';
 import { parseEventHTML } from 'utils';
 
 export default class extends Component {
@@ -8,6 +8,9 @@ export default class extends Component {
     const results = events.map(event => {
       return Object.assign(event, parseEventHTML(event.display_html));
     });
-    return <ResultList results={ results } beatMaps={ beatMaps } />;
+    if(!events.length) {
+      return <VCenter>No recent events</VCenter>;
+    }
+    return <Results results={ results } beatMaps={ beatMaps } />;
   }
 }
