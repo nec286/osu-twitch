@@ -2,10 +2,10 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 
 export default class extends Component {
-  render({ error }) {
+  render({ children }) {
     return (
-      <div className="error position-relative h-100">
-        <div className="v-center text-center">{ error }</div>
+      <div className="v-center position-relative w-100">
+        <div className="text-center">{ children }</div>
       </div>
     );
   }

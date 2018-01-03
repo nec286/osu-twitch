@@ -3,14 +3,11 @@ import Component from 'inferno-component';
 import { Loading, Events } from 'components/viewer';
 
 export default class extends Component {
-  render({ settings, isFetchingProfile, profiles, beatMaps }) {
+  render({ settings, profiles, beatMaps }) {
     const profile = profiles.get(settings.get('mode'));
-
     return (
       <div className="activity">
-        { isFetchingProfile && <Loading /> }
-        { !isFetchingProfile && !!profile &&
-          <Events events={ profile.events } beatMaps={ beatMaps } /> }
+        { !!profile &&  <Events events={ profile.events } beatMaps={ beatMaps } /> }
       </div>
     );
   }

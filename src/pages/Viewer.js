@@ -1,7 +1,7 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
-import { Loading, Error, Header } from 'components/viewer';
+import { Loading, VCenter, Header } from 'components/viewer';
 
 const updateLastRefreshTime = function() {
   const { store, state } = this.props;
@@ -21,13 +21,6 @@ export default class extends Component {
 
   componentDidMount() {
     updateLastRefreshTime.call(this);
-    window.addEventListener('scroll', () => {
-      document.body.className = (this.scroll.scrollTop > 1) ? 'collapsed' : '';
-    }, true);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll');
   }
 
   componentWillUpdate() {
@@ -35,16 +28,18 @@ export default class extends Component {
   }
 
   render({ state, children }) {
-    const { isFetchingSettings, lastError, settings, mode, lastRefreshTime } = state;
+    const { isFetchingSettings, lastError } = state;
+
+    children = Inferno.cloneVNode(children, { ...state });
 
     return (
       <div className="viewer container-fluid p-0">
         <div className="scroll h-100" ref={ (el) => { this.scroll = el; } } >
-          <Header settings={ settings } mode={ mode } lastRefreshTime={ lastRefreshTime } />
-          <main className="page h-100">
+          <Header { ...state } />
+          <main className="fs-3">
             { isFetchingSettings &&  <Loading /> }
-            { !isFetchingSettings && !!lastError && <Error error={ lastError } /> }
-            { !isFetchingSettings && !lastError && Inferno.cloneVNode(children, { ...state }) }
+            { !isFetchingSettings && !!lastError && <VCenter>{ lastError }</VCenter> }
+            { !isFetchingSettings && !lastError && children }
           </main>
         </div>
       </div>

@@ -17,8 +17,8 @@ export default class extends Component {
   @autobind
   handleSubmit(e) {
     const { store } = this.props;
-    store.settings.validateAndSave();
     e.preventDefault();
+    store.settings.validateAndSave();
   }
 
   @autobind
@@ -38,7 +38,7 @@ export default class extends Component {
           { this.renderTextInput('osuUsername', 'osu! username') }
         </div>
         <fieldset className="form-group">
-          <legend>Default - <small>The play mode that will be selected by default when the extension is loaded and receive real-time updates.</small></legend>
+          <legend className="fs-1">Default - <small>The play mode that will be selected by default when the extension is loaded and receive real-time updates.</small></legend>
           <RadioGroup name="mode" labels={ ['osu!', 'Taiko', 'CtB', 'osu!mania'] } value={ settings.get('mode') || 0 } onChange={ this.handleChange } />
         </fieldset>
         <SaveButton />
