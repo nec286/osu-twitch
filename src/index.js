@@ -25,17 +25,19 @@ module.exports = (routes, State) => {
     );
   };
 
-  window.__onAuthorized = (twitchAuth) => {
-    context.state.authorization = `Bearer ${twitchAuth.token}`;
-    Raven.context(() => init());
-  };
+  if(window.Twitch.ext) {
+    window.Twitch.ext.onAuthorized(function(auth) {
+      context.state.authorization = `Bearer ${auth.token}`;
+      Raven.context(() => init());
+    });
 
-  window.__onError = (err) => {
-    context.state.lastError = err;
-  };
+    window.Twitch.ext.onError(function(err) {
+      context.state.lastError = err;
+    });
 
-  window.__onMessage = (message) => {
-    message = JSON.parse(message);
-    context.store.pubsub[message.key] = message;
-  };
+    window.Twitch.ext.listen('broadcast', function(target, contentType, message) {
+      message = JSON.parse(message);
+      context.store.pubsub[message.key] = message;
+    });
+  }
 };

@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { avatarURL } from 'utils'
+import { avatarURL } from 'utils';
 
 export default class extends Component {
   handleError() {
