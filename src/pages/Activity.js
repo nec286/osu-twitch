@@ -1,6 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { Loading, Events } from 'components/viewer';
+import { Events } from 'components/viewer';
 
 export default class extends Component {
   render({ settings, profiles, beatMaps }) {

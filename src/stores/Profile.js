@@ -4,7 +4,6 @@ import asyncWrapper from 'stores/asyncWrapper';
 
 // TODO externalize
 function errorHandler(e) {
-  console.log(e);
   switch(e.response.status) {
   case 404:
     this.state.lastError = 'Profile not found';

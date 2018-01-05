@@ -12,8 +12,10 @@ export default class {
       const result = await this.request.get('/settings', {
         headers: { Authorization: this.state.authorization }
       });
-      this.state.mode = result.data.settings.mode;
-      this.state.settings.replace(result.data.settings);
+      if(result.data.settings) {
+        this.state.mode = result.data.settings.mode;
+        this.state.settings.replace(result.data.settings);
+      }
     }, 'Settings');
   }
 
