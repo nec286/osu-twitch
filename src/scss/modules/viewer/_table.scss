@@ -1,0 +1,18 @@
+.table {
+  width: auto;
+  td {
+    border-top: none;
+  }
+  tr:not(:last-child) {
+    td {
+      // border-bottom: 1px solid $ilonggo;
+    }
+  }
+  /*
+  tr:nth-child(odd) {
+    td {
+      background: $ilonggo;
+    }
+  }
+  */
+}

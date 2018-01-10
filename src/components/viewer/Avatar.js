@@ -1,5 +1,6 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
+import { avatarURL } from 'utils';
 
 export default class extends Component {
   handleError() {
@@ -8,7 +9,6 @@ export default class extends Component {
   }
 
   render({ username }) {
-    const src = `https://storage.googleapis.com/osu-twitch/avatars/${username.toLowerCase()}`;
-    return <img className="avatar z-depth-3" src={ src } onError={ this.handleError } />;
+    return <img className="avatar" src={ avatarURL(username) } onError={ this.handleError } />;
   }
 }

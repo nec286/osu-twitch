@@ -1,0 +1,64 @@
+.z-0 {
+  z-index: 0;
+  box-shadow: none;
+}
+
+.z-1 {
+  z-index: 1;
+  @include box-shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));
+}
+
+.z-2 {
+  z-index: 2;
+  @include box-shadow(0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23));
+}
+
+.z-3 {
+  z-index: 3;
+  @include box-shadow(0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23));
+}
+
+.z-4 {
+  z-index: 4;
+  @include box-shadow(0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22));
+}
+
+.z-5 {
+  z-index: 5;
+  @include box-shadow(0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22));
+}
+
+.abs-br {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.abs-b {
+  position: absolute;
+  bottom: 0;
+}
+
+.fs-1 {
+  font-size: 1em;
+}
+
+.fs-2 {
+  font-size: 0.9em;
+}
+
+.fs-3 {
+  font-size: 0.8em;
+}
+
+.fs-4 {
+  font-size: 0.7em;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-soften {
+  color: $epode;
+}

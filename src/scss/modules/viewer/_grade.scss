@@ -1,0 +1,23 @@
+.grade {
+  &.s, &.ss, &.x {
+    color: $gold;
+  }
+
+  &.sh, &.ssh, &.xh {
+    color: $silver;
+  }
+
+  &.a {
+    color: $green;
+  }
+
+  &.ss, &.x, &.xh {
+    .label {
+      letter-spacing: -0.2em;
+    }
+  }
+}
+
+.lost-first {
+  color: $red;
+}

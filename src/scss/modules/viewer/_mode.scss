@@ -1,0 +1,13 @@
+.mode {
+  li {
+    width: 75px;
+  }
+  a {
+    &.active {
+      font-weight: bold;
+      // color: #F660AB;
+      // color: #98FF98;
+      color: #43C6DB;
+    }
+  }
+}

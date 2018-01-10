@@ -1,0 +1,8 @@
+.viewer {
+  height: 350px;
+  overflow: hidden;
+  .scroll {
+    overflow-y: scroll;
+    width: 335px;
+  }
+}

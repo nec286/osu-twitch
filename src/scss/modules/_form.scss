@@ -1,0 +1,15 @@
+form {
+  label, legend {
+    font-weight: bold;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+  .invalid-feedback {
+    display: block;
+    font-size: $font-size-base;
+  }
+  .form-check-label {
+    font-weight: normal;
+  }
+}

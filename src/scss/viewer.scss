@@ -1,72 +1,50 @@
-@import "viewer/variables";
-@import "bootstrap/functions";
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/root";
-@import "bootstrap/print";
-@import "bootstrap/reboot";
-@import "bootstrap/images";
-@import "bootstrap/code";
-@import "bootstrap/grid";
-@import "bootstrap/tables";
-@import "bootstrap/buttons";
-@import "bootstrap/nav";
-@import "bootstrap/navbar";
-@import "bootstrap/progress";
-@import "bootstrap/card";
-@import "bootstrap/badge";
-@import "bootstrap/list-group";
-@import "bootstrap/progress";
-@import "bootstrap/utilities";
-@import "bootstrap/type";
-@import "mixins/animation";
-@import "mixins/keyframes";
-@import "mixins/size";
-@import "mixins/transition";
-@import "common/common";
-@import "viewer/container";
-@import "viewer/banner";
-@import "viewer/avatar";
-@import "viewer/mode-select";
-@import "viewer/page";
-@import "viewer/pattern";
-@import "viewer/table";
-@import "viewer/nav-tabs";
-@import "viewer/ranks";
-@import "viewer/loading";
-@import "viewer/result-list-item";
-@import "animations/beat";
+@import "vars";
+@import "bootstrap/bootstrap";
+@import "mixins/mixins";
+@import "utils";
+@import "pages/viewer";
+@import "modules/viewer/viewer";
+@import "animate";
 
-@import "viewer/collapse";
+$header-height: 135px;
 
 body {
-  background: $grey-1;
+  background: $navajos;
   color: $white;
   font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 header {
   position: fixed;
+  z-index: 1;
   height: $header-height;
-}
-
-.profile {
-  .badge {
-    flex-grow: 1;
-    &.s {
-      color: $silver;
-    }
+  background: $navajos;
+  > div:first-of-type {
+    height: 115px;
+  }
+  .flag-icon {
+    padding-left: 12px;
+  }
+  .icon-globe {
+    margin-left: -2px;
+  }
+  .v-center {
+    width: 150px !important;
+    margin-left: auto;
   }
 }
 
-.activity {
-  li {
-    height: 75px;
+a {
+  color: inherit;
+  &:hover {
+    color: inherit
   }
 }
 
-.best-scores {
-  li {
-    height: 90px;
+main {
+  padding-top: $header-height;
+  background: $libels;
+  > div, .v-center {
+    height: 215px;
   }
 }

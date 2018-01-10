@@ -1,0 +1,7 @@
+$avatar-size: 55px;
+
+.avatar {
+  @include square($avatar-size);
+  background: $ilonggo;
+  border: 1px solid $ilonggo;
+}

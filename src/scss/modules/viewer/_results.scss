@@ -1,0 +1,21 @@
+.results {
+  background: $libels;
+  li {
+    height: 60px;
+    border-bottom: 1px solid $ilonggo;
+    a {
+      width: 245px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .badge {
+      width: 40px;
+    }
+    .mods {
+      .badge {
+        width: auto;
+      }
+    }
+  }
+}
