@@ -17,7 +17,7 @@ export default class extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    if(!this.props.mods !== nextProps.mods) {
+    if(!this.props.mode !== nextProps.mode) {
       this.loadData();
     }
   }

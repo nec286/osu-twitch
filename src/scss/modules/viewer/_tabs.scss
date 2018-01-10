@@ -1,18 +1,15 @@
 .nav-tabs {
-  background: $epode;
+  background: $cyan;
   .nav-item {
     margin-bottom: 0;
     width: 35px;
     .nav-link {
-      // color: $epode;
       color: $black;
       font-weight: bold;
       outline: 0;
       background: none;
       &.active {
-        background: $white;
-        // color: $white;
-        // font-weight: bold;
+        background: #81efff;
       }
     }
   }

@@ -1,5 +1,6 @@
 .viewer {
   height: 350px;
+  border: 0.1rem solid $cyan;
   overflow: hidden;
   .scroll {
     overflow-y: scroll;

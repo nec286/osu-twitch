@@ -6,7 +6,7 @@
 @import "modules/viewer/viewer";
 @import "animate";
 
-$header-height: 135px;
+$header-height: 155px;
 
 body {
   background: $navajos;
@@ -19,8 +19,9 @@ header {
   z-index: 1;
   height: $header-height;
   background: $navajos;
+  width: 314px;
   > div:first-of-type {
-    height: 115px;
+    height: 130px;
   }
   .flag-icon {
     padding-left: 12px;
@@ -47,4 +48,8 @@ main {
   > div, .v-center {
     height: 215px;
   }
+}
+
+table {
+  line-height: 1.3em;
 }

@@ -12,7 +12,7 @@ class ListItem extends Component {
           <small className="d-block text-soften">{ dateFromNow(result.date, { addSuffix: true }) }</small>
           { !!result.enabled_mods && <Mods mods={ result.enabled_mods } /> }
         </div>
-        <div className="d-flex flex-column ml-auto">
+        <div className="d-flex flex-column ml-auto fs-2">
           { !!result.rank && <Grade value={ result.rank } /> }
           { result.droppedFirstPlace && <Badge className="lost-first text-line-through"> #1 </Badge> }
           { !!result.globalRank && <Badge className="rank">{ `#${result.globalRank}` }</Badge> }

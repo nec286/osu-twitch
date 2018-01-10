@@ -2,7 +2,7 @@ import Inferno from 'inferno';
 import Component from 'inferno-component';
 import { connect } from 'inferno-mobx';
 import { formatNo } from 'utils';
-import { Mode, Avatar, Badge, Flag, Summary, Tabs, Loading } from 'components/viewer';
+import { Mode, Avatar, ProfileLink, Badge, Flag, Stats, Tabs, Loading } from 'components/viewer';
 
 class Ranks extends Component {
   render({ profile }) {
@@ -12,23 +12,13 @@ class Ranks extends Component {
 
     return(
       <div className="d-flex flex-column">
-        <Badge className="px-0 text-left font-weight-normal">
+        <Badge className="px-0 text-left">
           <span className="icon-globe">{ format(profile.pp_rank) }</span>
         </Badge>
-        <Badge className="px-0 text-left font-weight-normal">
+        <Badge className="px-0 text-left">
           <Flag country={ profile.country }>{ format(profile.pp_country_rank) }</Flag>
         </Badge>
       </div>
-    );
-  }
-}
-
-class ProfileLink extends Component {
-  render({ username }) {
-    return(
-      <a className="text-underline" href={ `https://osu.ppy.sh/u/${username}` } target="_blank" nofollow>
-        <u>{ username }</u>
-      </a>
     );
   }
 }
@@ -47,8 +37,7 @@ class Profile extends Component {
   }
 
   componentDidUpdate(nextProps) {
-    const { isFetchingProfile, mode } = this.props;
-    if(!isFetchingProfile && nextProps.mode !== mode) {
+    if(!this.props.mode !== nextProps.mode) {
       this.loadData();
     }
   }
@@ -59,12 +48,12 @@ class Profile extends Component {
     return(
       <div className="d-flex p-2">
         <Avatar username={ settings.get('osuUsername') } />
-        <div className="d-flex flex-column px-2 fs-1">
+        <div className="d-flex flex-column px-2 fs-3">
           <ProfileLink username={ settings.get('osuUsername') }  />
           { !!profile && <Ranks profile={ profile } /> }
         </div>
         { isFetchingProfile && <Loading /> }
-        { !isFetchingProfile && !!profile && <Summary profile={ profile } /> }
+        { !isFetchingProfile && !!profile && <Stats profile={ profile } /> }
       </div>
     );
   }
@@ -73,8 +62,8 @@ class Profile extends Component {
 export default class extends Component {
   render({ settings, mode }) {
     return (
-      <header className="w-100">
-        <div className="position-relative z-1">
+      <header>
+        <div className="position-relative">
           { !!settings.size && <Profile { ...this.props } /> }
           <Mode className="abs-b" mode={ mode } />
         </div>
